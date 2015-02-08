@@ -1,0 +1,36 @@
+/*****************************************************************************************
+ * floatz.layout.print.css
+ * ---------------------------------------------------------------------------------------
+ * Basic layouting elements for fixed (and also fluid) layout in print mode
+ *
+ * Note: the separate print file is only necessary for GWT. Thus for GWT the print relevant
+ * part must be moved from floatz.layout.print.css into the current module (without using
+ * @media directly within bundle (must be done by style injector in css.java).
+ *
+ * @project       floatz CSS Framework
+ * @version       1.3.0
+ * @see           https://github.com/floatzcss/floatz
+ * @author        Harald Humml
+ * @copyright     Copyright (c) 1998-2015 by :hummldesign
+ * @link          http://www.floatzcss.com
+ * @license       Apache License 2.0 http://www.apache.org/licenses/LICENSE-2.0
+ * @lastmodified  2014-07-16
+ * @since         1.0.0
+ */
+
+@external .flz_panel, .flz_scrollpanel;
+
+/**
+ * Prepare panels for print
+ * @workaround Print preview does not work
+ * @cssfor IE 7, IE9, Chrome
+ * @affected All
+ */
+
+/*@media print {*/
+.flz_panel,
+.flz_scrollpanel {
+	overflow: visible;
+	position: static;
+}
+/*}*/

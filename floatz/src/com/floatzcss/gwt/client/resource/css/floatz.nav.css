@@ -1,0 +1,102 @@
+/*****************************************************************************************
+ * floatz.nav.css
+ * ---------------------------------------------------------------------------------------
+ * Contains navigational elements: simple list navigation, top navigation, breadcrumb
+ * navigation, toolbar navigation, horizontal menu navigation, vertical menu navigation
+ * and tabbed menu navigation
+ *
+ * Note: all menu items use a.selected while tabmenu uses li.selected. Latter is not
+ * possible, though it is inconsistent, because IE would not correctly use the li.selected
+ * style (everything after or within the li.selected class will get the same style)
+ *
+ * @project       floatz CSS Framework
+ * @version       1.2.0
+ * @see           http://code.google.com/p/floatz/
+ * @author        Harald Humml
+ * @copyright     Copyright (c) 1998-2013 by :humml:design
+ * @link          http://www.floatzcss.com
+ * @license       Apache License 2.0 http://www.apache.org/licenses/LICENSE-2.0
+ * @lastmodified  2013-03-17
+ * @since         1.0.0
+ *
+ *
+ * Maintenance note:
+ * -----------------
+ * GWT sprite images must be used for flz_htabmenu
+ * GWT literal function must be used for IE expressions
+ */
+
+@external .flz_skipnav, .flz_anchor, .flz_skiplink, .flz_listnav, .flz_disabled;
+@external .flz_selected, .flz_breadcrumb, .flz_toolbar, .flz_topnav, .flz_hmenu;
+@external .flz_vmenu, .flz_htabmenu, .flz_htabmenu_bottom;
+
+.flz_skipnav{}
+.flz_anchor{}
+a.flz_skiplink{left:0;position:absolute;top:-500px;}
+a:active.flz_skiplink,a:focus.flz_skiplink{position:static;}
+:first-child+html a:active.flz_skiplink{border:1px dotted #000;}
+* html a:active.flz_skiplink{border:1px dotted #000;}
+.flz_listnav{background-color:inherit;margin:0;padding:0.5em 1em;}.flz_listnav li{display:inline;list-style:none;margin:0;padding:0;}.flz_listnav li a{text-decoration:none;}
+.flz_listnav li a:visited{color:inherit;}
+.flz_listnav li a:focused,.flz_listnav li a:hover{text-decoration:underline;}
+.flz_listnav li a:active{color:inherit;}
+.flz_listnav li.flz_selected a{color:inherit;font-weight:bold;}.flz_listnav li.flz_selected a:focus,.flz_listnav li.flz_selected a:hover{color:inherit;}
+.flz_listnav li.flz_selected a:active{color:inherit;}
+.flz_listnav li.flz_disabled a{color:#aaa;text-decoration:none;}
+.flz_breadcrumb,.flz_toolbar,.flz_topnav{position:absolute;top:0;}
+.flz_breadcrumb{left:0;}
+.flz_toolbar,.flz_topnav{right:0;}
+.flz_hmenu{float:left;width:100%;}.flz_hmenu ul{float:right;margin:0;padding:0;}.flz_hmenu ul li{float:left;list-style-type:none;margin:0;padding:0;}.flz_hmenu ul li a{border-left:1px solid #000;display:block;text-decoration:none;padding:0.5em 1em;}.flz_hmenu ul li a:hover{text-decoration:underline;}
+.flz_hmenu ul li.flz_selected a{font-weight:bold;}
+.flz_hmenu ul li.flz_disabled a{color:#aaa;text-decoration:none;}
+.flz_vmenu ul{margin:0;padding:0;width:100%;}.flz_vmenu ul li{float:left;list-style-type:none;margin:0;padding:0;width:100%;}.flz_vmenu ul li a{display:block;padding:0.5em 1em;text-decoration:none;border-bottom:1px solid #000;}.flz_vmenu ul li a:hover{text-decoration:underline;}
+.flz_vmenu ul li.flz_selected>a{font-weight:bold;}
+.flz_vmenu ul li.flz_disabled>a{color:#aaa;text-decoration:none;}
+.flz_vmenu ul li ul li a{padding-left:1em;}
+.flz_vmenu ul li ul li ul li a{padding-left:2em;}
+.flz_vmenu ul li ul li ul li ul li a{padding-left:3em;}
+.flz_vmenu ul li ul li ul li ul li ul li a{padding-left:4em;}
+* html .flz_vmenu ul{}* html .flz_vmenu ul li.flz_selected a{font-weight:literal("expression(/flz_selected/.test(this.parentNode.className) ? \"bold\" : \"inherit\")");}
+* html .flz_vmenu ul li.flz_disabled a{color:literal("expression(/flz_disabled/.test(this.parentNode.className) ? \"#aaa\" : \"inherit\")");text-decoration:literal("expression(/flz_disabled/.test(this.parentNode.className) ? \"none\" : \"inherit\")");}
+@url HTABMENU_BOTTOM_ACTIVE htabmenu_bottom_active;
+@url HTABMENU_BOTTOM_HOVER htabmenu_bottom_hover;
+@url HTABMENU_BOTTOM_INACTIVE htabmenu_bottom_inactive;
+
+.flz_htabmenu,.flz_htabmenu_bottom{float:left;width:100%;}
+.flz_htabmenu ul,.flz_htabmenu_bottom ul{margin:0;padding:0;}
+.flz_htabmenu ul li,.flz_htabmenu_bottom ul li{float:left;list-style-type:none;margin:0 1px;padding:0 0 0 0.5em;}
+.flz_htabmenu ul li a,.flz_htabmenu_bottom ul li a{display:block;text-decoration:none;padding:0.5em 1em 0.5em 0.5em;}
+.flz_htabmenu ul li a a:visited,.flz_htabmenu_bottom ul li a a:visited{color:inherit;}
+.flz_htabmenu ul li a:focus,.flz_htabmenu_bottom ul li a:focus,.flz_htabmenu ul li a:active,.flz_htabmenu_bottom ul li a:active{color:inherit;text-decoration:underline;}
+.flz_htabmenu ul li:hover.flz_selected a,.flz_htabmenu_bottom ul li:hover.flz_selected a{color:inherit;}
+.flz_htabmenu ul li.flz_selected,.flz_htabmenu_bottom ul li.flz_selected{}.flz_htabmenu ul li.flz_selected a,.flz_htabmenu_bottom ul li.flz_selected a{color:inherit;font-weight:bold;}.flz_htabmenu ul li.flz_selected a:hover,.flz_htabmenu_bottom ul li.flz_selected a:hover{color:inherit;}
+.flz_htabmenu ul li.flz_selected a:focus,.flz_htabmenu_bottom ul li.flz_selected a:focus,.flz_htabmenu ul li.flz_selected a:active,.flz_htabmenu_bottom ul li.flz_selected a:active{color:inherit;text-decoration:underline;}
+.flz_htabmenu ul li.flz_disabled a,.flz_htabmenu_bottom ul li.flz_disabled a{color:#aaa;}
+.flz_htabmenu{border-bottom:1px solid #000;}
+@sprite .flz_htabmenu ul li{background-position: left top; background-repeat: no-repeat;gwt-image: 'htabmenu'; height: auto; width: auto;}
+@sprite .flz_htabmenu ul li a{background-repeat: no-repeat;background-position: right top;gwt-image: 'htabmenu';height: auto;width: auto;}
+@sprite .flz_htabmenu ul li a:hover{background-repeat: no-repeat;background-position: right -100px;gwt-image: 'htabmenu';height: auto;width: auto;}
+@sprite .flz_htabmenu ul li:hover{background-repeat: no-repeat;background-position: left -100px;gwt-image: 'htabmenu';height: auto;width: auto;}
+@sprite .flz_htabmenu ul li:hover a{background-position: right -100px;gwt-image: 'htabmenu';height: auto;width: auto;}
+@sprite .flz_htabmenu ul li:hover.flz_selected{background-position: left -100px;gwt-image: 'htabmenu';height: auto;width: auto;}
+@sprite .flz_htabmenu ul li:hover.flz_selected a{background-position: right -100px;gwt-image: 'htabmenu';height: auto;width: auto;}
+@sprite .flz_htabmenu ul li.flz_selected{margin-bottom:-1px;background-position: left -200px;gwt-image: 'htabmenu';height: auto;width: auto;}
+@sprite .flz_htabmenu ul li.flz_selected a{background-position: right -200px;gwt-image: 'htabmenu';height: auto;width: auto;margin-bottom:1px;}
+@sprite .flz_htabmenu ul li.flz_selected a:hover{background-position: right -100px;gwt-image: 'htabmenu';height: auto;width: auto;}
+.flz_htabmenu_bottom{border-top:1px solid #000;}
+.flz_htabmenu_bottom ul li{background-image:HTABMENU_BOTTOM_INACTIVE;background-repeat: no-repeat;background-position: left bottom;}
+.flz_htabmenu_bottom ul li a{background-image:HTABMENU_BOTTOM_INACTIVE;background-repeat: no-repeat;background-position: right bottom;}
+.flz_htabmenu_bottom ul li a:hover{background-image:HTABMENU_BOTTOM_HOVER;background-repeat: no-repeat;background-position: right bottom;}
+.flz_htabmenu_bottom ul li:hover{background-image:HTABMENU_BOTTOM_HOVER;background-repeat: no-repeat;background-position: left bottom;}
+.flz_htabmenu_bottom ul li:hover a{background-image:HTABMENU_BOTTOM_HOVER;background-repeat: no-repeat;background-position: right bottom;}
+.flz_htabmenu_bottom ul li:hover.flz_selected{background-image:HTABMENU_BOTTOM_HOVER;background-repeat: no-repeat;background-position: left bottom;}
+.flz_htabmenu_bottom ul li:hover.flz_selected a{background-image:HTABMENU_BOTTOM_HOVER;background-repeat: no-repeat;background-position: right bottom;}
+.flz_htabmenu_bottom ul li.flz_selected{margin-top:-1px;background-image:HTABMENU_BOTTOM_ACTIVE;background-repeat: no-repeat;background-position: left bottom;}
+.flz_htabmenu_bottom ul li.flz_selected a{background-image:HTABMENU_BOTTOM_ACTIVE;background-repeat: no-repeat;background-position: right bottom;margin-top:1px;}
+.flz_htabmenu_bottom ul li.flz_selected a:hover{background-image:HTABMENU_BOTTOM_HOVER;background-repeat: no-repeat;background-position: right bottom;}
+* html .flz_htabmenu ul li{}
+@sprite * html .flz_htabmenu ul li a:hover{background-repeat: no-repeat;background-position: right top;gwt-image: 'htabmenu';height: auto;text-decoration: underline;width: auto;}
+@sprite * html .flz_htabmenu ul li.flz_selected a:hover{background-repeat: no-repeat;background-position: right -200px;gwt-image: 'htabmenu';height: auto;text-decoration: underline;width: auto;}
+* html .flz_htabmenu_bottom ul li{}
+* html .flz_htabmenu_bottom ul li a:hover{background-image: HTABMENU_BOTTOM_INACTIVE;background-repeat: no-repeat;background-position: right bottom;text-decoration: underline;}
+* html .flz_htabmenu_bottom ul li.flz_selected a:hover{background-image: HTABMENU_BOTTOM_ACTIVE;background-repeat: no-repeat;background-position: right bottom;text-decoration: underline;}

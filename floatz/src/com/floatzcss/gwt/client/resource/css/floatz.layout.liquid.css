@@ -1,0 +1,26 @@
+/*****************************************************************************************
+ * floatz.layout.liquid.css
+ * ---------------------------------------------------------------------------------------
+ * Basic layouting elements for fluid layout
+ *
+ * @project       floatz CSS Framework
+ * @version       1.2.0
+ * @see           https://github.com/floatzcss/floatz
+ * @author        Harald Humml
+ * @copyright     Copyright (c) 1998-2015 by :hummldesign
+ * @link          http://www.floatzcss.com
+ * @license       Apache License 2.0 http://www.apache.org/licenses/LICENSE-2.0
+ * @lastmodified  2014-07-16
+ * @since         1.0.0
+ */
+
+/**
+ * ---------------------------------------------------------------------------------------
+ * @section       Page container (overloaded)
+ * @app-base_css  floatz.layout.css
+ *
+ * Adds fluid layout support to page container.
+ */
+#flz_page {
+	width: 100%;
+}

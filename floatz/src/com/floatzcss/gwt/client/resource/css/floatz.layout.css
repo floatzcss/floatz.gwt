@@ -1,0 +1,421 @@
+/*****************************************************************************************
+ * floatz.layout.css
+ * ---------------------------------------------------------------------------------------
+ * Basic layouting elements for fixed (and also fluid) layout
+ *
+ * @project       floatz CSS Framework
+ * @version       1.3.0
+ * @see           https://github.com/floatzcss/floatz
+ * @author        Harald Humml
+ * @copyright     Copyright (c) 1998-2015 by :hummldesign
+ * @link          http://www.floatzcss.com
+ * @license       Apache License 2.0 http://www.apache.org/licenses/LICENSE-2.0
+ * @lastmodified  2014-07-16
+ * @since         1.0.0
+ */
+
+@external .flz_box, .flz_relative, .flz_clear, .flz_lclear, .flz_rclear, .flz_hide;
+@external .flz_spacer, .flz_lspacer, .flz_mspacer, .flz_rspacer, .flz_spacer_mrsc_top;
+@external .flz_spacer_mrsc_mid, .flz_spacer_mrsc_bottom, .flz_lspacer_mrmc_top;
+@external .flz_lspacer_mrmc_mid, .flz_lspacer_mrmc_bottom, .flz_mspacer_mrmc_top;
+@external .flz_mspacer_mrmc_mid, .flz_mspacer_mrmc_bottom, .flz_rspacer_mrmc_top;
+@external .flz_rspacer_mrmc_mid, .flz_rspacer_mrmc_bottom, .flz_subspacer, .flz_lsubspacer;
+@external .flz_msubspacer, .flz_rsubspacer, .flz_subspacer_mrsc_top, .flz_subspacer_mrsc_mid;
+@external .flz_subspacer_mrsc_bottom, .flz_lsubspacer_mrmc_top, .flz_lsubspacer_mrmc_mid;
+@external .flz_lsubspacer_mrmc_bottom, .flz_msubspacer_mrmc_top, .flz_msubspacer_mrmc_mid;
+@external .flz_msubspacer_mrmc_bottom, .flz_rsubspacer_mrmc_top, .flz_rsubspacer_mrmc_mid;
+@external .flz_rsubspacer_mrmc_bottom, .flz_l10, .flz_m10, .flz_r10, .flz_l20, .flz_m20;
+@external .flz_r20, .flz_l25, .flz_m25, .flz_r25, .flz_l33, .flz_m33, .flz_r33, .flz_l40;
+@external .flz_m40, .flz_r40, .flz_l50, .flz_m50, .flz_r50, .flz_l60, .flz_m60, .flz_r60;
+@external .flz_l66, .flz_r66, .flz_l75, .flz_r75, .flz_l80,	.flz_r80, .flz_l90, .flz_r90;
+@external .flz_r100, .flz_panel, .flz_scrollpanel, .flz_scrollbox;
+
+/**
+ * ---------------------------------------------------------------------------------------
+ * @section       Page container
+ *
+ * Page container that represents the nutshell of each web page. Acts also as target for
+ * absolute positioned elements like toolbars, breadcrumbs, etc.
+ */
+#flz_page {
+	background-color: #fff;
+	float: left;
+	position: relative;
+	width: 985px;
+}
+
+/**
+ * ---------------------------------------------------------------------------------------
+ * @section       Layout containers
+ *
+ * Basic layout container that are used for the whole structure of a web page. Follows the
+ * principle: everything is a box. Can be combined with layouters to provide auto calculated
+ * widths based on percentages. Relative box acts also as target for absolute positioned
+ * elements like toolbars, breadcrumbs, etc.
+ */
+.flz_box {
+	background-color: inherit;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	clear: none;
+	float: left;
+	width: 100%;
+}
+
+.flz_scrollbox {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	overflow: auto;
+}
+
+/**
+ * ---------------------------------------------------------------------------------------
+ * @section       Spacing containers
+ * @see
+ * @see
+ *
+ * Spacing containers provide margin and padding functionality to layout containers. Using
+ * self clearing method workaround to enwrap contained content as well as floating elements.
+ * To prevent duplicated paddings if spacers are used in single or multi row and single or
+ * multi column scenario, you can use spacers and subspacers to correct whitespaces.
+ */
+/* Spacers for whitespaces (see description above) */
+.flz_spacer,
+.flz_lspacer,
+.flz_mspacer,
+.flz_rspacer,
+.flz_spacer_mrsc_top,
+.flz_spacer_mrsc_mid,
+.flz_spacer_mrsc_bottom,
+.flz_lspacer_mrmc_top,
+.flz_lspacer_mrmc_mid,
+.flz_lspacer_mrmc_bottom,
+.flz_mspacer_mrmc_top,
+.flz_mspacer_mrmc_mid,
+.flz_mspacer_mrmc_bottom,
+.flz_rspacer_mrmc_top,
+.flz_rspacer_mrmc_mid,
+.flz_rspacer_mrmc_bottom,
+.flz_subspacer,
+.flz_lsubspacer,
+.flz_msubspacer,
+.flz_rsubspacer,
+.flz_subspacer_mrsc_top,
+.flz_subspacer_mrsc_mid,
+.flz_subspacer_mrsc_bottom,
+.flz_lsubspacer_mrmc_top,
+.flz_lsubspacer_mrmc_mid,
+.flz_lsubspacer_mrmc_bottom,
+.flz_msubspacer_mrmc_top,
+.flz_msubspacer_mrmc_mid,
+.flz_msubspacer_mrmc_bottom,
+.flz_rsubspacer_mrmc_top,
+.flz_rsubspacer_mrmc_mid,
+.flz_rsubspacer_mrmc_bottom {
+	display: block;
+	padding: 0;
+	/* Reset all padding to allow full overwrites */
+	/*  */
+}
+
+.flz_spacer:after,
+.flz_lspacer:after,
+.flz_mspacer:after,
+.flz_rspacer:after,
+.flz_spacer_mrsc_top:after,
+.flz_spacer_mrsc_mid:after,
+.flz_spacer_mrsc_bottom:after,
+.flz_lspacer_mrmc_top:after,
+.flz_lspacer_mrmc_mid:after,
+.flz_lspacer_mrmc_bottom:after,
+.flz_mspacer_mrmc_top:after,
+.flz_mspacer_mrmc_mid:after,
+.flz_mspacer_mrmc_bottom:after,
+.flz_rspacer_mrmc_top:after,
+.flz_rspacer_mrmc_mid:after,
+.flz_rspacer_mrmc_bottom:after,
+.flz_subspacer:after,
+.flz_lsubspacer:after,
+.flz_msubspacer:after,
+.flz_rsubspacer:after,
+.flz_subspacer_mrsc_top:after,
+.flz_subspacer_mrsc_mid:after,
+.flz_subspacer_mrsc_bottom:after,
+.flz_lsubspacer_mrmc_top:after,
+.flz_lsubspacer_mrmc_mid:after,
+.flz_lsubspacer_mrmc_bottom:after,
+.flz_msubspacer_mrmc_top:after,
+.flz_msubspacer_mrmc_mid:after,
+.flz_msubspacer_mrmc_bottom:after,
+.flz_rsubspacer_mrmc_top:after,
+.flz_rsubspacer_mrmc_mid:after,
+.flz_rsubspacer_mrmc_bottom:after {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+
+.flz_spacer,
+.flz_lspacer,
+.flz_mspacer,
+.flz_rspacer {
+	padding: 1em;
+}
+
+.flz_subspacer_mrsc_top,
+.flz_lsubspacer_mrmc_top,
+.flz_msubspacer_mrmc_top,
+.flz_rsubspacer_mrmc_top {
+	padding-top: 0;
+	padding-bottom: 0.5em;
+}
+
+.flz_subspacer_mrsc_mid,
+.flz_lsubspacer_mrmc_mid,
+.flz_msubspacer_mrmc_mid,
+.flz_rsubspacer_mrmc_mid {
+	padding-top: 0.5em;
+	padding-bottom: 0.5em;
+}
+
+.flz_subspacer_mrsc_bottom,
+.flz_lsubspacer_mrmc_bottom,
+.flz_msubspacer_mrmc_bottom,
+.flz_rsubspacer_mrmc_bottom {
+	padding-top: 0.5em;
+	padding-bottom: 0;
+}
+
+.flz_lsubspacer,
+.flz_msubspacer,
+.flz_lsubspacer_mrmc_top,
+.flz_msubspacer_mrmc_top,
+.flz_lsubspacer_mrmc_mid,
+.flz_msubspacer_mrmc_mid,
+.flz_lsubspacer_mrmc_bottom,
+.flz_msubspacer_mrmc_bottom {
+	padding-right: 0.5em;
+}
+
+.flz_rsubspacer,
+.flz_msubspacer,
+.flz_msubspacer_mrmc_top,
+.flz_rsubspacer_mrmc_top,
+.flz_msubspacer_mrmc_mid,
+.flz_rsubspacer_mrmc_mid,
+.flz_msubspacer_mrmc_bottom,
+.flz_rsubspacer_mrmc_bottom {
+	padding-left: 0.5em;
+}
+
+.flz_spacer_mrsc_top,
+.flz_lspacer_mrmc_top,
+.flz_mspacer_mrmc_top,
+.flz_rspacer_mrmc_top {
+	padding-top: 1em;
+	padding-bottom: 0.5em;
+}
+
+.flz_spacer_mrsc_bottom,
+.flz_lspacer_mrmc_bottom,
+.flz_mspacer_mrmc_bottom,
+.flz_rspacer_mrmc_bottom {
+	padding-top: 0.5em;
+	padding-bottom: 1em;
+}
+
+.flz_spacer_mrsc_mid,
+.flz_lspacer_mrmc_mid,
+.flz_mspacer_mrmc_mid,
+.flz_rspacer_mrmc_mid {
+	padding-top: 0.5em;
+	padding-bottom: 0.5em;
+}
+
+.flz_spacer_mrsc_top,
+.flz_spacer_mrsc_bottom,
+.flz_spacer_mrsc_mid {
+	padding-left: 1em;
+	padding-right: 1em;
+}
+
+.flz_lspacer,
+.flz_mspacer,
+.flz_lspacer_mrmc_top,
+.flz_mspacer_mrmc_top,
+.flz_lspacer_mrmc_mid,
+.flz_mspacer_mrmc_mid,
+.flz_lspacer_mrmc_bottom,
+.flz_mspacer_mrmc_bottom {
+	padding-right: 0.5em;
+}
+
+.flz_mspacer,
+.flz_rspacer,
+.flz_mspacer_mrmc_top,
+.flz_rspacer_mrmc_top,
+.flz_mspacer_mrmc_mid,
+.flz_rspacer_mrmc_mid,
+.flz_mspacer_mrmc_bottom,
+.flz_rspacer_mrmc_bottom {
+	padding-left: 0.5em;
+}
+
+.flz_lspacer_mrmc_top,
+.flz_lspacer_mrmc_mid,
+.flz_lspacer_mrmc_bottom {
+	padding-left: 1em;
+}
+
+.flz_rspacer_mrmc_top,
+.flz_rspacer_mrmc_mid,
+.flz_rspacer_mrmc_bottom {
+	padding-right: 1em;
+}
+
+/**
+ * ---------------------------------------------------------------------------------------
+ * @section       Layouters
+ * @see           http://www.positioniseverything.net/explorer/dup-characters.html
+ *                http://ejohn.org/blog/sub-pixel-problems-in-css/
+ *                http://jacksleight.com/old/blog/2008/01/20/ie-floated-columns-totaling-100-percent-bug
+ *
+ * Layouters provide auto calculated widths (based on percentages) for layout and spacing
+ * containers. To avoid duplicated character bug and wrapping of floated containers in IE
+ * 5+, 6 and 7, each right most layouter must have a negative right margin of 3 pixels.
+ */
+.flz_l10,
+.flz_m10,
+.flz_r10 {
+	width: 10%;
+}
+
+.flz_l20,
+.flz_m20,
+.flz_r20 {
+	width: 20%;
+}
+
+.flz_l25,
+.flz_m25,
+.flz_r25 {
+	width: 25%;
+}
+
+.flz_l33,
+.flz_m33,
+.flz_r33 {
+	width: 33.33333%;
+}
+
+.flz_l40,
+.flz_m40,
+.flz_r40 {
+	width: 40%;
+}
+
+.flz_l50,
+.flz_m50,
+.flz_r50 {
+	width: 50%;
+}
+
+.flz_l60,
+.flz_m60,
+.flz_r60 {
+	width: 60%;
+}
+
+.flz_l66,
+.flz_r66 {
+	width: 66.66666%;
+}
+
+.flz_l75,
+.flz_r75 {
+	width: 75%;
+}
+
+.flz_l80,
+.flz_m80,
+.flz_r80 {
+	width: 80%;
+}
+
+.flz_l90,
+.flz_r90 {
+	width: 90%;
+}
+
+.flz_r100 {
+	width: 100%;
+}
+
+/**
+ * ---------------------------------------------------------------------------------------
+ * @section       Helper classes for layouting
+ */
+/* Marker for relative positioning */
+.flz_relative {
+	position: relative;
+}
+
+/* Clears floating elements */
+.flz_clear {
+	clear: both;
+}
+
+.flz_lclear {
+	clear: left;
+}
+
+.flz_rclear {
+	clear: right;
+}
+
+.flz_hide {
+	display: none;
+}
+
+/**
+ * ---------------------------------------------------------------------------------------
+ * @section       Panel containers
+ *
+ * Advanced layout containers for structuring desktop like web applications. Dimensions and
+ * positions of panels must manually using top, right, bottom, left em values.
+ */
+.flz_panel,
+.flz_scrollpanel {
+	bottom: 0;
+	left: 0;
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+
+.flz_panel {
+	overflow: hidden;
+}
+
+.flz_scrollpanel {
+	overflow: auto;
+}
+
+/**
+ * Prepare panels for print
+ * @workaround Print preview does not work
+ * @cssfor IE 7, IE9, Chrome
+ * @affected All
+ */
+/* See floatz.layout.print.css (only for GWT)
+@media print {
+	.flz_panel,
+	.flz_scrollpanel {
+		overflow: visible;
+		position: static;
+	}
+}*/

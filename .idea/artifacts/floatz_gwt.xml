@@ -1,0 +1,12 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="floatz.gwt">
+    <output-path>$PROJECT_DIR$/out/artifacts/floatz_gwt</output-path>
+    <root id="archive" name="floatz.gwt.jar">
+      <element id="module-output" name="floatz" />
+      <element id="dir-copy" path="$PROJECT_DIR$/floatz/src" />
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/floatz/META-INF/MANIFEST.MF" />
+      </element>
+    </root>
+  </artifact>
+</component>
