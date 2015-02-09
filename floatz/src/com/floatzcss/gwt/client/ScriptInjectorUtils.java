@@ -167,7 +167,7 @@ public class ScriptInjectorUtils {
 					// Load next tranche of or call final injectCommand after all tranches are loaded
 					if ((tranche + 1) < scheduledScripts.size()) {
 						loadScripts(tranche + 1, finalCommand);
-					} else {
+					} else if(finalCommand != null) {
 						finalCommand.execute();
 					}
 				}
@@ -176,7 +176,7 @@ public class ScriptInjectorUtils {
 				public void onFailure(Exception reason) {
 					// TODO: Remember error, throw not possible due to async call
 				}
-			});
+			}).inject();
 	}
 
 	/**
@@ -197,7 +197,7 @@ public class ScriptInjectorUtils {
 				public void onFailure(Exception reason) {
 					// TODO: Remember error, throw not possible due to async call
 				}
-			});
+			}).inject();
 	}
 
 	/**

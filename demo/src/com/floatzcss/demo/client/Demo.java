@@ -1,10 +1,13 @@
 package com.floatzcss.demo.client;
 
+import com.floatzcss.gwt.client.ScriptInjectorUtils;
+import com.floatzcss.gwt.client.browser.Browser;
+import com.floatzcss.gwt.client.module.LogLevel;
+import com.floatzcss.gwt.client.module.ModuleManager;
 import com.floatzcss.gwt.client.resource.Floatz;
-import com.google.gwt.core.client.Callback;
 import com.google.gwt.core.client.EntryPoint;
-import com.google.gwt.core.client.ScriptInjector;
-import com.google.gwt.user.client.Window;
+import com.google.gwt.core.client.GWT;
+import com.google.gwt.user.client.Command;
 import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.RootPanel;
@@ -15,24 +18,25 @@ public class Demo implements EntryPoint {
 
 	public void onModuleLoad() {
 		FLOATZ.layoutLiquid().ensureInjected();
-
-		ScriptInjector.fromUrl("floatz-1.3.0/scripts/jquery-1.11.2.min.js")
-				.setWindow(ScriptInjector.TOP_WINDOW)
-				.setCallback(new Callback<Void, Exception>() {
+		ScriptInjectorUtils.getInstance()
+				.inject("Demo/floatz-1.3.0/scripts/jquery-1.11.2.min.js")
+				.inject("Demo/floatz-1.3.0/scripts/ua-parser-0.7.3.min.js").waitFor()
+				.inject("Demo/floatz-1.3.0/scripts/floatz.js").waitFor()
+				.inject("Demo/floatz-1.3.0/scripts/floatz.mobile.js")
+				.flush(new Command() {
 					@Override
-					public void onFailure(Exception reason) {
-						Window.alert("Script load error");
-					}
+					public void execute() {
+						boolean debug = !GWT.isProdMode();
 
-					@Override
-					public void onSuccess(Void result) {
-						Window.alert("Script loaded");
+						// Start floatz javascript modules
+						ModuleManager.start(debug, debug ? LogLevel.DEBUG : LogLevel.INFO, "floatz.mobile");
+
+						// Load mobile styles only if user agent is mobile webkit
+						if (Browser.isMobileWebkit()) {
+							Floatz.INSTANCE.mobile().ensureInjected();
+						}
 					}
-				})
-				.inject();
-		
-/*		ScriptInjectorUtils.getInstance()
-				.inject("demo/floatz-1.3.0/scripts/jquery-1.11.2.min.js").flush();*/
+				});
 
 		FlowPanel panel = new FlowPanel();
 		panel.add(new Label("Demo"));
