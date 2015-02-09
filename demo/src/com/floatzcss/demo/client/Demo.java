@@ -5,9 +5,10 @@ import com.floatzcss.gwt.client.browser.Browser;
 import com.floatzcss.gwt.client.module.LogLevel;
 import com.floatzcss.gwt.client.module.ModuleManager;
 import com.floatzcss.gwt.client.resource.Floatz;
+import com.google.gwt.core.client.Callback;
 import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.core.client.GWT;
-import com.google.gwt.user.client.Command;
+import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.RootPanel;
@@ -19,24 +20,30 @@ public class Demo implements EntryPoint {
 	public void onModuleLoad() {
 		FLOATZ.layoutLiquid().ensureInjected();
 		ScriptInjectorUtils.getInstance()
-				.inject("Demo/floatz-1.3.0/scripts/jquery-1.11.2.min.js")
-				.inject("Demo/floatz-1.3.0/scripts/ua-parser-0.7.3.min.js").waitFor()
-				.inject("Demo/floatz-1.3.0/scripts/floatz.js").waitFor()
-				.inject("Demo/floatz-1.3.0/scripts/floatz.mobile.js")
-				.flush(new Command() {
-					@Override
-					public void execute() {
-						boolean debug = !GWT.isProdMode();
+			.inject("Demo/floatz-1.3.0/scripts/jquery-1.11.2.min.js")
+			.inject("Demo/floatz-1.3.0/scripts/ua-parser-0.7.3.min.js").waitFor()
+			.inject("Demo/floatz-1.3.0/scripts/floatz.js").waitFor()
+			.inject("Demo/floatz-1.3.0/scripts/floatz.mobile.js")
+			.flush(new Callback<Void, Exception>() {
 
-						// Start floatz javascript modules
-						ModuleManager.start(debug, debug ? LogLevel.DEBUG : LogLevel.INFO, "floatz.mobile");
+				@Override
+				public void onSuccess(Void result) {
+					boolean debug = !GWT.isProdMode();
 
-						// Load mobile styles only if user agent is mobile webkit
-						if (Browser.isMobileWebkit()) {
-							Floatz.INSTANCE.mobile().ensureInjected();
-						}
+					// Start floatz javascript modules
+					ModuleManager.start(debug, debug ? LogLevel.DEBUG : LogLevel.INFO);
+
+					// Load mobile styles only if user agent is mobile webkit
+					if (Browser.isMobileWebkit()) {
+						Floatz.INSTANCE.mobile().ensureInjected();
 					}
-				});
+				}
+
+				@Override
+				public void onFailure(Exception reason) {
+					Window.alert("Scripts can not be loaded: " + reason.getMessage());
+				}
+			});
 
 		FlowPanel panel = new FlowPanel();
 		panel.add(new Label("Demo"));

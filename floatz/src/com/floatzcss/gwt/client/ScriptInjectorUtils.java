@@ -3,16 +3,12 @@ package com.floatzcss.gwt.client;
 import com.google.gwt.core.client.Callback;
 import com.google.gwt.core.client.ScriptInjector;
 import com.google.gwt.core.client.ScriptInjector.FromUrl;
-import com.google.gwt.user.client.Command;
 
 import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Script injector utilities.
- * <p>
- * Supports method chaining syntax.
- * </p>
  * <p>
  * Copyright (c) 1998-2015 by :hummldesign http://design.humml.eu
  * Licensed under Apache License 2.0, http://www.apache.org/licenses/LICENSE-2.0
@@ -26,8 +22,6 @@ import java.util.List;
  * @since 1.3.0
  */
 
-// TODO Error handling
-
 public class ScriptInjectorUtils {
 
 	/**
@@ -36,7 +30,7 @@ public class ScriptInjectorUtils {
 	private class Script {
 		public FromUrl fromUrl;
 		public boolean wait;
-		public Command waitCommand;
+		public Callback<Void, Exception> waitCallback;
 
 		/**
 		 * Constructor
@@ -59,7 +53,8 @@ public class ScriptInjectorUtils {
 	 * Members.
 	 */
 	private List<List<Script>> scheduledScripts = new ArrayList<List<Script>>();
-	private List<Script> scripts = new ArrayList();
+	private List<Script> scripts = new ArrayList<Script>();
+	private Exception lastError;
 
 	/**
 	 * Constructor.
@@ -73,7 +68,7 @@ public class ScriptInjectorUtils {
 	 * @return ScriptInjectorUtils instance
 	 */
 	public static ScriptInjectorUtils getInstance() {
-		return instance != null ? instance : new ScriptInjectorUtils();
+		return ScriptInjectorUtils.instance != null ? ScriptInjectorUtils.instance : new ScriptInjectorUtils();
 	}
 
 	/**
@@ -92,16 +87,16 @@ public class ScriptInjectorUtils {
 	 * Must be executed after the last injected script.
 	 * </p>
 	 *
-	 * @param finalCommand Command that should be executed after all scripts are loaded
+	 * @param finalCallback Callback that is executed after all scripts are loaded
 	 */
-	public void flush(Command finalCommand) {
+	public void flush(Callback<Void, Exception> finalCallback) {
 
 		// Schedule scripts to be loaded
 		scheduleScripts();
 
 		// Load scripts according to schedule
 		if (scheduledScripts.size() > 0) {
-			loadScripts(0, finalCommand);
+			loadScripts(0, finalCallback);
 		}
 	}
 
@@ -109,7 +104,7 @@ public class ScriptInjectorUtils {
 	 * Schedule scripts.
 	 * <p>
 	 * All injected scripts are separated into tranches so that we can wait after each tranche until the last script of
-	 * the tranche is loaded, before we can continue with the next tranche. See {@link #loadScripts(int, Command)}.
+	 * the tranche is loaded, before we can continue with the next tranche. See {@link #loadScripts(int, com.google.gwt.core.client.Callback)}.
 	 * </p>
 	 */
 	private void scheduleScripts() {
@@ -128,16 +123,16 @@ public class ScriptInjectorUtils {
 	 * This method is called recursively until all tranches are loaded.
 	 * </p>
 	 *
-	 * @param tranche      Tranche number
-	 * @param finalCommand Command that should be executed after all scripts are loaded
+	 * @param tranche       Tranche number
+	 * @param finalCallback Callback that is executed after all scripts are loaded
 	 */
-	private void loadScripts(final int tranche, final Command finalCommand) {
+	private void loadScripts(final int tranche, final Callback<Void, Exception> finalCallback) {
 		List<Script> scripts = scheduledScripts.get(tranche);
 		int loaded = 1;
 		for (final Script script : scripts) {
 			if (loaded++ == scripts.size()) {
 				// Last script in tranche must be loaded before new tranche can be started
-				loadLastScript(tranche, finalCommand, script);
+				loadLastScript(tranche, finalCallback, script);
 
 			} else {
 				// All other scripts can be loaded without waiting
@@ -149,32 +144,45 @@ public class ScriptInjectorUtils {
 	/**
 	 * Load last script in tranche.
 	 *
-	 * @param tranche      Tranche number
-	 * @param finalCommand Command that should be executed after all scripts are loaded
-	 * @param script       Script to be loaded
+	 * @param tranche       Tranche number
+	 * @param finalCallback Callback that is executed after all scripts are loaded
+	 * @param script        Script to be loaded
 	 */
-	private void loadLastScript(final int tranche, final Command finalCommand, final Script script) {
+	private void loadLastScript(final int tranche, final Callback<Void, Exception> finalCallback, final Script script) {
 		script.fromUrl
 			.setWindow(ScriptInjector.TOP_WINDOW)
 			.setCallback(new Callback<Void, Exception>() {
 				@Override
 				public void onSuccess(Void result) {
-					// Execute command after waiting
-					if (script.waitCommand != null) {
-						script.waitCommand.execute();
+
+					// Execute wait callback
+					if (script.waitCallback != null) {
+						if (lastError != null) {
+							script.waitCallback.onFailure(lastError);
+						} else {
+							script.waitCallback.onSuccess(result);
+						}
 					}
 
 					// Load next tranche of or call final injectCommand after all tranches are loaded
 					if ((tranche + 1) < scheduledScripts.size()) {
-						loadScripts(tranche + 1, finalCommand);
-					} else if(finalCommand != null) {
-						finalCommand.execute();
+						loadScripts(tranche + 1, finalCallback);
+
+						// Execute final callback
+					} else if (finalCallback != null) {
+						if (lastError != null) {
+							finalCallback.onFailure(lastError);
+						} else {
+							finalCallback.onSuccess(result);
+						}
 					}
 				}
 
 				@Override
 				public void onFailure(Exception reason) {
-					// TODO: Remember error, throw not possible due to async call
+					if (finalCallback != null) {
+						finalCallback.onFailure(reason);
+					}
 				}
 			}).inject();
 	}
@@ -195,7 +203,10 @@ public class ScriptInjectorUtils {
 
 				@Override
 				public void onFailure(Exception reason) {
-					// TODO: Remember error, throw not possible due to async call
+					// Store error for later
+					if (lastError == null) {
+						lastError = reason;
+					}
 				}
 			}).inject();
 	}
@@ -226,12 +237,12 @@ public class ScriptInjectorUtils {
 	/**
 	 * Wait until preceding fromUrl has been loaded.
 	 *
-	 * @param waitCommand Command that should be executed after loading the script
+	 * @param waitCallback Callback that is executed after all scripts are loaded
 	 * @return Reference for chaining
 	 */
-	public ScriptInjectorUtils waitFor(Command waitCommand) {
+	public ScriptInjectorUtils waitFor(Callback<Void, Exception> waitCallback) {
 		Script script = scripts.get(scripts.size() - 1);
-		script.waitCommand = waitCommand;
+		script.waitCallback = waitCallback;
 		script.wait = true;
 		return this;
 	}

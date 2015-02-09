@@ -3,23 +3,19 @@ package com.floatzcss.gwt.client;
 import com.floatzcss.gwt.client.resource.Floatz;
 import com.google.gwt.core.client.EntryPoint;
 
-// @formatter:off
-
 /**
  * Module entry point for resource bundle.
  * <p>
- * Copyright (c) 1998-2012 by :humml:design,
- * http://design.humml.eu/toolbox/floatz Licensed under Apache License 2.0,
- * http://www.apache.org/licenses/LICENSE-2.0
+ * Copyright (c) 1998-2015 by :hummldesign http://design.humml.eu
+ * Licensed under Apache License 2.0, http://www.apache.org/licenses/LICENSE-2.0
  * </p>
  * <p>
- * See: http://code.google.com/p/floatz/
+ * See: https://github.com/floatzcss/
  * </p>
  *
  * @author Harald Humml
- * @version 1.2.0
+ * @since 1.2.0
  */
-// @formatter:on
 public class Css implements EntryPoint {
 
 	// Entry point method
@@ -40,12 +36,5 @@ public class Css implements EntryPoint {
 		// support @media. MUST use inject at end, otherwise not working in IE9
 		StyleInjectorUtils.getInstance().mediaQuery("@media print")
 			.injectAtEnd(Floatz.INSTANCE.layoutPrint());
-
-		// Fix: removed to onModuleLoad of the web application that uses floatz, because GWT does not load fromUrl any
-		// more as defined in web applications module.xml, thus the javascript modules are not loaded at this time
-		// Load mobile styles only if user agent is mobile webkit
-		/*if (Browser.isMobileWebkit()) {
-			Floatz.INSTANCE.mobile().ensureInjected();
-		}*/
 	}
 }
