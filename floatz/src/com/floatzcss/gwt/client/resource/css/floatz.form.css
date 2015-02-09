@@ -14,7 +14,7 @@
  * @since         1.0.0
  */
 
-@external .flz_custombutton, .flz_form, .flz_textbox, .flz_button, . ;
+@external .flz_custombutton, .flz_form, .flz_textbox, .flz_button;
 @external .flz_readonly, .flz_inline, .flz_combobox, .flz_checkbox, .flz_radio;
 
 /**
@@ -168,4 +168,9 @@ button {
 .flz_custombutton {
 	background: transparent;
 	border: 0;
+}
+
+.flz_button {
+}
+.flz_textbox {
 }

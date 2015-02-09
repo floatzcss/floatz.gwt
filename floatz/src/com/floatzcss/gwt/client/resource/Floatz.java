@@ -24,8 +24,6 @@ public interface Floatz extends ClientBundle {
 	// Get and create instance of resource bundle
 	public Floatz INSTANCE = GWT.create(Floatz.class);
 
-	LteIE6 lteIE6();
-
 	@Source("com/floatzcss/gwt/client/resource/css/floatz.reset.meyer.css")
 	ResetMeyer resetMeyer();
 

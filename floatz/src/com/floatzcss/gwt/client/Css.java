@@ -1,9 +1,7 @@
 package com.floatzcss.gwt.client;
 
-import com.floatzcss.gwt.client.browser.Browser;
 import com.floatzcss.gwt.client.resource.Floatz;
 import com.google.gwt.core.client.EntryPoint;
-import com.google.gwt.user.client.Command;
 
 // @formatter:off
 
@@ -35,7 +33,7 @@ public class Css implements EntryPoint {
 		Floatz.INSTANCE.nav().ensureInjected();
 
 		// TODO: Test
-		Floatz.INSTANCE.lteIE6().form().ensureInjected();
+		// Floatz.INSTANCE.lteIE6().form().ensureInjected();
 
 		// Workaround for injecting media relevant styles (does not work when
 		// defined directly in css file because CSS bundles currently do not
@@ -49,17 +47,5 @@ public class Css implements EntryPoint {
 		/*if (Browser.isMobileWebkit()) {
 			Floatz.INSTANCE.mobile().ensureInjected();
 		}*/
-
-		ScriptInjectorUtils.getInstance()
-			.inject("myscript.js").waitFor()
-			.inject("myscript2.js").flush(new Command() {
-			@Override
-			public void execute() {
-				// Load mobile styles only if user agent is mobile webkit
-				if (Browser.isMobileWebkit()) {
-					Floatz.INSTANCE.mobile().ensureInjected();
-				}
-			}
-		});
 	}
 }
