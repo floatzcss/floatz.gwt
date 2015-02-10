@@ -1,0 +1,332 @@
+/*****************************************************************************************
+ * floatz.layout.responsive.css
+ * ---------------------------------------------------------------------------------------
+ * Basic layouting elements for responsive layout
+ *
+ * @project       floatz CSS Framework
+ * @version       1.3.0
+ * @see           https://github.com/floatzcss/floatz
+ * @author        Harald Humml
+ * @copyright     Copyright (c) 1998-2015 by :hummldesign
+ * @link          http://www.floatzcss.com
+ * @license       Apache License 2.0 http://www.apache.org/licenses/LICENSE-2.0
+ * @lastmodified  2014-12-11
+ * @since         1.3.0
+ */
+
+@external .flz_clear_xs, .flz_lclear_xs, .flz_rclear_xs, .flz_hide_xs;
+@external .flz_spacer_xs, .flz_lspacer_xs, .flz_mspacer_xs, .flz_rspacer_xs;
+@external .flz_spacer_mrsc_top_xs, .flz_spacer_mrsc_mid_xs, .flz_spacer_mrsc_bottom_xs;
+@external .flz_lspacer_mrmc_top_xs, .flz_lspacer_mrmc_mid_xs, .flz_lspacer_mrmc_bottom_xs;
+@external .flz_mspacer_mrmc_top_xs, .flz_mspacer_mrmc_mid_xs, .flz_mspacer_mrmc_bottom_xs;
+@external .flz_rspacer_mrmc_top_xs, .flz_rspacer_mrmc_mid_xs, .flz_rspacer_mrmc_bottom_xs;
+@external .flz_subspacer_xs, .flz_lsubspacer_xs, .flz_msubspacer_xs, .flz_rsubspacer_xs;
+@external .flz_subspacer_mrsc_top_xs, .flz_subspacer_mrsc_mid_xs, .flz_subspacer_mrsc_bottom_xs;
+@external .flz_lsubspacer_mrmc_top_xs, .flz_lsubspacer_mrmc_mid_xs, .flz_lsubspacer_mrmc_bottom_xs;
+@external .flz_msubspacer_mrmc_top_xs, .flz_msubspacer_mrmc_mid_xs, .flz_msubspacer_mrmc_bottom_xs;
+@external .flz_rsubspacer_mrmc_top_xs, .flz_rsubspacer_mrmc_mid_xs, .flz_rsubspacer_mrmc_bottom_xs;
+@external .flz_l10_xs, .flz_m10_xs, .flz_r10_xs, .flz_l20_xs, .flz_m20_xs, .flz_r20_xs;
+@external .flz_l25_xs, .flz_m25_xs, .flz_r25_xs, .flz_l33_xs, .flz_m33_xs, .flz_r33_xs;
+@external .flz_l40_xs, .flz_m40_xs, .flz_r40_xs, .flz_l50_xs, .flz_m50_xs, .flz_r50_xs;
+@external .flz_l60_xs, .flz_m60_xs, .flz_r60_xs, .flz_l66_xs, .flz_r66_xs;
+@external .flz_l75_xs, .flz_r75_xs, .flz_l80_xs, .flz_m80_xs, .flz_r80_xs;
+@external .flz_l90_xs, .flz_r90_xs, .flz_r100_xs;
+
+/* Responsive images */
+img {
+	max-width: 100%;
+}
+
+/**
+
+ * ---------------------------------------------------------------------------------------
+ * @section       Smartphone in portrait mode (XS)
+ * @app-base_css  floatz.layout.css
+ *
+ * Adds responsive layout support.
+ */
+/*@media (min-width: 0) and (max-width: 480px) {*/
+	.flz_clear_xs {
+		clear: both;
+	}
+
+	.flz_lclear_xs {
+		clear: left;
+	}
+
+	.flz_rclear_xs {
+		clear: right;
+	}
+
+	.flz_hide_xs {
+		display: none;
+	}
+
+	/* Spacers */
+	.flz_spacer_xs,
+	.flz_lspacer_xs,
+	.flz_mspacer_xs,
+	.flz_rspacer_xs,
+	.flz_spacer_mrsc_top_xs,
+	.flz_spacer_mrsc_mid_xs,
+	.flz_spacer_mrsc_bottom_xs,
+	.flz_lspacer_mrmc_top_xs,
+	.flz_lspacer_mrmc_mid_xs,
+	.flz_lspacer_mrmc_bottom_xs,
+	.flz_mspacer_mrmc_top_xs,
+	.flz_mspacer_mrmc_mid_xs,
+	.flz_mspacer_mrmc_bottom_xs,
+	.flz_rspacer_mrmc_top_xs,
+	.flz_rspacer_mrmc_mid_xs,
+	.flz_rspacer_mrmc_bottom_xs,
+	.flz_subspacer_xs,
+	.flz_lsubspacer_xs,
+	.flz_msubspacer_xs,
+	.flz_rsubspacer_xs,
+	.flz_subspacer_mrsc_top_xs,
+	.flz_subspacer_mrsc_mid_xs,
+	.flz_subspacer_mrsc_bottom_xs,
+	.flz_lsubspacer_mrmc_top_xs,
+	.flz_lsubspacer_mrmc_mid_xs,
+	.flz_lsubspacer_mrmc_bottom_xs,
+	.flz_msubspacer_mrmc_top_xs,
+	.flz_msubspacer_mrmc_mid_xs,
+	.flz_msubspacer_mrmc_bottom_xs,
+	.flz_rsubspacer_mrmc_top_xs,
+	.flz_rsubspacer_mrmc_mid_xs,
+	.flz_rsubspacer_mrmc_bottom_xs {
+		display: block;
+		padding: 0;
+		/* Reset all padding to allow full overwrites */
+		/*  */
+	}
+
+	.flz_spacer_xs:after,
+	.flz_lspacer_xs:after,
+	.flz_mspacer_xs:after,
+	.flz_rspacer_xs:after,
+	.flz_spacer_mrsc_top_xs:after,
+	.flz_spacer_mrsc_mid_xs:after,
+	.flz_spacer_mrsc_bottom_xs:after,
+	.flz_lspacer_mrmc_top_xs:after,
+	.flz_lspacer_mrmc_mid_xs:after,
+	.flz_lspacer_mrmc_bottom_xs:after,
+	.flz_mspacer_mrmc_top_xs:after,
+	.flz_mspacer_mrmc_mid_xs:after,
+	.flz_mspacer_mrmc_bottom_xs:after,
+	.flz_rspacer_mrmc_top_xs:after,
+	.flz_rspacer_mrmc_mid_xs:after,
+	.flz_rspacer_mrmc_bottom_xs:after,
+	.flz_subspacer_xs:after,
+	.flz_lsubspacer_xs:after,
+	.flz_msubspacer_xs:after,
+	.flz_rsubspacer_xs:after,
+	.flz_subspacer_mrsc_top_xs:after,
+	.flz_subspacer_mrsc_mid_xs:after,
+	.flz_subspacer_mrsc_bottom_xs:after,
+	.flz_lsubspacer_mrmc_top_xs:after,
+	.flz_lsubspacer_mrmc_mid_xs:after,
+	.flz_lsubspacer_mrmc_bottom_xs:after,
+	.flz_msubspacer_mrmc_top_xs:after,
+	.flz_msubspacer_mrmc_mid_xs:after,
+	.flz_msubspacer_mrmc_bottom_xs:after,
+	.flz_rsubspacer_mrmc_top_xs:after,
+	.flz_rsubspacer_mrmc_mid_xs:after,
+	.flz_rsubspacer_mrmc_bottom_xs:after {
+		content: ".";
+		display: block;
+		height: 0;
+		clear: both;
+		visibility: hidden;
+	}
+
+	.flz_spacer_xs,
+	.flz_lspacer_xs,
+	.flz_mspacer_xs,
+	.flz_rspacer_xs {
+		padding: 1em;
+	}
+
+	.flz_subspacer_xs {
+		padding: 0;
+	}
+
+	.flz_subspacer_mrsc_top_xs,
+	.flz_lsubspacer_mrmc_top_xs,
+	.flz_msubspacer_mrmc_top_xs,
+	.flz_rsubspacer_mrmc_top_xs {
+		padding-top: 0;
+		padding-bottom: 0.5em;
+	}
+
+	.flz_subspacer_mrsc_mid_xs,
+	.flz_lsubspacer_mrmc_mid_xs,
+	.flz_msubspacer_mrmc_mid_xs,
+	.flz_rsubspacer_mrmc_mid_xs {
+		padding-top: 0.5em;
+		padding-bottom: 0.5em;
+	}
+
+	.flz_subspacer_mrsc_bottom_xs,
+	.flz_lsubspacer_mrmc_bottom_xs,
+	.flz_msubspacer_mrmc_bottom_xs,
+	.flz_rsubspacer_mrmc_bottom_xs {
+		padding-top: 0.5em;
+		padding-bottom: 0;
+	}
+
+	.flz_lsubspacer_xs,
+	.flz_msubspacer_xs,
+	.flz_lsubspacer_mrmc_top_xs,
+	.flz_msubspacer_mrmc_top_xs,
+	.flz_lsubspacer_mrmc_mid_xs,
+	.flz_msubspacer_mrmc_mid_xs,
+	.flz_lsubspacer_mrmc_bottom_xs,
+	.flz_msubspacer_mrmc_bottom_xs {
+		padding-right: 0.5em;
+	}
+
+	.flz_rsubspacer_xs,
+	.flz_msubspacer_xs,
+	.flz_msubspacer_mrmc_top_xs,
+	.flz_rsubspacer_mrmc_top_xs,
+	.flz_msubspacer_mrmc_mid_xs,
+	.flz_rsubspacer_mrmc_mid_xs,
+	.flz_msubspacer_mrmc_bottom_xs,
+	.flz_rsubspacer_mrmc_bottom_xs {
+		padding-left: 0.5em;
+	}
+
+	.flz_spacer_mrsc_top_xs,
+	.flz_lspacer_mrmc_top_xs,
+	.flz_mspacer_mrmc_top_xs,
+	.flz_rspacer_mrmc_top_xs {
+		padding-top: 1em;
+		padding-bottom: 0.5em;
+	}
+
+	.flz_spacer_mrsc_bottom_xs,
+	.flz_lspacer_mrmc_bottom_xs,
+	.flz_mspacer_mrmc_bottom_xs,
+	.flz_rspacer_mrmc_bottom_xs {
+		padding-top: 0.5em;
+		padding-bottom: 1em;
+	}
+
+	.flz_spacer_mrsc_mid_xs,
+	.flz_lspacer_mrmc_mid_xs,
+	.flz_mspacer_mrmc_mid_xs,
+	.flz_rspacer_mrmc_mid_xs {
+		padding-top: 0.5em;
+		padding-bottom: 0.5em;
+	}
+
+	.flz_spacer_mrsc_top_xs,
+	.flz_spacer_mrsc_bottom_xs,
+	.flz_spacer_mrsc_mid_xs {
+		padding-left: 1em;
+		padding-right: 1em;
+	}
+
+	.flz_lspacer_xs,
+	.flz_mspacer_xs,
+	.flz_lspacer_mrmc_top_xs,
+	.flz_mspacer_mrmc_top_xs,
+	.flz_lspacer_mrmc_mid_xs,
+	.flz_mspacer_mrmc_mid_xs,
+	.flz_lspacer_mrmc_bottom_xs,
+	.flz_mspacer_mrmc_bottom_xs {
+		padding-right: 0.5em;
+	}
+
+	.flz_mspacer_xs,
+	.flz_rspacer_xs,
+	.flz_mspacer_mrmc_top_xs,
+	.flz_rspacer_mrmc_top_xs,
+	.flz_mspacer_mrmc_mid_xs,
+	.flz_rspacer_mrmc_mid_xs,
+	.flz_mspacer_mrmc_bottom_xs,
+	.flz_rspacer_mrmc_bottom_xs {
+		padding-left: 0.5em;
+	}
+
+	.flz_lspacer_mrmc_top_xs,
+	.flz_lspacer_mrmc_mid_xs,
+	.flz_lspacer_mrmc_bottom_xs {
+		padding-left: 1em;
+	}
+
+	.flz_rspacer_mrmc_top_xs,
+	.flz_rspacer_mrmc_mid_xs,
+	.flz_rspacer_mrmc_bottom_xs {
+		padding-right: 1em;
+	}
+
+	/* Layouters */
+	.flz_l10_xs,
+	.flz_m10_xs,
+	.flz_r10_xs {
+		width: 10%;
+	}
+
+	.flz_l20_xs,
+	.flz_m20_xs,
+	.flz_r20_xs {
+		width: 20%;
+	}
+
+	.flz_l25_xs,
+	.flz_m25_xs,
+	.flz_r25_xs {
+		width: 25%;
+	}
+
+	.flz_l33_xs,
+	.flz_m33_xs,
+	.flz_r33_xs {
+		width: 33.33333%;
+	}
+
+	.flz_l40_xs,
+	.flz_m40_xs,
+	.flz_r40_xs {
+		width: 40%;
+	}
+
+	.flz_l50_xs,
+	.flz_m50_xs,
+	.flz_r50_xs {
+		width: 50%;
+	}
+
+	.flz_l60_xs,
+	.flz_m60_xs,
+	.flz_r60_xs {
+		width: 60%;
+	}
+
+	.flz_l66_xs,
+	.flz_r66_xs {
+		width: 66.66666%;
+	}
+
+	.flz_l75_xs,
+	.flz_r75_xs {
+		width: 75%;
+	}
+
+	.flz_l80_xs,
+	.flz_m80_xs,
+	.flz_r80_xs {
+		width: 80%;
+	}
+
+	.flz_l90_xs,
+	.flz_r90_xs {
+		width: 90%;
+	}
+
+	.flz_r100_xs {
+		width: 100%;
+	}
+/*}*/

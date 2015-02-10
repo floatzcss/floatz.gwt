@@ -46,6 +46,7 @@ public class Demo implements EntryPoint {
 			});
 
 		FlowPanel panel = new FlowPanel();
+		panel.setStyleName(FLOATZ.layoutResponsive().xs().spacer());
 		panel.add(new Label("Demo"));
 		RootPanel.get().add(panel);
 	}
