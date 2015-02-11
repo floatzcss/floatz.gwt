@@ -10,4 +10,16 @@ public interface LayoutResponsive extends ClientBundle {
 
 	@Source("com/floatzcss/gwt/client/resource/css/floatz.layout.responsive.xs.css")
 	LayoutResponsiveXS xs();
+
+	@Source("com/floatzcss/gwt/client/resource/css/floatz.layout.responsive.s.css")
+	LayoutResponsiveS s();
+
+	@Source("com/floatzcss/gwt/client/resource/css/floatz.layout.responsive.m.css")
+	LayoutResponsiveM m();
+
+	@Source("com/floatzcss/gwt/client/resource/css/floatz.layout.responsive.l.css")
+	LayoutResponsiveL l();
+
+	@Source("com/floatzcss/gwt/client/resource/css/floatz.layout.responsive.xl.css")
+	LayoutResponsiveXL xl();
 }

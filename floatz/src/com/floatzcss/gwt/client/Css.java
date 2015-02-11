@@ -28,9 +28,6 @@ public class Css implements EntryPoint {
 		Floatz.INSTANCE.form().ensureInjected();
 		Floatz.INSTANCE.nav().ensureInjected();
 
-		// TODO: Test
-		// Floatz.INSTANCE.lteIE6().form().ensureInjected();
-
 		// Workaround for injecting media relevant styles (does not work when
 		// defined directly in css file because CSS bundles currently do not
 		// support @media. MUST use inject at end, otherwise not working in IE9

@@ -1,6 +1,7 @@
 package com.floatzcss.demo.client;
 
 import com.floatzcss.gwt.client.ScriptInjectorUtils;
+import com.floatzcss.gwt.client.StyleInjectorUtils;
 import com.floatzcss.gwt.client.browser.Browser;
 import com.floatzcss.gwt.client.module.LogLevel;
 import com.floatzcss.gwt.client.module.ModuleManager;
@@ -18,12 +19,24 @@ public class Demo implements EntryPoint {
 	private static final Floatz FLOATZ = Floatz.INSTANCE;
 
 	public void onModuleLoad() {
+		
+		// Load additional floatz stylesheet
 		FLOATZ.layoutLiquid().ensureInjected();
+
+		// Inject floatz stylesheets for responsive layout
+		StyleInjectorUtils.getInstance()
+			.mediaQuery("@media (min-width: 0) and (max-width: 480px)").injectAtEnd(FLOATZ.layoutResponsive().xs())
+			.mediaQuery("@media (min-width: 481px) and (max-width: 767px)").injectAtEnd(FLOATZ.layoutResponsive().s())
+			.mediaQuery("@media (min-width: 768px) and (max-width: 979px)").injectAtEnd(FLOATZ.layoutResponsive().m())
+			.mediaQuery("@media (min-width: 980px) and (max-width: 1199px)").injectAtEnd(FLOATZ.layoutResponsive().l())
+			.mediaQuery("@media (min-width: 1200px)").injectAtEnd(FLOATZ.layoutResponsive().xl());
+
+		// Inject floatz script modules
 		ScriptInjectorUtils.getInstance()
 			.inject("Demo/floatz-1.3.0/scripts/jquery-1.11.2.min.js")
 			.inject("Demo/floatz-1.3.0/scripts/ua-parser-0.7.3.min.js").waitFor()
-			.inject("Demo/floatz-1.3.0/scripts/floatz.js").waitFor()
-			.inject("Demo/floatz-1.3.0/scripts/floatz.mobile.js")
+			.inject("Demo/floatz-1.3.0/scripts/floatz.js")/*.waitFor()
+			.inject("Demo/floatz-1.3.0/scripts/floatz.mobile.js")*/
 			.flush(new Callback<Void, Exception>() {
 
 				@Override
@@ -46,7 +59,8 @@ public class Demo implements EntryPoint {
 			});
 
 		FlowPanel panel = new FlowPanel();
-		panel.setStyleName(FLOATZ.layoutResponsive().xs().spacer());
+		panel.addStyleName(FLOATZ.layout().box());
+		panel.addStyleName(FLOATZ.layoutResponsive().xs().spacer());
 		panel.add(new Label("Demo"));
 		RootPanel.get().add(panel);
 	}
