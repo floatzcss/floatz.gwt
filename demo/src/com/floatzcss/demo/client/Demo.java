@@ -26,7 +26,6 @@ public class Demo implements EntryPoint {
 		
 		// Load additional floatz stylesheet
 		FLOATZ.layoutLiquid().ensureInjected();
-		FLOATZ.ie().ensureInjected();
 
 		// Inject floatz stylesheets for responsive layout
 		StyleInjectorUtils.getInstance()

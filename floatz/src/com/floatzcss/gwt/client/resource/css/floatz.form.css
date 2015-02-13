@@ -17,27 +17,15 @@
 @external .flz_custombutton, .flz_form, .flz_textbox, .flz_button;
 @external .flz_readonly, .flz_inline, .flz_combobox, .flz_checkbox, .flz_radio;
 
-/**
- * ---------------------------------------------------------------------------------------
- * @section       Form baseline
- *
- * Baseline styles for standard form elements
- */
-
-/* Clears floats */
-
-/* Clears floats */
 form {
 	clear: both;
 }
-/* Change fonts */
 label {
 	font-weight: bold;
 }
 optgroup {
 	font-style: italic;
 }
-/* Adjusts baseline of input fields and label */
 button input,
 label,
 select,
@@ -46,27 +34,16 @@ textarea {
 	margin-left: 0;
 	vertical-align: middle;
 }
-/* Add border to get same visual appearance to all input elements */
 select,
 textarea {
 	border: 1px solid #000;
 }
-/* Fieldset */
 fieldset {
-	/* Clear floats */
 	clear: both;
-	/**
-		 * Sets border styles (because of meyer reset), paddings and encloses floating boxes
-		 * within fieldset using overflow method
-		 */
 	border: 1px solid #000;
 	padding: 1em;
 	margin-bottom: 1em;
-	/**
-		 * @affected Opera <= 8.5
-		 */
 	overflow: hidden;
-	/* Opera <= 8.5 */
 }
 fieldset legend {
 	font-weight: bold;
@@ -80,21 +57,6 @@ fieldset legend {
  */
 /* Form */
 .flz_form {
-	/* Textbox */
-	/* Label, Selectbox */
-	/* Textarea */
-	/* Checkboxes and radio buttons */
-	/* Marker for mandatory fields */
-	/* Marker for readonly fields */
-	/**
-		 * Label in combination with checkbox or radio should be inline
-		 * @workaround Handle situations when label comes before radiobutton, checkbox and to
-		 *             support inline labels in combination with checkbox in IE 5, 6
-		 * @affected all browsers
-		 */
-	/* Separate inline class (for IE 5,6 and when label comes before radiobutton, checkbox) */
-	/* Combobox marker classes to combine fields with images in one line (e.g. date field with
-		   date picker image) */
 }
 .flz_form input[type="text"],
 .flz_form input[type="password"] {
@@ -102,7 +64,6 @@ fieldset legend {
 	border: 1px solid #000;
 	display: block;
 	width: 99.4%;
-	/* Fix overlap bug in iOS by removing horizontal spacing */
 	padding-left: 0;
 	padding-right: 0;
 }
@@ -120,7 +81,6 @@ fieldset legend {
 .flz_form .flz_checkbox,
 .flz_form .flz_radio {
 	margin: 0;
-	/* Label in combination with checkbox or radio should be inline */
 }
 .flz_form input[type="checkbox"] + label,
 .flz_form input[type="radio"] + label,
@@ -150,7 +110,6 @@ fieldset legend {
 	bottom: 0;
 	right: 0;
 }
-/* Buttons (should also work outside of .flz_form) */
 input[type="button"],
 input[type="submit"],
 input[type="reset"],
@@ -158,18 +117,12 @@ button {
 	background-color: #fff;
 	margin: 0;
 	padding: 0.25em 0.35em;
-	/**
-		 * @workaround Add border otherwise buttons are not styleable in webkit browsers
-		 * @affected All browsers
-		 */
 	border: 1px solid #000;
 }
-/* Special class for custom buttons that removes unnecessary formatting */
 .flz_custombutton {
 	background: transparent;
 	border: 0;
 }
-
 .flz_button {
 }
 .flz_textbox {

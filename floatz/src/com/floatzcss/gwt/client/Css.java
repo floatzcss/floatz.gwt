@@ -27,6 +27,7 @@ public class Css implements EntryPoint {
 		Floatz.INSTANCE.layout().ensureInjected();
 		Floatz.INSTANCE.form().ensureInjected();
 		Floatz.INSTANCE.nav().ensureInjected();
+		Floatz.INSTANCE.ie().ensureInjected();
 
 		// Workaround for injecting media relevant styles (does not work when
 		// defined directly in css file because CSS bundles currently do not

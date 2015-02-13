@@ -14,18 +14,8 @@
  * @since         1.0.0
  */
 
-/**
- * ---------------------------------------------------------------------------------------
- * @section       Page container (overloaded)
- * @app-base_css  floatz.layout.css
- *
- * Adds centered layout support to page container.
- */
 #flz_page {
 	float: none;
-	/* Reset default floating */
 	margin: 0 auto;
-	/* For all standard browsers incl. IE 7 */
 	overflow: hidden;
-	/* encloses inner containers (all non-IE browsers, "auto" does not work for Netscape 7, 8) */
 }

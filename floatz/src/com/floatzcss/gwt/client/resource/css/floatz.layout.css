@@ -30,29 +30,11 @@
 @external .flz_l66, .flz_r66, .flz_l75, .flz_r75, .flz_l80,	.flz_r80, .flz_l90, .flz_r90;
 @external .flz_r100, .flz_panel, .flz_scrollpanel, .flz_scrollbox;
 
-/**
- * ---------------------------------------------------------------------------------------
- * @section       Page container
- *
- * Page container that represents the nutshell of each web page. Acts also as target for
- * absolute positioned elements like toolbars, breadcrumbs, etc.
- */
-#flz_page {
-	background-color: #fff;
+#flz_page {background-color: #fff;
 	float: left;
 	position: relative;
 	width: 985px;
 }
-
-/**
- * ---------------------------------------------------------------------------------------
- * @section       Layout containers
- *
- * Basic layout container that are used for the whole structure of a web page. Follows the
- * principle: everything is a box. Can be combined with layouters to provide auto calculated
- * widths based on percentages. Relative box acts also as target for absolute positioned
- * elements like toolbars, breadcrumbs, etc.
- */
 .flz_box {
 	background-color: inherit;
 	-webkit-box-sizing: border-box;
@@ -62,26 +44,12 @@
 	float: left;
 	width: 100%;
 }
-
 .flz_scrollbox {
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 	overflow: auto;
 }
-
-/**
- * ---------------------------------------------------------------------------------------
- * @section       Spacing containers
- * @see
- * @see
- *
- * Spacing containers provide margin and padding functionality to layout containers. Using
- * self clearing method workaround to enwrap contained content as well as floating elements.
- * To prevent duplicated paddings if spacers are used in single or multi row and single or
- * multi column scenario, you can use spacers and subspacers to correct whitespaces.
- */
-/* Spacers for whitespaces (see description above) */
 .flz_spacer,
 .flz_lspacer,
 .flz_mspacer,
@@ -116,8 +84,6 @@
 .flz_rsubspacer_mrmc_bottom {
 	display: block;
 	padding: 0;
-	/* Reset all padding to allow full overwrites */
-	/*  */
 }
 
 .flz_spacer:after,
@@ -276,18 +242,6 @@
 .flz_rspacer_mrmc_bottom {
 	padding-right: 1em;
 }
-
-/**
- * ---------------------------------------------------------------------------------------
- * @section       Layouters
- * @see           http://www.positioniseverything.net/explorer/dup-characters.html
- *                http://ejohn.org/blog/sub-pixel-problems-in-css/
- *                http://jacksleight.com/old/blog/2008/01/20/ie-floated-columns-totaling-100-percent-bug
- *
- * Layouters provide auto calculated widths (based on percentages) for layout and spacing
- * containers. To avoid duplicated character bug and wrapping of floated containers in IE
- * 5+, 6 and 7, each right most layouter must have a negative right margin of 3 pixels.
- */
 .flz_l10,
 .flz_m10,
 .flz_r10 {
@@ -355,16 +309,10 @@
 	width: 100%;
 }
 
-/**
- * ---------------------------------------------------------------------------------------
- * @section       Helper classes for layouting
- */
-/* Marker for relative positioning */
 .flz_relative {
 	position: relative;
 }
 
-/* Clears floating elements */
 .flz_clear {
 	clear: both;
 }
@@ -381,13 +329,6 @@
 	display: none;
 }
 
-/**
- * ---------------------------------------------------------------------------------------
- * @section       Panel containers
- *
- * Advanced layout containers for structuring desktop like web applications. Dimensions and
- * positions of panels must manually using top, right, bottom, left em values.
- */
 .flz_panel,
 .flz_scrollpanel {
 	bottom: 0;
@@ -404,13 +345,6 @@
 .flz_scrollpanel {
 	overflow: auto;
 }
-
-/**
- * Prepare panels for print
- * @workaround Print preview does not work
- * @cssfor IE 7, IE9, Chrome
- * @affected All
- */
 /* See floatz.layout.print.css (only for GWT)
 @media print {
 	.flz_panel,
