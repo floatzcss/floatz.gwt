@@ -8,7 +8,7 @@ package com.floatzcss.gwt.client.module;
  * other floatz module.
  * </p>
  * <p>
- * Copyright (c) 1998-2015 by :hummldesign http://design.humml.eu
+ * Copyright (c) 2010-2015 by :hummldesign http://design.humml.eu
  * Licensed under Apache License 2.0, http://www.apache.org/licenses/LICENSE-2.0
  * </p>
  * <p>

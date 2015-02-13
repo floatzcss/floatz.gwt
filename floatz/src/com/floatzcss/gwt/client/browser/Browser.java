@@ -1,7 +1,5 @@
 package com.floatzcss.gwt.client.browser;
 
-//@formatter:off
-
 /**
  * Browser utility.
  * <p>
@@ -10,7 +8,7 @@ package com.floatzcss.gwt.client.browser;
  * possible try to use a different method (e.g. feature detection).
  * </p>
  * <p>
- * Copyright (c) 1998-2015 by :hummldesign http://design.humml.eu
+ * Copyright (c) 2010-2015 by :hummldesign http://design.humml.eu
  * Licensed under Apache License 2.0, http://www.apache.org/licenses/LICENSE-2.0
  * </p>
  * <p>
@@ -20,8 +18,6 @@ package com.floatzcss.gwt.client.browser;
  * @author Harald Humml
  * @since 1.2.0
  */
-
-// formatter:on
 public class Browser {
 
 	// TODO: Add different browser detection methods from browser.js

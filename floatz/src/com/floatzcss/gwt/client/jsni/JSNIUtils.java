@@ -7,7 +7,7 @@ import java.util.List;
 /**
  * JSNI utilities for converting between Java and Javascript.
  * <p>
- * Copyright (c) 1998-2015 by :hummldesign http://design.humml.eu
+ * Copyright (c) 2010-2015 by :hummldesign http://design.humml.eu
  * Licensed under Apache License 2.0, http://www.apache.org/licenses/LICENSE-2.0
  * </p>
  * <p>
@@ -15,7 +15,6 @@ import java.util.List;
  * </p>
  *
  * @author Harald Humml
- * @see com.google.gwt.core.client.ScriptInjector
  * @since 1.2.0
  */
 public class JSNIUtils {

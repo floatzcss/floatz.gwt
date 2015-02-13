@@ -3,20 +3,18 @@ package com.floatzcss.gwt.client.resource;
 import com.google.gwt.resources.client.CssResource;
 
 /**
- * Css bundle for floatz.layout.responsive.css
+ * CSS bundle of floatz.layout.repsonsive.css for GWT.
  * <p>
- * Copyright (c) 1998-2015 by :hummldesign http://www.floatzcss.com
- * Licensed under Apache License 2.0 http://www.apache.org/licenses/LICENSE-2.0
+ * Copyright (c) 2010-2015 by :hummldesign http://design.humml.eu
+ * Licensed under Apache License 2.0, http://www.apache.org/licenses/LICENSE-2.0
  * </p>
  * <p>
  * See: https://github.com/floatzcss/
  * </p>
  *
  * @author Harald Humml
- * @version 1.3.0
- * @since 1.3.0
+ * @since 1.2.0
  */
-
 public interface LayoutResponsiveXL extends CssResource {
 
 	@ClassName("flz_clear_xl")

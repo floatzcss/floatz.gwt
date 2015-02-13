@@ -9,7 +9,7 @@ import com.google.gwt.resources.client.CssResource;
  * Supports chaining syntax as well as media queries.
  * </p>
  * <p>
- * Copyright (c) 1998-2015 by :hummldesign http://design.humml.eu
+ * Copyright (c) 2010-2015 by :hummldesign http://design.humml.eu
  * Licensed under Apache License 2.0, http://www.apache.org/licenses/LICENSE-2.0
  * </p>
  * <p>

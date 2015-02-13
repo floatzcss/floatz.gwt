@@ -3,9 +3,9 @@ package com.floatzcss.gwt.client.resource;
 import com.google.gwt.resources.client.CssResource;
 
 /**
- * Css bundle implementation of floatz.form.css for GWT (2.0.1 and above)
+ * CSS bundle of floatz.form.css for GWT.
  * <p>
- * Copyright (c) 1998-2015 by :hummldesign http://design.humml.eu
+ * Copyright (c) 2010-2015 by :hummldesign http://design.humml.eu
  * Licensed under Apache License 2.0, http://www.apache.org/licenses/LICENSE-2.0
  * </p>
  * <p>

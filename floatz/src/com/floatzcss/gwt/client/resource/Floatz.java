@@ -6,9 +6,9 @@ import com.google.gwt.resources.client.DataResource;
 import com.google.gwt.resources.client.ImageResource;
 
 /**
- * Resource bundle of floatz CSS framework for GWT (2.0.1 and above)
+ * Resource bundle of floatz CSS framework for GWT.
  * <p>
- * Copyright (c) 1998-2015 by :hummldesign http://design.humml.eu
+ * Copyright (c) 2010-2015 by :hummldesign http://design.humml.eu
  * Licensed under Apache License 2.0, http://www.apache.org/licenses/LICENSE-2.0
  * </p>
  * <p>
@@ -18,7 +18,6 @@ import com.google.gwt.resources.client.ImageResource;
  * @author Harald Humml
  * @since 1.2.0
  */
-
 public interface Floatz extends ClientBundle {
 
 	// Get and create instance of resource bundle
