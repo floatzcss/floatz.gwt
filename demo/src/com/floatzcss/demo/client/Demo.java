@@ -9,10 +9,14 @@ import com.floatzcss.gwt.client.resource.Floatz;
 import com.google.gwt.core.client.Callback;
 import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.core.client.GWT;
+import com.google.gwt.dom.client.Document;
+import com.google.gwt.dom.client.Element;
+import com.google.gwt.dom.client.HeadElement;
 import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.RootPanel;
+import com.google.gwt.xml.client.Node;
 
 public class Demo implements EntryPoint {
 
@@ -22,6 +26,7 @@ public class Demo implements EntryPoint {
 		
 		// Load additional floatz stylesheet
 		FLOATZ.layoutLiquid().ensureInjected();
+		FLOATZ.ie().ensureInjected();
 
 		// Inject floatz stylesheets for responsive layout
 		StyleInjectorUtils.getInstance()
@@ -30,6 +35,7 @@ public class Demo implements EntryPoint {
 			.mediaQuery("@media (min-width: 768px) and (max-width: 979px)").injectAtEnd(FLOATZ.layoutResponsive().m())
 			.mediaQuery("@media (min-width: 980px) and (max-width: 1199px)").injectAtEnd(FLOATZ.layoutResponsive().l())
 			.mediaQuery("@media (min-width: 1200px)").injectAtEnd(FLOATZ.layoutResponsive().xl());
+
 
 		// Inject floatz script modules
 		ScriptInjectorUtils.getInstance()

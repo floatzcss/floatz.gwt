@@ -42,6 +42,9 @@ public interface Floatz extends ClientBundle {
 	@Source("com/floatzcss/gwt/client/resource/css/floatz.layout.liquid.css")
 	LayoutLiquid layoutLiquid();
 
+	@Source("com/floatzcss/gwt/client/resource/css/floatz.ie.css")
+	IE ie();
+	
 	LayoutResponsive layoutResponsive();
 
 	@Source("com/floatzcss/gwt/client/resource/css/floatz.form.css")

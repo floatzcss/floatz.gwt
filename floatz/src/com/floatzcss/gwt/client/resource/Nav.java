@@ -75,6 +75,13 @@ public interface Nav extends CssResource {
 	String listnav();
 
 	/**
+	 * Marker class for passed workflow steps
+	 * @return Name of CSS class
+	 */
+	@ClassName("flz_passed")
+	String passed();
+
+	/**
 	 * Marker class for selected navigation items
 	 *
 	 * @return Name of CSS class
@@ -118,4 +125,10 @@ public interface Nav extends CssResource {
 	 */
 	@ClassName("flz_vmenu")
 	String vmenu();
+	/**
+	 * Workflow indicator
+	 * @return Name of CSS class
+	 */
+	@ClassName("flz_workflow")
+	String workflow();
 }
