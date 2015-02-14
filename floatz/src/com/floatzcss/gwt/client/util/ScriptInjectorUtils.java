@@ -1,4 +1,4 @@
-package com.floatzcss.gwt.client;
+package com.floatzcss.gwt.client.util;
 
 import com.google.gwt.core.client.Callback;
 import com.google.gwt.core.client.ScriptInjector;

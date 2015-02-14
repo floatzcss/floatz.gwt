@@ -11,7 +11,4 @@
 	<!-- Other module inherits                                -->
 	<inherits name='com.floatzcss.gwt.Css'/>
 
-	<!-- Specify the app servlets.                            -->
-	<servlet path='/DemoService' class='com.floatzcss.demo.server.DemoServiceImpl'/>
-
 </module>

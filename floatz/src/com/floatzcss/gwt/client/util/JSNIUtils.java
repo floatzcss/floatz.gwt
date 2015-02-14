@@ -1,4 +1,4 @@
-package com.floatzcss.gwt.client.jsni;
+package com.floatzcss.gwt.client.util;
 
 import com.google.gwt.core.client.JsArrayString;
 

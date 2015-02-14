@@ -19,7 +19,6 @@ package com.floatzcss.gwt.client.module;
  * @since 1.2.0
  */
 public class ModuleManager {
-
 	/**
 	 * Start floatz modules.
 	 *
@@ -30,7 +29,7 @@ public class ModuleManager {
 	public static native void start(boolean debug, LogLevel logLevel, String... modules) /*-{
 
         // Convert vararg of modules into Javascript array
-        var moduleArray = @com.floatzcss.gwt.client.jsni.JSNIUtils::convert([Ljava/lang/String;)(modules);
+        var moduleArray = @com.floatzcss.gwt.client.util.JSNIUtils::convert([Ljava/lang/String;)(modules);
 
         // Convert log level
         var level;

@@ -1,5 +1,2 @@
-IE specific stylesheets with conditional comments
-Constants for script file names and media queries
 Browser API
 GWT Tests
-Comments in all files (copyright, version, etc.)

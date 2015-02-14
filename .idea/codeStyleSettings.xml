@@ -17,6 +17,9 @@
         </option>
         <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="true" />
         <option name="FORMATTER_TAGS_ENABLED" value="true" />
+        <XML>
+          <option name="XML_LEGACY_SETTINGS_IMPORTED" value="true" />
+        </XML>
         <codeStyleSettings language="CSS">
           <indentOptions>
             <option name="USE_TAB_CHARACTER" value="true" />

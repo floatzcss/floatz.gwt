@@ -8,12 +8,4 @@
 	<welcome-file-list>
 		<welcome-file>index.html</welcome-file>
 	</welcome-file-list>
-	<servlet>
-		<servlet-name>DemoService</servlet-name>
-		<servlet-class>com.floatzcss.demo.server.DemoServiceImpl</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>DemoService</servlet-name>
-		<url-pattern>/Demo/DemoService</url-pattern>
-	</servlet-mapping>
 </web-app>

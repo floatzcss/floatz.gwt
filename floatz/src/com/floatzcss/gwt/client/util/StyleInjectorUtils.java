@@ -1,4 +1,4 @@
-package com.floatzcss.gwt.client;
+package com.floatzcss.gwt.client.util;
 
 import com.google.gwt.dom.client.StyleInjector;
 import com.google.gwt.resources.client.CssResource;
@@ -21,7 +21,6 @@ import com.google.gwt.resources.client.CssResource;
  * @since 1.3.0
  */
 public class StyleInjectorUtils {
-
 	/**
 	 * Static members.
 	 */
