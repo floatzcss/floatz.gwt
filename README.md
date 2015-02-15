@@ -24,6 +24,113 @@ Integrating **floatz** into your project is very easy. Here are the necessary st
 ```
 <inherits name='com.floatzcss.gwt.Css'/>
 ```
+3. Load the script modules
+```
+/**
+ * Entry point method.
+ */
+public void onModuleLoad() {
+
+	// Inject floatz script modules
+	ScriptInjectorUtils.getInstance()
+	  .inject(WEB_ROOT + Module.JQUERY)
+		.inject(WEB_ROOT + Module.UAPARSER).waitFor()
+		.inject(WEB_ROOT + Module.FLOATZ).waitFor()
+		.inject(WEB_ROOT + Module.FLOATZ_SKIPLINK)
+		.flush(new Callback<Void, Exception>() {
+
+			@Override
+			public void onSuccess(Void result) {
+				boolean debug = !GWT.isProdMode();
+
+				// Load additional floatz stylesheet for liquid layout
+				FLOATZ.layoutLiquid().ensureInjected();
+
+				// Inject floatz stylesheets for responsive layouts
+				StyleInjectorUtils.getInstance()
+					.mediaQuery(Media.XS).injectAtEnd(FLOATZ.responsive().xs())
+					.mediaQuery(Media.S).injectAtEnd(FLOATZ.responsive().s())
+					.mediaQuery(Media.M).injectAtEnd(FLOATZ.responsive().m())
+					.mediaQuery(Media.L).injectAtEnd(FLOATZ.responsive().l())
+					.mediaQuery(Media.XL).injectAtEnd(FLOATZ.responsive().xl());
+
+				// Start floatz script modules
+				ModuleManager.start(debug, debug ? LogLevel.DEBUG : LogLevel.INFO, "floatz.skiplink");
+
+				// Load mobile styles only if user agent is mobile webkit
+				if (Browser.isMobileWebkit()) {
+					FLOATZ.mobile().ensureInjected();
+				}
+
+				// Load application specific styles
+				DEMO.css().ensureInjected();
+					StyleInjectorUtils.getInstance().mediaQuery("@media print").injectAtEnd(DEMO.printCss());
+					
+				// Create test page
+				RootPanel.get().add(new TestPage());
+			}
+
+			@Override
+			public void onFailure(Exception reason) {
+				Window.alert("Scripts can not be loaded: " + reason.getMessage());
+			}
+		});
+}
+```
+
+```
+/**
+ * Entry point method.
+ */
+public void onModuleLoad() {
+
+	// Inject floatz script modules
+	ScriptInjectorUtils.getInstance()
+	  .inject(WEB_ROOT + Module.JQUERY)
+		.inject(WEB_ROOT + Module.UAPARSER).waitFor()
+		.inject(WEB_ROOT + Module.FLOATZ).waitFor()
+		.inject(WEB_ROOT + Module.FLOATZ_SKIPLINK)
+		.flush(new Callback<Void, Exception>() {
+
+			@Override
+			public void onSuccess(Void result) {
+				boolean debug = !GWT.isProdMode();
+
+				// Load additional floatz stylesheet for liquid layout
+				FLOATZ.layoutLiquid().ensureInjected();
+
+				// Inject floatz stylesheets for responsive layouts
+				StyleInjectorUtils.getInstance()
+					.mediaQuery(Media.XS).injectAtEnd(FLOATZ.responsive().xs())
+					.mediaQuery(Media.S).injectAtEnd(FLOATZ.responsive().s())
+					.mediaQuery(Media.M).injectAtEnd(FLOATZ.responsive().m())
+					.mediaQuery(Media.L).injectAtEnd(FLOATZ.responsive().l())
+					.mediaQuery(Media.XL).injectAtEnd(FLOATZ.responsive().xl());
+
+				// Start floatz script modules
+				ModuleManager.start(debug, debug ? LogLevel.DEBUG : LogLevel.INFO, "floatz.skiplink");
+
+				// Load mobile styles only if user agent is mobile webkit
+				if (Browser.isMobileWebkit()) {
+					FLOATZ.mobile().ensureInjected();
+				}
+
+				// Load application specific styles
+				DEMO.css().ensureInjected();
+					StyleInjectorUtils.getInstance().mediaQuery("@media print").injectAtEnd(DEMO.printCss());
+					
+				// Create test page
+				RootPanel.get().add(new TestPage());
+			}
+
+			@Override
+			public void onFailure(Exception reason) {
+				Window.alert("Scripts can not be loaded: " + reason.getMessage());
+			}
+		});
+}
+```
+
 
 ##Using floatz##
 
