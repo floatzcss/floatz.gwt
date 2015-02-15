@@ -31,6 +31,8 @@ Integrating **floatz** into your project is very easy. Here are the necessary st
 ### Changing the layout mode ###
 By default **floatz** is using a *fixed width layout*. It can also be switched to *liquid layout* or *centered layout* by simply injecting the appropriate *CSS bundle* in the *onLoadModule()* method of the applications *entry point class*.
 ```
+private static final Floatz FLOATZ = Floatz.INSTANCE;
+
 public void onModuleLoad() {
 	// Load additional floatz stylesheet for liquid layout
 	StyleInjectorUtils.getInstance().injectAtEnd(FLOATZ.layoutLiquid());
@@ -46,6 +48,8 @@ public void onModuleLoad() {
 ###Supporting responsive design###
 To support *responsive layouts* within the application additional *CSS bundles* have to be loaded in the *entry point class* as well. Media queries are not supported in GWT CSS bundles by default, thus we have to use the *StyleInjectorUtils* singleton class which allow to wrap styles with media queries when injected.
 ```
+private static final Floatz FLOATZ = Floatz.INSTANCE;
+
 public void onModuleLoad() {
    ...
    // Inject floatz stylesheets for responsive layouts
@@ -60,6 +64,9 @@ public void onModuleLoad() {
 ###Loading and starting script modules###
 **Floatz** ships with some optional *script modules* that extend floatz with some additional functionality. These scripts can be loaded using the *ScriptInjectorUtils* utility class.
 ```
+private static final Floatz FLOATZ = Floatz.INSTANCE;
+private static final String WEB_ROOT = "Demo/";
+
 public void onModuleLoad() {
    ...
 
@@ -81,8 +88,26 @@ public void onModuleLoad() {
       });
 }
 ```
-After loading the scripts have to be started using the *ModuleManager* class.
+After the scripts are loaded they have to be started the *ModuleManager* class.
 ```
+public void onModuleLoad() {
+   ...
+
+   // Inject floatz script modules
+   ScriptInjectorUtils.getInstance()
+      ...
+      .flush(new Callback<Void, Exception>() {
+         @Override
+         public void onSuccess(Void result) {
+            boolean debug = !GWT.isProdMode();
+
+	    // Start floatz script modules
+	    ModuleManager.start(debug, debug ? LogLevel.DEBUG : LogLevel.INFO, "floatz.skiplink");
+            ...
+         }
+         ...
+      });
+}
 ```
 
 
