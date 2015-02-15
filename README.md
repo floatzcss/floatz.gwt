@@ -8,9 +8,6 @@
 ##Table of content
 * [Version history](#version-history)
 * [Getting started](#getting-started)
-* [Changing the layout mode](#changing-the-layout-mode)
-* [Supporting responsive design](#supporting-responsive-design)
-* [Loading script modules](#loading-script-modules)
 
 ##Version history
 * February, 2015 - Version 1.3.0 currently under construction
@@ -18,6 +15,12 @@
 * July 29th, 2013 - Version 1.2.0 released
 
 ###Getting started###
+* [Integrating floatz into the application](#Integrating-floatz-into-the-application)
+* [Changing the layout mode](#changing-the-layout-mode)
+* [Supporting responsive design](#supporting-responsive-design)
+* [Loading script modules](#loading-script-modules)
+
+####Integrating floatz into the application####
 Integrating **floatz** into your project is very easy. Here are the necessary steps:
 
 * Download the [latest JAR version](https://github.com/floatzcss/floatz.gwt/tree/master/download) and copy it into the applications *WEB-INF/lib* folder.
@@ -45,7 +48,7 @@ public void onModuleLoad() {
 }
 ```
 
-###Supporting responsive design###
+####Supporting responsive design####
 To support *responsive layouts* within the application additional *CSS bundles* have to be loaded in the *entry point class* as well. Media queries are not supported in GWT CSS bundles by default, thus we have to use the *StyleInjectorUtils* singleton class which allow to wrap styles with media queries when injected.
 ```
 private static final Floatz FLOATZ = Floatz.INSTANCE;
@@ -61,7 +64,7 @@ public void onModuleLoad() {
       .mediaQuery(Media.XL).injectAtEnd(FLOATZ.responsive().xl());
 }
 ```
-###Loading script modules###
+####Loading script modules####
 **Floatz** ships with some optional *script modules* that extend floatz with some additional functionality. These scripts can be loaded using the *ScriptInjectorUtils* utility class. After the scripts are loaded they have to be started using the *ModuleManager* class.
 ```
 private static final String WEB_ROOT = "Demo/";
