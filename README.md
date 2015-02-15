@@ -99,9 +99,9 @@ public void onModuleLoad() {
          @Override
          public void onSuccess(Void result) {
             boolean debug = !GWT.isProdMode();
-
-	    // Start floatz script modules
-	    ModuleManager.start(debug, debug ? LogLevel.DEBUG : LogLevel.INFO, "floatz.skiplink");
+            
+            // Start floatz script modules
+            ModuleManager.start(debug, debug ? LogLevel.DEBUG : LogLevel.INFO, "floatz.skiplink");
             ...
          }
          ...
