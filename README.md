@@ -19,7 +19,7 @@
 Integrating **floatz** into your project is very easy. Here are the necessary steps:
 
 ####Adding the floatz JAR file####
-Download the [latest JAR version](https://github.com/floatzcss/floatz.gwt/tree/master/download) and copy it into the applications *WEB_INF/lib* folder.
+Download the [latest JAR version](https://github.com/floatzcss/floatz.gwt/tree/master/download) and copy it into the applications *WEB-INF/lib* folder.
 
 ####Importing the floatz module####
 Next import the **floatz.gwt** module into the application by simply adding it to the GWT module descriptor XML.
