@@ -1,13 +1,13 @@
-package com.floatzcss.demo.client;
+package com.floatzcss.demo.client.testpage;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.uibinder.client.UiBinder;
+import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.HTMLPanel;
 
 /**
- * @author Harald Humml
- * @since 1.0.0
+ * Test page.
  */
 public class TestPage extends Composite {
 	interface IndexUiBinder extends UiBinder<HTMLPanel, TestPage> {
@@ -15,7 +15,13 @@ public class TestPage extends Composite {
 
 	private static IndexUiBinder ourUiBinder = GWT.create(IndexUiBinder.class);
 
+	@UiField
+	public HTMLPanel page;
+
 	public TestPage() {
 		initWidget(ourUiBinder.createAndBindUi(this));
+
+		// Set floatz page id to root element
+		page.getElement().setId("flz_page");
 	}
 }

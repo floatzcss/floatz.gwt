@@ -23,6 +23,13 @@ public interface Floatz extends ClientBundle {
 	// Get and create instance of resource bundle
 	public Floatz INSTANCE = GWT.create(Floatz.class);
 
+	/**
+	 * Resource bundle for responsive layout styles.
+	 *
+	 * @return Resource bundle
+	 */
+	LayoutResponsive responsive();
+
 	@Source("com/floatzcss/gwt/client/resource/css/floatz.reset.meyer.css")
 	ResetMeyer resetMeyer();
 
@@ -43,8 +50,6 @@ public interface Floatz extends ClientBundle {
 
 	@Source("com/floatzcss/gwt/client/resource/css/floatz.ie.css")
 	IE ie();
-	
-	LayoutResponsive layoutResponsive();
 
 	@Source("com/floatzcss/gwt/client/resource/css/floatz.form.css")
 	Form form();

@@ -78,7 +78,7 @@ public interface LayoutResponsiveXS extends CssResource {
 	String rspacer_mrmc_bottom();
 
 	@ClassName("flz_subspacer_xs")
-	String flz_subspacer();
+	String subspacer();
 
 	@ClassName("flz_lsubspacer_xs")
 	String lsubspacer();

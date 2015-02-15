@@ -1,5 +1,7 @@
 package com.floatzcss.demo.client;
 
+import com.floatzcss.demo.client.resource.DemoBundle;
+import com.floatzcss.demo.client.testpage.TestPage;
 import com.floatzcss.gwt.client.browser.Browser;
 import com.floatzcss.gwt.client.module.LogLevel;
 import com.floatzcss.gwt.client.module.Module;
@@ -15,11 +17,12 @@ import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.ui.RootPanel;
 
 /**
- * GWT entry point.
+ * Application entry point.
  */
 public class Demo implements EntryPoint {
 
 	private static final Floatz FLOATZ = Floatz.INSTANCE;
+	private static final DemoBundle DEMO = DemoBundle.INSTANCE;
 	private static final String WEB_ROOT = "Demo/";
 
 	// Test page
@@ -29,17 +32,6 @@ public class Demo implements EntryPoint {
 	 * Entry point method.
 	 */
 	public void onModuleLoad() {
-
-		// Load additional floatz stylesheet for liquid layout
-		FLOATZ.layoutLiquid().ensureInjected();
-
-		// Inject floatz stylesheets for responsive layouts
-		StyleInjectorUtils.getInstance()
-			.mediaQuery(Media.XS).injectAtEnd(FLOATZ.layoutResponsive().xs())
-			.mediaQuery(Media.S).injectAtEnd(FLOATZ.layoutResponsive().s())
-			.mediaQuery(Media.M).injectAtEnd(FLOATZ.layoutResponsive().m())
-			.mediaQuery(Media.L).injectAtEnd(FLOATZ.layoutResponsive().l())
-			.mediaQuery(Media.XL).injectAtEnd(FLOATZ.layoutResponsive().xl());
 
 		// Inject floatz script modules
 		ScriptInjectorUtils.getInstance()
@@ -53,13 +45,30 @@ public class Demo implements EntryPoint {
 				public void onSuccess(Void result) {
 					boolean debug = !GWT.isProdMode();
 
+					// Load additional floatz stylesheet for liquid layout
+					FLOATZ.layoutLiquid().ensureInjected();
+
+					// Inject floatz stylesheets for responsive layouts
+					StyleInjectorUtils.getInstance()
+						.mediaQuery(Media.XS).injectAtEnd(FLOATZ.responsive().xs())
+						.mediaQuery(Media.S).injectAtEnd(FLOATZ.responsive().s())
+						.mediaQuery(Media.M).injectAtEnd(FLOATZ.responsive().m())
+						.mediaQuery(Media.L).injectAtEnd(FLOATZ.responsive().l())
+						.mediaQuery(Media.XL).injectAtEnd(FLOATZ.responsive().xl());
+
 					// Start floatz script modules
-					ModuleManager.start(debug, debug ? LogLevel.DEBUG : LogLevel.INFO);
+					ModuleManager.start(debug, debug ? LogLevel.DEBUG : LogLevel.INFO, "floatz.skiplink");
 
 					// Load mobile styles only if user agent is mobile webkit
 					if (Browser.isMobileWebkit()) {
-						Floatz.INSTANCE.mobile().ensureInjected();
+						FLOATZ.mobile().ensureInjected();
 					}
+
+					// Load application specific styles
+					DEMO.css().ensureInjected();
+					
+					// Create test page
+					RootPanel.get().add(new TestPage());
 				}
 
 				@Override
@@ -67,8 +76,5 @@ public class Demo implements EntryPoint {
 					Window.alert("Scripts can not be loaded: " + reason.getMessage());
 				}
 			});
-
-		// Create test page
-		RootPanel.get().add(new TestPage());
 	}
 }

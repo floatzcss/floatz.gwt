@@ -1,0 +1,52 @@
+@external .header, .menu, .nav, .content, .footer;
+@external .flz_vmenu, .flz_htabmenu, .flz_htabmenu_bottom, .flz_workflow, .flz_form;
+
+body {
+	font-size: 1em;
+}
+h1, h2, h3 {
+	padding-bottom: 0.5em;
+}
+p {
+	padding-bottom: 1em;
+}
+.header {
+	background-color: royalblue;
+	color: white;
+	height: 5em;
+}
+.header .logo {
+	font-size: 2em;
+}
+.menu {
+	background-color: orange;
+	height: 2.2em;
+}
+.nav {
+	background-color: dimgray;
+	color: white;
+}
+.flz_vmenu ul li a {
+	border-color: white;
+	color: white;
+	padding: 1em;
+}
+.flz_vmenu ul:first-child > li:last-child a {
+	border: 0;
+}
+.flz_htabmenu, .flz_htabmenu_bottom, .flz_workflow, .flz_form {
+	margin-bottom: 1em;
+}
+.flz_htabmenu_bottom ul {
+	float: right;
+}
+.content {
+	background-color: white;
+	padding-top: 3em;
+	position: relative;
+}
+.footer {
+	background-color: lightgray;
+	height: 3em;
+}
+
