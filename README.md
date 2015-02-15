@@ -27,18 +27,35 @@ Integrating **floatz** into your project is very easy. Here are the necessary st
 * Done. All necessary floatz CSS resources bundles are injected automatically when the application starts.
 
 ### Changing the layout mode ###
-By default **floatz** is using a *fixed width layout*. It can also be switched to *liquid layout* or
-*centered layout* by simply injecting the appropriate *CSS resource bundle* in the *onLoadModule()* method of
-the applications *entry point class*.
+By default **floatz** is using a *fixed width layout*. It can also be switched to *liquid layout* or *centered layout* by simply injecting the appropriate *CSS bundle* in the *onLoadModule()* method of the applications *entry point class*.
 ```
 public void onModuleLoad() {
-   // Load additional floatz stylesheet for liquid layout
-   FLOATZ.layoutLiquid().ensureInjected();
+	// Load additional floatz stylesheet for liquid layout
+	StyleInjectorUtils.getInstance().injectAtEnd(FLOATZ.layoutLiquid());
 }
 ```
 ```
 public void onModuleLoad() {
-   // Load additional floatz stylesheet for centered layout
-   FLOATZ.layoutCenter().ensureInjected();
+	// Load additional floatz stylesheet for centered layout
+	StyleInjectorUtils.getInstance().injectAtEnd(FLOATZ.layoutCenter());
 }
 ```
+
+###Adding styles for responsive layouts###
+To support *responsive layouts* within the application additional *CSS bundles* have to be loaded in the *entry point class* as well. Media queries are not supported in GWT CSS bundles by default, thus we have to use the *StyleInjectorUtils* which allow to wrap styles with media queries when injected.
+```
+public void onModuleLoad() {
+   ...
+   // Inject floatz stylesheets for responsive layouts
+   StyleInjectorUtils.getInstance()
+      .mediaQuery(Media.XS).injectAtEnd(FLOATZ.responsive().xs())
+      .mediaQuery(Media.S).injectAtEnd(FLOATZ.responsive().s())
+		.mediaQuery(Media.M).injectAtEnd(FLOATZ.responsive().m())
+	   .mediaQuery(Media.L).injectAtEnd(FLOATZ.responsive().l())
+      .mediaQuery(Media.XL).injectAtEnd(FLOATZ.responsive().xl());
+}
+```
+
+
+
+
