@@ -10,6 +10,7 @@
 * [Getting started](#getting-started)
 * [Changing the layout mode](#changing-the-layout-mode)
 * [Supporting responsive design](#supporting-responsive-design)
+* [Loading script modules](#loading-script-modules)
 
 ##Version history
 * February, 2015 - Version 1.3.0 currently under construction
@@ -43,7 +44,7 @@ public void onModuleLoad() {
 ```
 
 ###Supporting responsive design###
-To support *responsive layouts* within the application additional *CSS bundles* have to be loaded in the *entry point class* as well. Media queries are not supported in GWT CSS bundles by default, thus we have to use the *StyleInjectorUtils* which allow to wrap styles with media queries when injected.
+To support *responsive layouts* within the application additional *CSS bundles* have to be loaded in the *entry point class* as well. Media queries are not supported in GWT CSS bundles by default, thus we have to use the *StyleInjectorUtils* singleton class which allow to wrap styles with media queries when injected.
 ```
 public void onModuleLoad() {
    ...
@@ -56,6 +57,34 @@ public void onModuleLoad() {
       .mediaQuery(Media.XL).injectAtEnd(FLOATZ.responsive().xl());
 }
 ```
+###Loading and starting script modules###
+**Floatz** ships with some optional *script modules* that extend floatz with some additional functionality. These scripts can be loaded using the *ScriptInjectorUtils* utility class.
+```
+public void onModuleLoad() {
+   ...
+
+   // Inject floatz script modules
+   ScriptInjectorUtils.getInstance()
+      .inject(WEB_ROOT + Module.JQUERY)
+      .inject(WEB_ROOT + Module.UAPARSER).waitFor()
+      .inject(WEB_ROOT + Module.FLOATZ).waitFor()
+      .inject(WEB_ROOT + Module.FLOATZ_SKIPLINK)
+      .flush(new Callback<Void, Exception>() {
+         @Override
+         public void onSuccess(Void result) {
+       }
+       @Override
+       public void onFailure(Exception reason) {
+          Window.alert("Scripts can not be loaded: " + reason.getMessage());
+       }
+    });
+```
+After loading the scripts have to be started using the *ModuleManager* class.
+```
+```
+
+
+
 
 
 
