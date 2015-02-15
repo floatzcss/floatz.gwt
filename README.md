@@ -61,7 +61,7 @@ public void onModuleLoad() {
       .mediaQuery(Media.XL).injectAtEnd(FLOATZ.responsive().xl());
 }
 ```
-###Loading and starting script modules###
+###Loading script modules###
 **Floatz** ships with some optional *script modules* that extend floatz with some additional functionality. These scripts can be loaded using the *ScriptInjectorUtils* utility class.
 ```
 private static final String WEB_ROOT = "Demo/";
