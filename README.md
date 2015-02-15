@@ -9,6 +9,7 @@
 * [Version history](#version-history)
 * [Getting started](#getting-started)
 * [Changing the layout mode](#changing-the-layout-mode)
+* [Supporting responsive design](#supporting-responsive-design)
 
 ##Version history
 * February, 2015 - Version 1.3.0 currently under construction
@@ -41,7 +42,7 @@ public void onModuleLoad() {
 }
 ```
 
-###Adding styles for responsive layouts###
+###Supporting responsive design###
 To support *responsive layouts* within the application additional *CSS bundles* have to be loaded in the *entry point class* as well. Media queries are not supported in GWT CSS bundles by default, thus we have to use the *StyleInjectorUtils* which allow to wrap styles with media queries when injected.
 ```
 public void onModuleLoad() {
