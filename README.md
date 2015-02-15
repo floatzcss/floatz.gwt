@@ -31,7 +31,7 @@ Integrating **floatz** into your project is very easy. Here are the necessary st
 ```
 * Done. All necessary floatz CSS resources bundles are injected automatically when the application starts.
 
-### Changing the layout mode ###
+####Changing the layout mode####
 By default **floatz** is using a *fixed width layout*. It can also be switched to *liquid layout* or *centered layout* by simply injecting the appropriate *CSS bundle* in the *onLoadModule()* method of the applications *entry point class*.
 ```
 private static final Floatz FLOATZ = Floatz.INSTANCE;
