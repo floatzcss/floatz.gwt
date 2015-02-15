@@ -8,6 +8,7 @@
 ##Table of content
 * [Version history](#version-history)
 * [Getting started](#getting-started)
+* [Layouting with floatz](#layouting-with-floatz)
 
 ##Version history
 * February, 2015 - Version 1.3.0 currently under construction
@@ -65,7 +66,7 @@ public void onModuleLoad() {
 }
 ```
 ####Loading script modules####
-**Floatz** ships with some optional *script modules* that extend floatz with some additional functionality. These scripts can be loaded using the *ScriptInjectorUtils* utility class. After the scripts are loaded they have to be started using the *ModuleManager* class.
+**Floatz** ships with some optional *script modules* that add some extra additional functionality. These scripts can be loaded using the *ScriptInjectorUtils* utility class. After the scripts are loaded they have to be started using the *ModuleManager* class.
 ```
 private static final String WEB_ROOT = "Demo/";
 
@@ -93,3 +94,10 @@ public void onModuleLoad() {
       });
 }
 ```
+###Layouting with floatz###
+* [Layouting in Java code](#layouting-in-java-code)
+* [Layouting in UI binders](#layouting-in-ui-binders)
+
+
+####Layouting in Java code####
+####Layouting in UI binders####
