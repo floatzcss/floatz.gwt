@@ -72,12 +72,13 @@ public void onModuleLoad() {
       .flush(new Callback<Void, Exception>() {
          @Override
          public void onSuccess(Void result) {
-       }
-       @Override
-       public void onFailure(Exception reason) {
-          Window.alert("Scripts can not be loaded: " + reason.getMessage());
-       }
-    });
+            ...
+         }
+         @Override
+         public void onFailure(Exception reason) {
+            Window.alert("Scripts can not be loaded: " + reason.getMessage());
+         }
+      });
 ```
 After loading the scripts have to be started using the *ModuleManager* class.
 ```
