@@ -66,7 +66,7 @@ public void onModuleLoad() {
 }
 ```
 ####Loading script modules####
-**Floatz** ships with some optional *script modules* that add some extra additional functionality. These scripts can be loaded using the *ScriptInjectorUtils* utility class. After the scripts are loaded they have to be started using the *ModuleManager* class.
+**Floatz** ships with some optional *script modules* that add some additional functionality. These scripts can be loaded using the *ScriptInjectorUtils* utility class. After the scripts are loaded they have to be started using the *ModuleManager* class.
 ```
 private static final String WEB_ROOT = "Demo/";
 
