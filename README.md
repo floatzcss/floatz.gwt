@@ -3,7 +3,7 @@
 
 ***THIS PAGE IS CURRENTLY UNDER CONSTRUCTION AND NOT FINISHED YET.***
 
-**floatz.gwt integrates the [floatz CSS framework](https://github.com/floatzcss/floatz/) into [Google Web Toolkit (GWT)](http://www.gwtproject.org).** On this page you find all information you need to know how to use **floatz** within GWT based applications. A more detailled introduction into **floatz** itself can be [found here](https://github.com/floatzcss/floatz/edit/master/README.md).
+**floatz.gwt integrates the [floatz CSS framework](https://github.com/floatzcss/floatz/) into [Google Web Toolkit (GWT)](http://www.gwtproject.org).** This page contains all information that is necessary to use **floatz** within GWT based applications. A more detailled introduction into **floatz** itself can be [found here](https://github.com/floatzcss/floatz/edit/master/README.md).
 
 ##Table of content
 * [Version history](#version-history)
@@ -22,11 +22,11 @@
 * [Loading script modules](#loading-script-modules)
 
 ####Integrating floatz into the application####
-Integrating **floatz** into your project is very easy. Here are the necessary steps:
+Integrating **floatz** into the application is very easy. Here are the necessary steps:
 
 * Download the [latest JAR version](https://github.com/floatzcss/floatz.gwt/tree/master/download) and copy it into the applications *WEB-INF/lib* folder.
 
-* Import the **floatz.gwt** module into the application by adding it to the *GWT module descriptor XML*.
+* Add the **floatz.gwt** module to the applications *GWT module descriptor XML*.
 ```
 <inherits name='com.floatzcss.gwt.Css'/>
 ```
