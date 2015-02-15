@@ -50,7 +50,7 @@ public void onModuleLoad() {
 ```
 
 ####Supporting responsive design####
-To support *responsive layouts* within the application additional *CSS bundles* have to be loaded in the *entry point class*. Media queries are not supported in GWT CSS bundles by default, thus we have to use the *StyleInjectorUtils* singleton class which allow to wrap styles with media queries when injected.
+To support *responsive layouts* within the application additional *CSS bundles* have to be loaded in the *entry point class*. Media queries are not supported in GWT CSS bundles by default, thus **floatz** provides the *StyleInjectorUtils* singleton class which allows to wrap styles with media queries when injected.
 ```
 private static final Floatz FLOATZ = Floatz.INSTANCE;
 
