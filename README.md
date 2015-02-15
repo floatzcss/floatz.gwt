@@ -79,6 +79,7 @@ public void onModuleLoad() {
             Window.alert("Scripts can not be loaded: " + reason.getMessage());
          }
       });
+}
 ```
 After loading the scripts have to be started using the *ModuleManager* class.
 ```
