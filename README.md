@@ -85,7 +85,7 @@ public void onModuleLoad() {
             boolean debug = !GWT.isProdMode();
             
             // Start floatz script modules
-            ModuleManager.start(debug, debug ? LogLevel.DEBUG : LogLevel.INFO, "floatz.skiplink");
+            ModuleManager.start(debug, debug ? LogLevel.DEBUG : LogLevel.INFO, FLOATZ_SKIPLINK_NOPATH);
          }
          @Override
          public void onFailure(Exception reason) {
