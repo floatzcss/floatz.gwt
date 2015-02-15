@@ -18,13 +18,19 @@
 ###Getting started###
 Integrating **floatz** into your project is very easy. Here are the necessary steps:
 
-1. Download the [latest JAR version](https://github.com/floatzcss/floatz.gwt/tree/master/download) and copy it into the applications *WEB-INF/lib* folder.
+* Download the [latest JAR version](https://github.com/floatzcss/floatz.gwt/tree/master/download) and copy it into the applications *WEB-INF/lib* folder.
 
-2. Import the **floatz.gwt** module into the application by simply adding it to the GWT module descriptor XML.
+* Import the **floatz.gwt** module into the application by adding it to the *GWT module descriptor XML*.
 ```
 <inherits name='com.floatzcss.gwt.Css'/>
 ```
-3. Load the script modules
+* Done
+
+### Using floatz ###
+
+#### Changing the layout mode ####
+By default 
+
 ```
 /**
  * Entry point method.
@@ -77,6 +83,7 @@ public void onModuleLoad() {
 		});
 }
 ```
+
 
 ```
 /**
