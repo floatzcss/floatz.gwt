@@ -3,7 +3,7 @@
 
 ***THIS PAGE IS CURRENTLY UNDER CONSTRUCTION AND NOT FINISHED YET.***
 
-**floatz.gwt integrates the [floatz CSS framework](https://github.com/floatzcss/floatz/) into [Google Web Toolkit (GWT)](http://www.gwtproject.org).** On this page you find all information you need to know how to use **floatz** within GWT based applications. A more detailled introduction into **floatz** itself can be [found here](https://github.com/floatzcss/floatz/edit/master/README.md).
+**floatz.gwt integrates the [floatz CSS framework](https://github.com/floatzcss/floatz/) into [Google Web Toolkit (GWT)](http://www.gwtproject.org).** This page contains all information that is necessary to use **floatz** within GWT based applications. A more detailled introduction into **floatz** itself can be [found here](https://github.com/floatzcss/floatz/edit/master/README.md).
 
 ##Table of content
 * [Version history](#version-history)
@@ -22,15 +22,15 @@
 * [Loading script modules](#loading-script-modules)
 
 ####Integrating floatz into the application####
-Integrating **floatz** into your project is very easy. Here are the necessary steps:
+Integrating **floatz** into the application is very easy. Here are the necessary steps:
 
 * Download the [latest JAR version](https://github.com/floatzcss/floatz.gwt/tree/master/download) and copy it into the applications *WEB-INF/lib* folder.
 
-* Import the **floatz.gwt** module into the application by adding it to the *GWT module descriptor XML*.
+* Add the **floatz.gwt** module to the applications *GWT module descriptor XML*.
 ```
 <inherits name='com.floatzcss.gwt.Css'/>
 ```
-* Done. All necessary floatz CSS resources bundles are injected automatically when the application starts.
+* Done. All necessary **floatz** *CSS bundles* are injected automatically when the application starts.
 
 ####Changing the layout mode####
 By default **floatz** is using a *fixed width layout*. It can also be switched to *liquid layout* or *centered layout* by simply injecting the appropriate *CSS bundle* in the *onLoadModule()* method of the applications *entry point class*.
@@ -50,7 +50,7 @@ public void onModuleLoad() {
 ```
 
 ####Supporting responsive design####
-To support *responsive layouts* within the application additional *CSS bundles* have to be loaded in the *entry point class* as well. Media queries are not supported in GWT CSS bundles by default, thus we have to use the *StyleInjectorUtils* singleton class which allow to wrap styles with media queries when injected.
+To support *responsive layouts* within the application additional *CSS bundles* have to be loaded in the *entry point class*. Media queries are not supported in GWT *CSS bundles* by default thus **floatz** provides the *StyleInjectorUtils* singleton class which allows to wrap styles with media queries when injected.
 ```
 private static final Floatz FLOATZ = Floatz.INSTANCE;
 
@@ -66,7 +66,7 @@ public void onModuleLoad() {
 }
 ```
 ####Loading script modules####
-**Floatz** ships with some optional *script modules* that add some extra additional functionality. These scripts can be loaded using the *ScriptInjectorUtils* utility class. After the scripts are loaded they have to be started using the *ModuleManager* class.
+**Floatz** ships with some optional *script modules* that add some additional functionality. These scripts can be loaded using the *ScriptInjectorUtils* utility class. After the scripts are loaded they have to be started using the *ModuleManager* class.
 ```
 private static final String WEB_ROOT = "Demo/";
 
@@ -85,7 +85,7 @@ public void onModuleLoad() {
             boolean debug = !GWT.isProdMode();
             
             // Start floatz script modules
-            ModuleManager.start(debug, debug ? LogLevel.DEBUG : LogLevel.INFO, "floatz.skiplink");
+            ModuleManager.start(debug, debug ? LogLevel.DEBUG : LogLevel.INFO, FLOATZ_SKIPLINK_NOPATH);
          }
          @Override
          public void onFailure(Exception reason) {
