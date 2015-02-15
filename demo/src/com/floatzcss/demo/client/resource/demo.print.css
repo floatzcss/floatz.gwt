@@ -1,0 +1,10 @@
+@external .header, .menu, .nav, .footer;
+@external .flz_breadcrumb, .flz_workflow, .flz_htabmenu, .flz_htabmenu_bottom;
+
+.header, .menu, .nav, .footer {
+	display: none;
+}
+
+.flz_breadcrumb, .flz_workflow, .flz_htabmenu, .flz_htabmenu_bottom {
+	display: none;
+}

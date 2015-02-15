@@ -131,7 +131,7 @@
 							<input type="text" id="combobox1" />
 							<!-- Image must be in next line - otherwise unnecessary whitespace in IE -->
 							<a href="#">
-								<span class="ion-ios7-arrow-down"></span>
+								<g:Image resource="{DEMO.dropdown}" />
 							</a>
 						</div>
 					</div>

@@ -66,6 +66,7 @@ public class Demo implements EntryPoint {
 
 					// Load application specific styles
 					DEMO.css().ensureInjected();
+					StyleInjectorUtils.getInstance().mediaQuery("@media print").injectAtEnd(DEMO.printCss());
 					
 					// Create test page
 					RootPanel.get().add(new TestPage());

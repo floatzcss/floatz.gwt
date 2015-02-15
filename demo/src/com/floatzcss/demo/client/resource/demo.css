@@ -1,5 +1,5 @@
-@external .header, .menu, .nav, .content, .footer;
-@external .flz_vmenu, .flz_htabmenu, .flz_htabmenu_bottom, .flz_workflow, .flz_form;
+@external .header, .menu, .nav, .content, .footer, .logo;
+@external .flz_vmenu, .flz_htabmenu, .flz_htabmenu_bottom, .flz_workflow, .flz_form, .flz_combobox;
 
 body {
 	font-size: 1em;
@@ -39,6 +39,13 @@ p {
 }
 .flz_htabmenu_bottom ul {
 	float: right;
+}
+.flz_combobox a {
+	top: -0.25em;
+}
+.flz_combobox a img {
+	width: 1.75em;
+	height: 1.75em;
 }
 .content {
 	background-color: white;
