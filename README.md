@@ -102,7 +102,6 @@ public void onModuleLoad() {
             
             // Start floatz script modules
             ModuleManager.start(debug, debug ? LogLevel.DEBUG : LogLevel.INFO, "floatz.skiplink");
-            ...
          }
          ...
       });
