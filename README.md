@@ -30,7 +30,7 @@ Integrating **floatz** into the application is very easy. Here are the necessary
 ```
 <inherits name='com.floatzcss.gwt.Css'/>
 ```
-* Done. All necessary floatz CSS resources bundles are injected automatically when the application starts.
+* Done. All necessary **floatz** *CSS bundles* are injected automatically when the application starts.
 
 ####Changing the layout mode####
 By default **floatz** is using a *fixed width layout*. It can also be switched to *liquid layout* or *centered layout* by simply injecting the appropriate *CSS bundle* in the *onLoadModule()* method of the applications *entry point class*.
