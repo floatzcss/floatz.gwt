@@ -8,7 +8,7 @@
 ##Table of content
 * [Version history](#version-history)
 * [Getting started](#getting-started)
-* [Using floatz](#using-floatz)
+* [Changing the layout mode](#changing-the-layout-mode)
 
 ##Version history
 * February, 2015 - Version 1.3.0 currently under construction
@@ -24,12 +24,26 @@ Integrating **floatz** into your project is very easy. Here are the necessary st
 ```
 <inherits name='com.floatzcss.gwt.Css'/>
 ```
-* Done
+* Done. All necessary floatz CSS resources bundles are injected automatically when the application starts.
 
-### Using floatz ###
+### Changing the layout mode ###
+By default **floatz** is using a *fixed width layout mode*. It can also be switched to *liquid layout mode* or 
+*centered layout mode* by simply injecting the appropriate *CSS resource bundle* in the *onLoadModule()* method of 
+the applications *entry point class*.
 
-#### Changing the layout mode ####
-By default 
+```
+public void onModuleLoad() {
+   // Load additional floatz stylesheet for liquid layout
+   FLOATZ.layoutLiquid().ensureInjected();
+}
+```
+```
+public void onModuleLoad() {
+   // Load additional floatz stylesheet for liquid layout
+   FLOATZ.layoutCenter().ensureInjected();
+}
+```
+
 
 ```
 /**
