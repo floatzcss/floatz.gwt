@@ -62,7 +62,7 @@ public void onModuleLoad() {
 }
 ```
 ###Loading script modules###
-**Floatz** ships with some optional *script modules* that extend floatz with some additional functionality. These scripts can be loaded using the *ScriptInjectorUtils* utility class.
+**Floatz** ships with some optional *script modules* that extend floatz with some additional functionality. These scripts can be loaded using the *ScriptInjectorUtils* utility class. After the scripts are loaded they have to be started using the *ModuleManager* class.
 ```
 private static final String WEB_ROOT = "Demo/";
 
@@ -78,7 +78,10 @@ public void onModuleLoad() {
       .flush(new Callback<Void, Exception>() {
          @Override
          public void onSuccess(Void result) {
-            ...
+            boolean debug = !GWT.isProdMode();
+            
+            // Start floatz script modules
+            ModuleManager.start(debug, debug ? LogLevel.DEBUG : LogLevel.INFO, "floatz.skiplink");
          }
          @Override
          public void onFailure(Exception reason) {
@@ -87,30 +90,3 @@ public void onModuleLoad() {
       });
 }
 ```
-After the scripts are loaded they have to be started using the *ModuleManager* class.
-```
-public void onModuleLoad() {
-   ...
-
-   // Inject floatz script modules
-   ScriptInjectorUtils.getInstance()
-      ...
-      .flush(new Callback<Void, Exception>() {
-         @Override
-         public void onSuccess(Void result) {
-            boolean debug = !GWT.isProdMode();
-            
-            // Start floatz script modules
-            ModuleManager.start(debug, debug ? LogLevel.DEBUG : LogLevel.INFO, "floatz.skiplink");
-         }
-         ...
-      });
-}
-```
-
-
-
-
-
-
-
