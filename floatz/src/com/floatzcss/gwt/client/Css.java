@@ -3,6 +3,7 @@ package com.floatzcss.gwt.client;
 import com.floatzcss.gwt.client.resource.Floatz;
 import com.floatzcss.gwt.client.util.StyleInjectorUtils;
 import com.google.gwt.core.client.EntryPoint;
+import com.google.gwt.user.client.Window;
 
 /**
  * Module entry point for resource bundle.

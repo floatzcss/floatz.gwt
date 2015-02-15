@@ -33,6 +33,23 @@ public class Demo implements EntryPoint {
 	 */
 	public void onModuleLoad() {
 
+		// Inject additional floatz stylesheet for liquid layout and application specific styles
+		StyleInjectorUtils.getInstance()
+			.injectAtEnd(FLOATZ.layoutLiquid())
+			.injectAtEnd(DEMO.css())
+			.mediaQuery("media print").injectAtEnd(DEMO.printCss());
+
+		// Inject floatz stylesheets for responsive layouts
+		StyleInjectorUtils.getInstance()
+			.mediaQuery(Media.XS).injectAtEnd(FLOATZ.responsive().xs())
+			.mediaQuery(Media.S).injectAtEnd(FLOATZ.responsive().s())
+			.mediaQuery(Media.M).injectAtEnd(FLOATZ.responsive().m())
+			.mediaQuery(Media.L).injectAtEnd(FLOATZ.responsive().l())
+			.mediaQuery(Media.XL).injectAtEnd(FLOATZ.responsive().xl());
+
+		// Create test page
+		RootPanel.get().add(new TestPage());
+
 		// Inject floatz script modules
 		ScriptInjectorUtils.getInstance()
 			.inject(WEB_ROOT + Module.JQUERY)
@@ -45,17 +62,6 @@ public class Demo implements EntryPoint {
 				public void onSuccess(Void result) {
 					boolean debug = !GWT.isProdMode();
 
-					// Load additional floatz stylesheet for liquid layout
-					FLOATZ.layoutLiquid().ensureInjected();
-
-					// Inject floatz stylesheets for responsive layouts
-					StyleInjectorUtils.getInstance()
-						.mediaQuery(Media.XS).injectAtEnd(FLOATZ.responsive().xs())
-						.mediaQuery(Media.S).injectAtEnd(FLOATZ.responsive().s())
-						.mediaQuery(Media.M).injectAtEnd(FLOATZ.responsive().m())
-						.mediaQuery(Media.L).injectAtEnd(FLOATZ.responsive().l())
-						.mediaQuery(Media.XL).injectAtEnd(FLOATZ.responsive().xl());
-
 					// Start floatz script modules
 					ModuleManager.start(debug, debug ? LogLevel.DEBUG : LogLevel.INFO, "floatz.skiplink");
 
@@ -63,13 +69,6 @@ public class Demo implements EntryPoint {
 					if (Browser.isMobileWebkit()) {
 						FLOATZ.mobile().ensureInjected();
 					}
-
-					// Load application specific styles
-					DEMO.css().ensureInjected();
-					StyleInjectorUtils.getInstance().mediaQuery("@media print").injectAtEnd(DEMO.printCss());
-					
-					// Create test page
-					RootPanel.get().add(new TestPage());
 				}
 
 				@Override
