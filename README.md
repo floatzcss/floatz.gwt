@@ -180,3 +180,4 @@ public class TestPage extends Composite {
    </g:HTMLPanel>
 </ui:UiBinder>
 ```
+A full blown GWT example can be found in the provided [demo application](https://github.com/floatzcss/floatz.gwt/tree/master/demo).
