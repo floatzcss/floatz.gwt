@@ -89,7 +89,7 @@ public void onModuleLoad() {
             // Start floatz script modules
             ModuleManager.start(debug, 
                debug ? LogLevel.DEBUG : LogLevel.INFO, 
-               FLOATZ_SKIPLINK_NOPATH);
+               FLOATZ_SKIPLINK_NAME);
          }
          @Override
          public void onFailure(Exception reason) {
@@ -136,10 +136,14 @@ public class FloatzTest implements EntryPoint {
    }
 }
 ```
-
-
 ####Layouting in UI binders####
 
-
-
-
+Of course **floatz.gwt** provided *CSS bundles* can also be used within UI binders which is the preferred way to structure and style pages in GWT applications.
+```
+public void onModuleLoad() {
+   ...
+   // Create test page
+   RootPanel.get().add(new TestPage());
+```
+```
+```
