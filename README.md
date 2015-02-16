@@ -137,13 +137,46 @@ public class FloatzTest implements EntryPoint {
 }
 ```
 ####Layouting in UI binders####
+Of course it is also possible to use the provided *CSS bundles* within UI binders which is the preferred way to structure and style pages in GWT applications. This is an exemplary Java and UI binder code.
+```
+public class TestPage extends Composite {
+   interface IndexUiBinder extends UiBinder<HTMLPanel, TestPage> {}
+   private static IndexUiBinder ourUiBinder = GWT.create(IndexUiBinder.class);
 
-Of course **floatz.gwt** provided *CSS bundles* can also be used within UI binders which is the preferred way to structure and style pages in GWT applications.
+   @UiField
+   public HTMLPanel page;
+
+   public TestPage() {
+      initWidget(ourUiBinder.createAndBindUi(this));
+
+      // Set floatz page id to root element
+      page.getElement().setId("flz_page");
+   }
+}
 ```
-public void onModuleLoad() {
-   ...
-   // Create test page
-   RootPanel.get().add(new TestPage());
 ```
-```
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+   xmlns:g='urn:import:com.google.gwt.user.client.ui'>
+   <ui:with field="DEMO" type="com.floatzcss.demo.client.resource.DemoBundle"/>
+   <ui:with field="FLOATZ" type="com.floatzcss.gwt.client.resource.Floatz"/>
+   <g:HTMLPanel ui:field="page">
+      <div class="{FLOATZ.layout.box} {FLOATZ.layout.spacer} {DEMO.css.header}">
+         ...
+      </div>
+      <div class="{FLOATZ.layout.box} {DEMO.css.menu} {FLOATZ.responsive.xs.hide}">
+         ...
+      </div>
+      <div class="{FLOATZ.layout.box} {FLOATZ.layout.l25} {FLOATZ.responsive.s.hide} 
+         {FLOATZ.responsive.xs.hide} {DEMO.css.nav}">
+         ...
+      </div>
+      <div class="{FLOATZ.layout.box} {FLOATZ.layout.spacer} {FLOATZ.layout.r75} 
+         {FLOATZ.responsive.s.r100}  {FLOATZ.responsive.xs.r100} {DEMO.css.content}">
+         ...
+      </div>
+      <div class="{FLOATZ.layout.box} {FLOATZ.layout.spacer} {DEMO.css.footer}">
+         ...
+      </div>
+   </g:HTMLPanel>
+</ui:UiBinder>
 ```
