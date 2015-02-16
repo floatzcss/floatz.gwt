@@ -3,7 +3,7 @@
 
 ***THIS PAGE IS CURRENTLY UNDER CONSTRUCTION AND NOT FINISHED YET.***
 
-**floatz.gwt integrates the [floatz CSS framework](https://github.com/floatzcss/floatz/) into [Google Web Toolkit (GWT)](http://www.gwtproject.org).** This page contains all information that is necessary to use **floatz** within GWT based applications. A more detailled introduction into **floatz** itself can be [found here](https://github.com/floatzcss/floatz/edit/master/README.md).
+**floatz.gwt integrates the [floatz CSS framework](https://github.com/floatzcss/floatz/) into [Google Web Toolkit (GWT)](http://www.gwtproject.org).** This page contains only information that is necessary to use **floatz** within GWT based applications. A more detailled introduction how to use **floatz** itself can be [found here](https://github.com/floatzcss/floatz/edit/master/README.md).
 
 ##Table of content
 * [Version history](#version-history)
@@ -14,6 +14,8 @@
 * February, 2015 - Version 1.3.0 currently under construction
 * 2nd December, 2014 - [Hotfix](https://github.com/floatzcss/floatz.gwt/blob/master/download/floatz.gwt-1.2.0hotfix01.jar) for GWT 2.7.0 
 * July 29th, 2013 - Version 1.2.0 released
+
+For a description how to use versions below version 1.3.0 please goto [code.google.com](https://code.google.com/p/floatz/wiki/LayoutingInGoogleWebToolkit#Adding_floatz_to_a_GWT_project).
 
 ###Getting started###
 * [Integrating floatz into the application](#Integrating-floatz-into-the-application)
