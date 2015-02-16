@@ -107,53 +107,56 @@
 				<li><a>Forth and last</a></li>
 			</ul>
 			<form class="{FLOATZ.layout.box} {FLOATZ.form.form}">
-				<div class="{FLOATZ.layout.box} {FLOATZ.layout.l50} {FLOATZ.responsive.s.r100} {FLOATZ.responsive.xs.r100} {FLOATZ.layout.lsubspacer_mrmc_top} {FLOATZ.responsive.s.subspacer_mrsc_top} {FLOATZ.responsive.xs.subspacer_mrsc_top}">
-					<label for="field1">Text Field</label>
-					<input type="text" id="field1" />
-				</div>
-				<div class="{FLOATZ.layout.box} {FLOATZ.layout.r50} {FLOATZ.responsive.s.r100} {FLOATZ.responsive.xs.r100} {FLOATZ.layout.rsubspacer_mrmc_top} {FLOATZ.layout.subspacer_mrsc_mid}_s {FLOATZ.responsive.xs.subspacer_mrsc_mid}">
-					<label for="field2">Password Field</label>
-					<input type="password" id="field2" />
-				</div>
-				<div class="{FLOATZ.layout.box} {FLOATZ.layout.l25} {FLOATZ.responsive.xs.r100} {FLOATZ.layout.lsubspacer_mrmc_mid} {FLOATZ.layout.lsubspacer_mrmc_mid}_s {FLOATZ.responsive.xs.subspacer_mrsc_mid}">
-					<label for="dropdown1">Dropdown 1</label>
-					<select id="dropdown1">
-						<option>Option 1</option>
-						<option>Option 2</option>
-						<option>Option 3</option>
-						<option>Option 4</option>
-					</select>
-				</div>
-				<div class="{FLOATZ.layout.box} {FLOATZ.layout.r75} {FLOATZ.responsive.xs.r100} {FLOATZ.layout.rsubspacer_mrmc_mid} {FLOATZ.layout.rsubspacer_mrmc_mid}_s {FLOATZ.responsive.xs.subspacer_mrsc_mid}">
-					<label for="combobox1">Combobox</label>
-					<div class="{FLOATZ.form.combobox}">
-						<input type="text" id="combobox1" />
-						<!-- Image must be in next line - otherwise unnecessary whitespace in IE -->
-						<a href="#">
-							<g:Image resource="{DEMO.dropdown}" />
-						</a>
+				<fieldset>
+					<legend>Form data</legend>
+					<div class="{FLOATZ.layout.box} {FLOATZ.layout.l50} {FLOATZ.responsive.s.r100} {FLOATZ.responsive.xs.r100} {FLOATZ.layout.lsubspacer_mrmc_top} {FLOATZ.responsive.s.subspacer_mrsc_top} {FLOATZ.responsive.xs.subspacer_mrsc_top}">
+						<label for="field1">Text Field</label>
+						<input type="text" id="field1" />
 					</div>
-				</div>
-				<div class="{FLOATZ.layout.box} {FLOATZ.layout.subspacer_mrsc_mid}">
-					<label for="textarea1">Texarea 1</label>
-					<textarea id="textarea1"></textarea>
-				</div>
-				<div class="{FLOATZ.layout.box} {FLOATZ.layout.subspacer_mrsc_mid}">
-					<input type="checkbox" id="checkbox1" /> <label for="checkbox1" class="{FLOATZ.form.inline}">Checkbox 1</label>
-					<input type="checkbox" id="checkbox2" /> <label for="checkbox2" class="{FLOATZ.form.inline}">Checkbox 2</label>
-					<input type="checkbox" id="checkbox3" /> <label for="checkbox3" class="{FLOATZ.form.inline}">Checkbox 3</label>
-				</div>
-				<div class="{FLOATZ.layout.box} {FLOATZ.layout.subspacer_mrsc_mid}">
-					<input type="radio" id="radio1" name="radioGroup1" /> <label for="radio1" class="{FLOATZ.form.inline}">Radio 1</label>
-					<input type="radio" id="radio2" name="radioGroup1" /> <label for="radio2" class="{FLOATZ.form.inline}">Radio 2</label>
-					<input type="radio" id="radio3" name="radioGroup1" /> <label for="radio3" class="{FLOATZ.form.inline}">Radio 3</label>
-				</div>
-				<div class="{FLOATZ.layout.box} {FLOATZ.layout.subspacer_mrsc_bottom}">
-					<input type="submit" value="Save" />
-					<input type="button" value="Cancel" />
-					<input type="reset" value="Reset" />
-					<button>Help</button>
-				</div>
+					<div class="{FLOATZ.layout.box} {FLOATZ.layout.r50} {FLOATZ.responsive.s.r100} {FLOATZ.responsive.xs.r100} {FLOATZ.layout.rsubspacer_mrmc_top} {FLOATZ.layout.subspacer_mrsc_mid}_s {FLOATZ.responsive.xs.subspacer_mrsc_mid}">
+						<label for="field2">Password Field</label>
+						<input type="password" id="field2" />
+					</div>
+					<div class="{FLOATZ.layout.box} {FLOATZ.layout.l25} {FLOATZ.responsive.xs.r100} {FLOATZ.layout.lsubspacer_mrmc_mid} {FLOATZ.layout.lsubspacer_mrmc_mid}_s {FLOATZ.responsive.xs.subspacer_mrsc_mid}">
+						<label for="dropdown1">Dropdown 1</label>
+						<select id="dropdown1">
+							<option>Option 1</option>
+							<option>Option 2</option>
+							<option>Option 3</option>
+							<option>Option 4</option>
+						</select>
+					</div>
+					<div class="{FLOATZ.layout.box} {FLOATZ.layout.r75} {FLOATZ.responsive.xs.r100} {FLOATZ.layout.rsubspacer_mrmc_mid} {FLOATZ.layout.rsubspacer_mrmc_mid}_s {FLOATZ.responsive.xs.subspacer_mrsc_mid}">
+						<label for="combobox1">Combobox</label>
+						<div class="{FLOATZ.form.combobox}">
+							<input type="text" id="combobox1" />
+							<!-- Image must be in next line - otherwise unnecessary whitespace in IE -->
+							<a href="#">
+								<g:Image resource="{DEMO.dropdown}" />
+							</a>
+						</div>
+					</div>
+					<div class="{FLOATZ.layout.box} {FLOATZ.layout.subspacer_mrsc_mid}">
+						<label for="textarea1">Texarea 1</label>
+						<textarea id="textarea1"></textarea>
+					</div>
+					<div class="{FLOATZ.layout.box} {FLOATZ.layout.subspacer_mrsc_mid}">
+						<input type="checkbox" id="checkbox1" /> <label for="checkbox1" class="{FLOATZ.form.inline}">Checkbox 1</label>
+						<input type="checkbox" id="checkbox2" /> <label for="checkbox2" class="{FLOATZ.form.inline}">Checkbox 2</label>
+						<input type="checkbox" id="checkbox3" /> <label for="checkbox3" class="{FLOATZ.form.inline}">Checkbox 3</label>
+					</div>
+					<div class="{FLOATZ.layout.box} {FLOATZ.layout.subspacer_mrsc_mid}">
+						<input type="radio" id="radio1" name="radioGroup1" /> <label for="radio1" class="{FLOATZ.form.inline}">Radio 1</label>
+						<input type="radio" id="radio2" name="radioGroup1" /> <label for="radio2" class="{FLOATZ.form.inline}">Radio 2</label>
+						<input type="radio" id="radio3" name="radioGroup1" /> <label for="radio3" class="{FLOATZ.form.inline}">Radio 3</label>
+					</div>
+					<div class="{FLOATZ.layout.box} {FLOATZ.layout.subspacer_mrsc_bottom}">
+						<input type="submit" value="Save" />
+						<input type="button" value="Cancel" />
+						<input type="reset" value="Reset" />
+						<button>Help</button>
+					</div>
+				</fieldset>
 			</form>
 		</div>
 		<div class="{FLOATZ.layout.box} {FLOATZ.layout.spacer} {DEMO.css.footer}">
