@@ -1,19 +1,20 @@
 ![](https://github.com/floatzcss/floatz/blob/master/wiki/logo.png) floatz.gwt
 ======
 
-***THIS PAGE IS CURRENTLY UNDER CONSTRUCTION AND NOT FINISHED YET.***
-
-**floatz.gwt integrates the [floatz CSS framework](https://github.com/floatzcss/floatz/) into [Google Web Toolkit (GWT)](http://www.gwtproject.org).** This page contains all information that is necessary to use **floatz** within GWT based applications. A more detailled introduction into **floatz** itself can be [found here](https://github.com/floatzcss/floatz/edit/master/README.md).
+**floatz.gwt** integrates the [floatz CSS framework](https://github.com/floatzcss/floatz/) into [Google Web Toolkit (GWT)](http://www.gwtproject.org). This page contains information that is necessary to use **floatz** within GWT based applications. A more detailed introduction how to use **floatz** itself can be [found here](https://github.com/floatzcss/floatz/blob/master/README.md).
 
 ##Table of content
 * [Version history](#version-history)
 * [Getting started](#getting-started)
 * [Layouting with floatz](#layouting-with-floatz)
+* [Reference](#reference)
 
 ##Version history
 * February, 2015 - Version 1.3.0 currently under construction
 * 2nd December, 2014 - [Hotfix](https://github.com/floatzcss/floatz.gwt/blob/master/download/floatz.gwt-1.2.0hotfix01.jar) for GWT 2.7.0 
 * July 29th, 2013 - Version 1.2.0 released
+
+For a description how to use versions below 1.3.0 please goto [code.google.com](https://code.google.com/p/floatz/wiki/LayoutingInGoogleWebToolkit#Adding_floatz_to_a_GWT_project).
 
 ###Getting started###
 * [Integrating floatz into the application](#Integrating-floatz-into-the-application)
@@ -85,7 +86,9 @@ public void onModuleLoad() {
             boolean debug = !GWT.isProdMode();
             
             // Start floatz script modules
-            ModuleManager.start(debug, debug ? LogLevel.DEBUG : LogLevel.INFO, FLOATZ_SKIPLINK_NOPATH);
+            ModuleManager.start(debug, 
+               debug ? LogLevel.DEBUG : LogLevel.INFO, 
+               FLOATZ_SKIPLINK_NAME);
          }
          @Override
          public void onFailure(Exception reason) {
@@ -94,10 +97,111 @@ public void onModuleLoad() {
       });
 }
 ```
+The log output in the browser console shows which script modules are loaded and started successfully.
+```
+floatz                            | 1.3.0 | INFO   | Module floatz loaded
+floatz.js:10 floatz.skiplink      | 1.3.0 | INFO   | Module floatz.skiplink loaded
+floatz.js:10 floatz               | 1.3.0 | INFO   | Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.111 Safari/537.36
+floatz.js:10 floatz               | 1.3.0 | INFO   | Module floatz started
+floatz.js:10 floatz               | 1.3.0 | INFO   | Module floatz.skiplink started
+```
+
 ###Layouting with floatz###
 * [Layouting in Java code](#layouting-in-java-code)
 * [Layouting in UI binders](#layouting-in-ui-binders)
 
-
 ####Layouting in Java code####
+**Floatz.gwt** provides a set of *GWT resource and CSS bundles* which can be easily used to style elements directly within Java code. Each CSS file has its own namespace within the *resource bundle* which makes it very convenient to find the right CSS classes using the IDEs code completion facility.
+```
+public class FloatzTest implements EntryPoint {
+
+   private static final Floatz FLOATZ = Floatz.INSTANCE;
+
+   public void onModuleLoad() {
+      ...
+
+      FlowPanel pageContainer = new FlowPanel();
+      pageContainer.getElement().setId("flz_page");
+
+      HTMLPanel box = new HTMLPanel("");
+      box.setStyleName(FLOATZ.layout().box());
+
+      HTMLPanel spacer = new HTMLPanel("<p>Hello world</p>");
+      spacer.setStyleName(FLOATZ.layout().spacer());
+      box.add(spacer);
+
+      pageContainer.add(box);
+      RootPanel.get().add(pageContainer);
+   }
+}
+```
 ####Layouting in UI binders####
+Of course it is also possible to use the provided *CSS bundles* within UI binders which is the preferred way to structure and style pages in GWT applications. This is an exemplary Java and UI binder code.
+```
+public class TestPage extends Composite {
+   interface IndexUiBinder extends UiBinder<HTMLPanel, TestPage> {}
+   private static IndexUiBinder ourUiBinder = GWT.create(IndexUiBinder.class);
+
+   @UiField
+   public HTMLPanel page;
+
+   public TestPage() {
+      initWidget(ourUiBinder.createAndBindUi(this));
+
+      // Set floatz page id to root element
+      page.getElement().setId("flz_page");
+   }
+}
+```
+```
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+   xmlns:g='urn:import:com.google.gwt.user.client.ui'>
+   <ui:with field="DEMO" type="com.floatzcss.demo.client.resource.DemoBundle"/>
+   <ui:with field="FLOATZ" type="com.floatzcss.gwt.client.resource.Floatz"/>
+   <g:HTMLPanel ui:field="page">
+      <div class="{FLOATZ.layout.box} {FLOATZ.layout.spacer} {DEMO.css.header}">
+         ...
+      </div>
+      <div class="{FLOATZ.layout.box} {DEMO.css.menu} {FLOATZ.responsive.xs.hide}">
+         ...
+      </div>
+      <div class="{FLOATZ.layout.box} {FLOATZ.layout.l25} {FLOATZ.responsive.s.hide} 
+         {FLOATZ.responsive.xs.hide} {DEMO.css.nav}">
+         ...
+      </div>
+      <div class="{FLOATZ.layout.box} {FLOATZ.layout.spacer} {FLOATZ.layout.r75} 
+         {FLOATZ.responsive.s.r100}  {FLOATZ.responsive.xs.r100} {DEMO.css.content}">
+         ...
+      </div>
+      <div class="{FLOATZ.layout.box} {FLOATZ.layout.spacer} {DEMO.css.footer}">
+         ...
+      </div>
+   </g:HTMLPanel>
+</ui:UiBinder>
+```
+A full blown GWT example can be found in the provided [demo application](https://github.com/floatzcss/floatz.gwt/tree/master/demo).
+
+###Reference###
+* [Resource and CSS bundles](#resource-and-css-bundles)
+
+####Resource and CSS bundles####
+
+| Name                    | Description                                                        |
+| ----------------------- | ------------------------------------------------------------------ |
+| [Floatz.java](https://github.com/floatzcss/floatz.gwt/blob/master/floatz/src/com/floatzcss/gwt/client/resource/Floatz.java)             | Root resource bundle that contains all used resources and bundles.          |
+| [ResetMeyer.java](https://github.com/floatzcss/floatz.gwt/blob/master/floatz/src/com/floatzcss/gwt/client/resource/ResetMeyer.java)         | [Global reset CSS bundle](https://github.com/floatzcss/floatz.gwt/blob/master/floatz/src/com/floatzcss/gwt/client/resource/css/floatz.reset.meyer.css). Loaded by default.                               |
+| [Reset.java](https://github.com/floatzcss/floatz.gwt/blob/master/floatz/src/com/floatzcss/gwt/client/resource/Reset.java)              | [Floatz reset CSS bundle](https://github.com/floatzcss/floatz.gwt/blob/master/floatz/src/com/floatzcss/gwt/client/resource/css/floatz.reset.css). Loaded by default.                                   |
+| [Layout.java](https://github.com/floatzcss/floatz.gwt/blob/master/floatz/src/com/floatzcss/gwt/client/resource/Layout.java)             | [Layout CSS bundle](https://github.com/floatzcss/floatz.gwt/blob/master/floatz/src/com/floatzcss/gwt/client/resource/css/floatz.layout.css). Loaded by default.                            |
+| [Form.java](https://github.com/floatzcss/floatz.gwt/blob/master/floatz/src/com/floatzcss/gwt/client/resource/Form.java)               | [Form CSS bundle](https://github.com/floatzcss/floatz.gwt/blob/master/floatz/src/com/floatzcss/gwt/client/resource/css/floatz.form.css). Loaded by default.                              |
+| [Nav.java](https://github.com/floatzcss/floatz.gwt/blob/master/floatz/src/com/floatzcss/gwt/client/resource/Nav.java)                | [Navigation CSS bundle](https://github.com/floatzcss/floatz.gwt/blob/master/floatz/src/com/floatzcss/gwt/client/resource/css/floatz.nav.css). Loaded by default.                        |
+| [IE.java](https://github.com/floatzcss/floatz.gwt/blob/master/floatz/src/com/floatzcss/gwt/client/resource/IE.java)                 | [IE 8,9 specific conditional CSS bundle](https://github.com/floatzcss/floatz.gwt/blob/master/floatz/src/com/floatzcss/gwt/client/resource/css/floatz.ie.css).                           |
+| [LayoutPrint.java](https://github.com/floatzcss/floatz.gwt/blob/master/floatz/src/com/floatzcss/gwt/client/resource/LayoutPrint.java)        | [Print specific CSS bundle](https://github.com/floatzcss/floatz.gwt/blob/master/floatz/src/com/floatzcss/gwt/client/resource/css/floatz.layout.print.css). Loaded by default.                             |
+| [LayoutLiquid.java](https://github.com/floatzcss/floatz.gwt/blob/master/floatz/src/com/floatzcss/gwt/client/resource/LayoutLiquid.java)       | [Liquid layout CSS bundle](https://github.com/floatzcss/floatz.gwt/blob/master/floatz/src/com/floatzcss/gwt/client/resource/css/floatz.layout.liquid.css). Optional.                                       |
+| [LayoutCenter.java](https://github.com/floatzcss/floatz.gwt/blob/master/floatz/src/com/floatzcss/gwt/client/resource/LayoutCenter.java)       | [Centered layout CSS bundle](https://github.com/floatzcss/floatz.gwt/blob/master/floatz/src/com/floatzcss/gwt/client/resource/css/floatz.layout.center.css). Optional.                                     |
+| [MobileWebkit.java](https://github.com/floatzcss/floatz.gwt/blob/master/floatz/src/com/floatzcss/gwt/client/resource/MobileWebkit.java)       | [Mobile webkit specific CSS bundle](https://github.com/floatzcss/floatz.gwt/blob/master/floatz/src/com/floatzcss/gwt/client/resource/css/floatz.mobile.webkit.css). Optional.                              |
+| [LayoutResponsive.java](https://github.com/floatzcss/floatz.gwt/blob/master/floatz/src/com/floatzcss/gwt/client/resource/LayoutResponsive.java)   | Root bundle containing all reponsive CSS bundles.                  |
+| [LayoutResponsiveXS.java](https://github.com/floatzcss/floatz.gwt/blob/master/floatz/src/com/floatzcss/gwt/client/resource/LayoutResponsiveXS.java) | [Responsive CSS bundle](https://github.com/floatzcss/floatz.gwt/blob/master/floatz/src/com/floatzcss/gwt/client/resource/css/floatz.layout.responsive.xs.css) for smartphones in portrait mode. Optional.         |
+| [LayoutResponsiveS.java](https://github.com/floatzcss/floatz.gwt/blob/master/floatz/src/com/floatzcss/gwt/client/resource/LayoutResponsiveS.java)  | [Responsive CSS bundle](https://github.com/floatzcss/floatz.gwt/blob/master/floatz/src/com/floatzcss/gwt/client/resource/css/floatz.layout.responsive.s.css) for smartphones in landscape mode. Optional.        |
+| [LayoutResponsiveM.java](https://github.com/floatzcss/floatz.gwt/blob/master/floatz/src/com/floatzcss/gwt/client/resource/LayoutResponsiveM.java)  | [Responsive CSS bundle](https://github.com/floatzcss/floatz.gwt/blob/master/floatz/src/com/floatzcss/gwt/client/resource/css/floatz.layout.responsive.m.css) for tablets in portrait mode. Optional.             |
+| [LayoutResponsiveL.java](https://github.com/floatzcss/floatz.gwt/blob/master/floatz/src/com/floatzcss/gwt/client/resource/LayoutResponsiveL.java)  | [Responsive CSS bundle](https://github.com/floatzcss/floatz.gwt/blob/master/floatz/src/com/floatzcss/gwt/client/resource/css/floatz.layout.responsive.l.css) for tablets in landscape mode and desktops. Optional.  |
+| [LayoutResponsiveXL.java](https://github.com/floatzcss/floatz.gwt/blob/master/floatz/src/com/floatzcss/gwt/client/resource/LayoutResponsiveXL.java) | [Responsive CSS bundle](https://github.com/floatzcss/floatz.gwt/blob/master/floatz/src/com/floatzcss/gwt/client/resource/css/floatz.layout.responsive.xl.css) for large desktops in landscape mode. Optional.          |
