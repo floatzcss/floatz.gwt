@@ -190,7 +190,7 @@ A full blown GWT example can be found in the provided [demo application](https:/
 ####Resource and CSS bundles####
 
 | Name                    | Type            | Description                                                        |
-| ----------------------- | ------------------------------------------------------------------------------------ |
+| ----------------------- | --------------- | ------------------------------------------------------------------ |
 | Floatz.java             | Resource bundle | Root bundle that contains all used resources and bundles.          |
 | ResetMeyer.java         | CSS bundle      | Global reset CSS. Loaded by default.                               |
 | Reset.java              | CSS bundle      | Floatz reset. Loaded by default.                                   |
