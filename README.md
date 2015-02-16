@@ -1,9 +1,7 @@
 ![](https://github.com/floatzcss/floatz/blob/master/wiki/logo.png) floatz.gwt
 ======
 
-***THIS PAGE IS CURRENTLY UNDER CONSTRUCTION AND NOT FINISHED YET.***
-
-**floatz.gwt integrates the [floatz CSS framework](https://github.com/floatzcss/floatz/) into [Google Web Toolkit (GWT)](http://www.gwtproject.org).** This page contains only information that is necessary to use **floatz** within GWT based applications. A more detailled introduction how to use **floatz** itself can be [found here](https://github.com/floatzcss/floatz/blob/master/README.md).
+**floatz.gwt integrates the [floatz CSS framework](https://github.com/floatzcss/floatz/) into [Google Web Toolkit (GWT)](http://www.gwtproject.org).** This page contains information that is necessary to use **floatz** within GWT based applications. A more detailed introduction how to use **floatz** itself can be [found here](https://github.com/floatzcss/floatz/blob/master/README.md).
 
 ##Table of content
 * [Version history](#version-history)
