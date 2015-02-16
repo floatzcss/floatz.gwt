@@ -198,13 +198,13 @@ A full blown GWT example can be found in the provided [demo application](https:/
 | [Nav.java](https://github.com/floatzcss/floatz.gwt/blob/master/floatz/src/com/floatzcss/gwt/client/resource/Nav.java)                | CSS bundle      | Navigation relevant CSS. Loaded by default.                        |
 | [IE.java](https://github.com/floatzcss/floatz.gwt/blob/master/floatz/src/com/floatzcss/gwt/client/resource/IE.java)                 | CSS bundle      | IE 8,9 version specific conditional CSS.                           |
 | [LayoutPrint.java](https://github.com/floatzcss/floatz.gwt/blob/master/floatz/src/com/floatzcss/gwt/client/resource/LayoutPrint.java)        | CSS bundle      | Print specific CSS. Loaded by default.                             |
-| LayoutLiquid.java       | CSS bundle      | Liquid layout CSS. Optional.                                       |
-| LayoutCenter.java       | CSS bundle      | Centered layout CSS. Optional.                                     |
-| MobileWebkit.java       | CSS bundle      | Mobile webkit specific CSS. Optional.                              |
-| LayoutResponsive.java   | Resource bundle | Root bundle containing all reponsive CSS bundles.                  |
-| LayoutResponsiveXS.java | Css bundle      | Responsive CSS for smartphones in portrait mode. Optional.         |
-| LayoutResponsiveS.java  | Css bundle      | Responsive CSS for smartphones in landscape mode. Optional.        |
-| LayoutResponsiveM.java  | Css bundle      | Responsive CSS for tablets in portrait mode. Optional.             |
-| LayoutResponsiveL.java  | Css bundle      | Responsive CSS for tablets, desktops in landscape mode. Optional.  |
-| LayoutResponsiveXL.java | Css bundle      | Responsive CSS for desktiops in landscape mode. Optional.          |
+| [LayoutLiquid.java](https://github.com/floatzcss/floatz.gwt/blob/master/floatz/src/com/floatzcss/gwt/client/resource/LayoutLiquid.java)       | CSS bundle      | Liquid layout CSS. Optional.                                       |
+| [LayoutCenter.java](https://github.com/floatzcss/floatz.gwt/blob/master/floatz/src/com/floatzcss/gwt/client/resource/LayoutCenter.java)       | CSS bundle      | Centered layout CSS. Optional.                                     |
+| [MobileWebkit.java](https://github.com/floatzcss/floatz.gwt/blob/master/floatz/src/com/floatzcss/gwt/client/resource/MobileWebkit.java)       | CSS bundle      | Mobile webkit specific CSS. Optional.                              |
+| [LayoutResponsive.java](https://github.com/floatzcss/floatz.gwt/blob/master/floatz/src/com/floatzcss/gwt/client/resource/LayoutResponsive.java)   | Resource bundle | Root bundle containing all reponsive CSS bundles.                  |
+| [LayoutResponsiveXS.java](https://github.com/floatzcss/floatz.gwt/blob/master/floatz/src/com/floatzcss/gwt/client/resource/LayoutResponsiveXS.java) | Css bundle      | Responsive CSS for smartphones in portrait mode. Optional.         |
+| [LayoutResponsiveS.java](https://github.com/floatzcss/floatz.gwt/blob/master/floatz/src/com/floatzcss/gwt/client/resource/LayoutResponsiveS.java)  | Css bundle      | Responsive CSS for smartphones in landscape mode. Optional.        |
+| [LayoutResponsiveM.java](https://github.com/floatzcss/floatz.gwt/blob/master/floatz/src/com/floatzcss/gwt/client/resource/LayoutResponsiveM.java)  | Css bundle      | Responsive CSS for tablets in portrait mode. Optional.             |
+| [LayoutResponsiveL.java](https://github.com/floatzcss/floatz.gwt/blob/master/floatz/src/com/floatzcss/gwt/client/resource/LayoutResponsiveL.java)  | Css bundle      | Responsive CSS for tablets, desktops in landscape mode. Optional.  |
+| [LayoutResponsiveXL.java](https://github.com/floatzcss/floatz.gwt/blob/master/floatz/src/com/floatzcss/gwt/client/resource/LayoutResponsiveXL.java) | Css bundle      | Responsive CSS for desktiops in landscape mode. Optional.          |
 
