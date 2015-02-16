@@ -111,6 +111,35 @@ floatz.js:10 floatz               | 1.3.0 | INFO   | Module floatz.skiplink star
 * [Layouting in Java code](#layouting-in-java-code)
 * [Layouting in UI binders](#layouting-in-ui-binders)
 
-
 ####Layouting in Java code####
+**Floatz.gwt** provides a set of *GWT resource and CSS bundles* which can be easily used to style elements directly within Java code. Each CSS file has its own namespace within the *resource bundle* which makes it very convenient to find the right CSS classes using the IDEs code completion facility.
+```
+public class FloatzTest implements EntryPoint {
+
+   private static final Floatz FLOATZ = Floatz.INSTANCE;
+
+   public void onModuleLoad() {
+      ...
+
+      FlowPanel pageContainer = new FlowPanel();
+      pageContainer.getElement().setId("flz_page");
+
+      HTMLPanel box = new HTMLPanel("");
+      box.setStyleName(FLOATZ.layout().box());
+
+      HTMLPanel spacer = new HTMLPanel("<p>Hello world</p>");
+      spacer.setStyleName(FLOATZ.layout().spacer());
+      box.add(spacer);
+
+      pageContainer.add(box);
+      RootPanel.get().add(pageContainer);
+   }
+}
+```
+
+
 ####Layouting in UI binders####
+
+
+
+
