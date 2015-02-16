@@ -98,6 +98,15 @@ public void onModuleLoad() {
       });
 }
 ```
+The log output in the browser console shows which script modules are loaded and started successfully.
+```
+floatz                            | 1.3.0 | INFO   | Module floatz loaded
+floatz.js:10 floatz.skiplink      | 1.3.0 | INFO   | Module floatz.skiplink loaded
+floatz.js:10 floatz               | 1.3.0 | INFO   | Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.111 Safari/537.36
+floatz.js:10 floatz               | 1.3.0 | INFO   | Module floatz started
+floatz.js:10 floatz               | 1.3.0 | INFO   | Module floatz.skiplink started
+```
+
 ###Layouting with floatz###
 * [Layouting in Java code](#layouting-in-java-code)
 * [Layouting in UI binders](#layouting-in-ui-binders)
