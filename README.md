@@ -9,6 +9,7 @@
 * [Version history](#version-history)
 * [Getting started](#getting-started)
 * [Layouting with floatz](#layouting-with-floatz)
+* [Reference](#reference)
 
 ##Version history
 * February, 2015 - Version 1.3.0 currently under construction
@@ -181,3 +182,30 @@ public class TestPage extends Composite {
 </ui:UiBinder>
 ```
 A full blown GWT example can be found in the provided [demo application](https://github.com/floatzcss/floatz.gwt/tree/master/demo).
+
+###Reference###
+* [Resource and CSS bundles](#resource-and-css-bundles)
+* [Script modules](#script-modules)
+
+####Resource and CSS bundles####
+
+| Name                    | Type            | Description                                                        |
+| ----------------------- | ------------------------------------------------------------------------------------ |
+| Floatz.java             | Resource bundle | Root bundle that contains all used resources and bundles.          |
+| ResetMeyer.java         | CSS bundle      | Global reset CSS. Loaded by default.                               |
+| Reset.java              | CSS bundle      | Floatz reset. Loaded by default.                                   |
+| Layout.java             | CSS bundle      | Layout relevant CSS. Loaded by default.                            |
+| Form.java               | CSS bundle      | Form relevant CSS. Loaded by default.                              |
+| Nav.java                | CSS bundle      | Navigation relevant CSS. Loaded by default.                        |
+| IE.java                 | CSS bundle      | IE 8,9 version specific conditional CSS.                           |
+| LayoutPrint.java        | CSS bundle      | Print specific CSS. Loaded by default.                             |
+| LayoutLiquid.java       | CSS bundle      | Liquid layout CSS. Optional.                                       |
+| LayoutCenter.java       | CSS bundle      | Centered layout CSS. Optional.                                     |
+| MobileWebkit.java       | CSS bundle      | Mobile webkit specific CSS. Optional.                              |
+| LayoutResponsive.java   | Resource bundle | Root bundle containing all reponsive CSS bundles.                  |
+| LayoutResponsiveXS.java | Css bundle      | Responsive CSS for smartphones in portrait mode. Optional.         |
+| LayoutResponsiveS.java  | Css bundle      | Responsive CSS for smartphones in landscape mode. Optional.        |
+| LayoutResponsiveM.java  | Css bundle      | Responsive CSS for tablets in portrait mode. Optional.             |
+| LayoutResponsiveL.java  | Css bundle      | Responsive CSS for tablets, desktops in landscape mode. Optional.  |
+| LayoutResponsiveXL.java | Css bundle      | Responsive CSS for desktiops in landscape mode. Optional.          |
+
