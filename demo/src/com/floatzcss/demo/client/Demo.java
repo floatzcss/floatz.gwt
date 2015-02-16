@@ -63,7 +63,9 @@ public class Demo implements EntryPoint {
 					boolean debug = !GWT.isProdMode();
 
 					// Start floatz script modules
-					ModuleManager.start(debug, debug ? LogLevel.DEBUG : LogLevel.INFO, Module.FLOATZ_SKIPLINK_NOPATH);
+					ModuleManager.start(debug, 
+						debug ? LogLevel.DEBUG : LogLevel.INFO, 
+						Module.FLOATZ_SKIPLINK_NAME);
 
 					// Load mobile styles only if user agent is mobile webkit
 					if (Browser.isMobileWebkit()) {

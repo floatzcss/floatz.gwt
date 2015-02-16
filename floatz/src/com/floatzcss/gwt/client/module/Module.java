@@ -19,6 +19,6 @@ public class Module {
 	public static final String FLOATZ = "floatz-1.3.0/scripts/floatz.js";
 	public static final String FLOATZ_SKIPLINK = "floatz-1.3.0/scripts/floatz.skiplink.js";
 	public static final String FLOATZ_MOBILE = "floatz-1.3.0/scripts/floatz.mobile.js";
-	public static final String FLOATZ_SKIPLINK_NOPATH = "floatz.skiplink.js";
-	public static final String FLOATZ_MOBILE_NOPATH = "floatz.mobile.js";
+	public static final String FLOATZ_SKIPLINK_NAME = "floatz.skiplink";
+	public static final String FLOATZ_MOBILE_NAME = "floatz.mobile";
 }

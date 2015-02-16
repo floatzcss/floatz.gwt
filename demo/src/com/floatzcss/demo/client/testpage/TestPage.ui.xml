@@ -5,161 +5,159 @@
 	<ui:style>
 	</ui:style>
 	<g:HTMLPanel ui:field="page">
-		<div class="{FLOATZ.layout.box}">
-			<div class="{FLOATZ.layout.box} {FLOATZ.layout.spacer} {DEMO.css.header}">
-				<span class="{DEMO.css.logo}">floatz.gwt demo</span>
-				<ul class="{FLOATZ.nav.listnav} {FLOATZ.nav.topnav} {FLOATZ.responsive.xs.hide}">
-					<ul>
-						<li><a href="">Top 1</a> |</li>
-						<li><a href="">Top 2</a> |</li>
-						<li><a href="">Top 3</a></li>
-					</ul>
+		<div class="{FLOATZ.layout.box} {FLOATZ.layout.spacer} {DEMO.css.header}">
+			<span class="{DEMO.css.logo}">floatz.gwt demo</span>
+			<ul class="{FLOATZ.nav.listnav} {FLOATZ.nav.topnav} {FLOATZ.responsive.xs.hide}">
+				<ul>
+					<li><a href="">Top 1</a> |</li>
+					<li><a href="">Top 2</a> |</li>
+					<li><a href="">Top 3</a></li>
+				</ul>
+			</ul>
+		</div>
+		<div class="{FLOATZ.layout.box} {DEMO.css.menu} {FLOATZ.responsive.xs.hide}">
+			<div class="{FLOATZ.nav.hmenu}">
+				<ul>
+					<li><a href="">Menu 1</a></li>
+					<li><a href="">Menu 2</a></li>
+					<li><a href="">Menu 3</a></li>
+					<li><a href="">Menu 4</a></li>
+					<li><a href="">Menu 5</a></li>
 				</ul>
 			</div>
-			<div class="{FLOATZ.layout.box} {DEMO.css.menu} {FLOATZ.responsive.xs.hide}">
-				<div class="{FLOATZ.nav.hmenu}">
-					<ul>
-						<li><a href="">Menu 1</a></li>
-						<li><a href="">Menu 2</a></li>
-						<li><a href="">Menu 3</a></li>
-						<li><a href="">Menu 4</a></li>
-						<li><a href="">Menu 5</a></li>
-					</ul>
-				</div>
-			</div>
-			<div class="{FLOATZ.layout.box} {FLOATZ.layout.l25} {FLOATZ.responsive.s.hide} {FLOATZ.responsive.xs.hide} {DEMO.css.nav}">
-				<div class="{FLOATZ.nav.vmenu}">
-					<ul>
-						<li class="{FLOATZ.nav.selected}"><a href="">Nav 1</a></li>
-						<li><a href="">Nav 2</a>
-							<ul>
-								<li><a href="">SubNav 1</a></li>
-								<li><a href="">SubNav 2</a>
-									<ul>
-										<li><a href="">SubSubNav 1</a></li>
-										<li><a href="">SubSubNav 2</a></li>
-										<li><a href="">SubSubNav 3</a></li>
-									</ul>
-								</li>
-								<li><a href="">SubNav 3</a></li>
-							</ul>
-						</li>
-						<li><a href="">Nav 3</a></li>
-						<li><a href="">Nav 4</a></li>
-						<li><a href="">Nav 5</a></li>
-						<li><a href="">Nav 6</a></li>
-						<li><a href="">Nav 7</a></li>
-					</ul>
-				</div>
-			</div>
-			<div class="{FLOATZ.layout.box} {FLOATZ.layout.spacer} {FLOATZ.layout.r75} {FLOATZ.responsive.s.r100}  {FLOATZ.responsive.xs.r100} {DEMO.css.content}">
-				<ul class="{FLOATZ.nav.listnav} {FLOATZ.nav.breadcrumb}">
-					<li><a href="#">Menu 1</a> &gt;</li>
-					<li><a href="#">Nav 1</a></li>
+		</div>
+		<div class="{FLOATZ.layout.box} {FLOATZ.layout.l25} {FLOATZ.responsive.s.hide} {FLOATZ.responsive.xs.hide} {DEMO.css.nav}">
+			<div class="{FLOATZ.nav.vmenu}">
+				<ul>
+					<li class="{FLOATZ.nav.selected}"><a href="">Nav 1</a></li>
+					<li><a href="">Nav 2</a>
+						<ul>
+							<li><a href="">SubNav 1</a></li>
+							<li><a href="">SubNav 2</a>
+								<ul>
+									<li><a href="">SubSubNav 1</a></li>
+									<li><a href="">SubSubNav 2</a></li>
+									<li><a href="">SubSubNav 3</a></li>
+								</ul>
+							</li>
+							<li><a href="">SubNav 3</a></li>
+						</ul>
+					</li>
+					<li><a href="">Nav 3</a></li>
+					<li><a href="">Nav 4</a></li>
+					<li><a href="">Nav 5</a></li>
+					<li><a href="">Nav 6</a></li>
+					<li><a href="">Nav 7</a></li>
 				</ul>
-				<div class="{FLOATZ.nav.htabmenu}">
-					<ul>
-						<li class="{FLOATZ.nav.selected}"><a href="">Tab 1</a></li>
-						<li><a href="">Tab 2</a></li>
-						<li><a href="">Tab 3</a></li>
-						<li><a href="">Tab 4</a></li>
-					</ul>
-				</div>
-				<div class="{FLOATZ.nav.htabmenu_bottom}">
-					<ul>
-						<li class="{FLOATZ.nav.selected}"><a href="">Tab 1</a></li>
-						<li><a href="">Tab 2</a></li>
-						<li><a href="">Tab 3</a></li>
-						<li><a href="">Tab 4</a></li>
-					</ul>
-				</div>
-				<h1>Header 1</h1>
-				<div class="{FLOATZ.layout.box}">
-					<div 
-						class="{FLOATZ.layout.box} {FLOATZ.layout.l25} {FLOATZ.responsive.m.l50} {FLOATZ.responsive.s.l50} {FLOATZ.responsive.xs.r100} {FLOATZ.layout.lsubspacer} {FLOATZ.responsive.xs.subspacer}">
-						<p>
-							Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-						</p>
-					</div>
-					<div 
-						class="{FLOATZ.layout.box} {FLOATZ.layout.m25} {FLOATZ.responsive.m.r50} {FLOATZ.responsive.s.r50} {FLOATZ.responsive.xs.r100} {FLOATZ.layout.msubspacer} {FLOATZ.responsive.m.rsubspacer} {FLOATZ.responsive.s.rsubspacer} {FLOATZ.responsive.xs.subspacer}">
-						<p>
-							Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-						</p>
-					</div>
-					<div 
-						class="{FLOATZ.layout.box} {FLOATZ.layout.m25} {FLOATZ.responsive.m.l50} {FLOATZ.responsive.s.l50} {FLOATZ.responsive.xs.r100} {FLOATZ.layout.msubspacer} {FLOATZ.responsive.m.lsubspacer} {FLOATZ.responsive.s.lsubspacer} {FLOATZ.responsive.xs.subspacer}">
-						<p>
-							Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-						</p>
-					</div>
-					<div 
-						class="{FLOATZ.layout.box} {FLOATZ.layout.r25} {FLOATZ.responsive.m.r50} {FLOATZ.responsive.s.r50} {FLOATZ.responsive.xs.r100} {FLOATZ.layout.rsubspacer} {FLOATZ.responsive.m.rsubspacer} {FLOATZ.responsive.s.rsubspacer} {FLOATZ.responsive.xs.subspacer}">
-						<p>
-							Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-						</p>
-					</div>
-				</div>
-				<h1>Form</h1>
-				<ul class="{FLOATZ.nav.workflow} {FLOATZ.responsive.xs.hide}">
-					<li class="{FLOATZ.nav.passed}"><a href="#">First</a></li>
-					<li class="{FLOATZ.nav.passed}"><a href="#">Second</a></li>
-					<li class="{FLOATZ.nav.selected}"><a href="#">The third</a></li>
-					<li><a>Forth and last</a></li>
+			</div>
+		</div>
+		<div class="{FLOATZ.layout.box} {FLOATZ.layout.spacer} {FLOATZ.layout.r75} {FLOATZ.responsive.s.r100}  {FLOATZ.responsive.xs.r100} {DEMO.css.content}">
+			<ul class="{FLOATZ.nav.listnav} {FLOATZ.nav.breadcrumb}">
+				<li><a href="#">Menu 1</a> &gt;</li>
+				<li><a href="#">Nav 1</a></li>
+			</ul>
+			<div class="{FLOATZ.nav.htabmenu}">
+				<ul>
+					<li class="{FLOATZ.nav.selected}"><a href="">Tab 1</a></li>
+					<li><a href="">Tab 2</a></li>
+					<li><a href="">Tab 3</a></li>
+					<li><a href="">Tab 4</a></li>
 				</ul>
-				<form class="{FLOATZ.layout.box} {FLOATZ.form.form}">
-					<div class="{FLOATZ.layout.box} {FLOATZ.layout.l50} {FLOATZ.responsive.s.r100} {FLOATZ.responsive.xs.r100} {FLOATZ.layout.lsubspacer_mrmc_top} {FLOATZ.responsive.s.subspacer_mrsc_top} {FLOATZ.responsive.xs.subspacer_mrsc_top}">
-						<label for="field1">Text Field</label>
-						<input type="text" id="field1" />
-					</div>
-					<div class="{FLOATZ.layout.box} {FLOATZ.layout.r50} {FLOATZ.responsive.s.r100} {FLOATZ.responsive.xs.r100} {FLOATZ.layout.rsubspacer_mrmc_top} {FLOATZ.layout.subspacer_mrsc_mid}_s {FLOATZ.responsive.xs.subspacer_mrsc_mid}">
-						<label for="field2">Password Field</label>
-						<input type="password" id="field2" />
-					</div>
-					<div class="{FLOATZ.layout.box} {FLOATZ.layout.l25} {FLOATZ.responsive.xs.r100} {FLOATZ.layout.lsubspacer_mrmc_mid} {FLOATZ.layout.lsubspacer_mrmc_mid}_s {FLOATZ.responsive.xs.subspacer_mrsc_mid}">
-						<label for="dropdown1">Dropdown 1</label>
-						<select id="dropdown1">
-							<option>Option 1</option>
-							<option>Option 2</option>
-							<option>Option 3</option>
-							<option>Option 4</option>
-						</select>
-					</div>
-					<div class="{FLOATZ.layout.box} {FLOATZ.layout.r75} {FLOATZ.responsive.xs.r100} {FLOATZ.layout.rsubspacer_mrmc_mid} {FLOATZ.layout.rsubspacer_mrmc_mid}_s {FLOATZ.responsive.xs.subspacer_mrsc_mid}">
-						<label for="combobox1">Combobox</label>
-						<div class="{FLOATZ.form.combobox}">
-							<input type="text" id="combobox1" />
-							<!-- Image must be in next line - otherwise unnecessary whitespace in IE -->
-							<a href="#">
-								<g:Image resource="{DEMO.dropdown}" />
-							</a>
-						</div>
-					</div>
-					<div class="{FLOATZ.layout.box} {FLOATZ.layout.subspacer_mrsc_mid}">
-						<label for="textarea1">Texarea 1</label>
-						<textarea id="textarea1"></textarea>
-					</div>
-					<div class="{FLOATZ.layout.box} {FLOATZ.layout.subspacer_mrsc_mid}">
-						<input type="checkbox" id="checkbox1" /> <label for="checkbox1" class="{FLOATZ.form.inline}">Checkbox 1</label>
-						<input type="checkbox" id="checkbox2" /> <label for="checkbox2" class="{FLOATZ.form.inline}">Checkbox 2</label>
-						<input type="checkbox" id="checkbox3" /> <label for="checkbox3" class="{FLOATZ.form.inline}">Checkbox 3</label>
-					</div>
-					<div class="{FLOATZ.layout.box} {FLOATZ.layout.subspacer_mrsc_mid}">
-						<input type="radio" id="radio1" name="radioGroup1" /> <label for="radio1" class="{FLOATZ.form.inline}">Radio 1</label>
-						<input type="radio" id="radio2" name="radioGroup1" /> <label for="radio2" class="{FLOATZ.form.inline}">Radio 2</label>
-						<input type="radio" id="radio3" name="radioGroup1" /> <label for="radio3" class="{FLOATZ.form.inline}">Radio 3</label>
-					</div>
-					<div class="{FLOATZ.layout.box} {FLOATZ.layout.subspacer_mrsc_bottom}">
-						<input type="submit" value="Save" />
-						<input type="button" value="Cancel" />
-						<input type="reset" value="Reset" />
-						<button>Help</button>
-					</div>
-				</form>
 			</div>
-			<div class="{FLOATZ.layout.box} {FLOATZ.layout.spacer} {DEMO.css.footer}">
-				Version 1.3.0
+			<div class="{FLOATZ.nav.htabmenu_bottom}">
+				<ul>
+					<li class="{FLOATZ.nav.selected}"><a href="">Tab 1</a></li>
+					<li><a href="">Tab 2</a></li>
+					<li><a href="">Tab 3</a></li>
+					<li><a href="">Tab 4</a></li>
+				</ul>
 			</div>
+			<h1>Header 1</h1>
+			<div class="{FLOATZ.layout.box}">
+				<div
+					class="{FLOATZ.layout.box} {FLOATZ.layout.l25} {FLOATZ.responsive.m.l50} {FLOATZ.responsive.s.l50} {FLOATZ.responsive.xs.r100} {FLOATZ.layout.lsubspacer} {FLOATZ.responsive.xs.subspacer}">
+					<p>
+						Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+					</p>
+				</div>
+				<div
+					class="{FLOATZ.layout.box} {FLOATZ.layout.m25} {FLOATZ.responsive.m.r50} {FLOATZ.responsive.s.r50} {FLOATZ.responsive.xs.r100} {FLOATZ.layout.msubspacer} {FLOATZ.responsive.m.rsubspacer} {FLOATZ.responsive.s.rsubspacer} {FLOATZ.responsive.xs.subspacer}">
+					<p>
+						Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+					</p>
+				</div>
+				<div
+					class="{FLOATZ.layout.box} {FLOATZ.layout.m25} {FLOATZ.responsive.m.l50} {FLOATZ.responsive.s.l50} {FLOATZ.responsive.xs.r100} {FLOATZ.layout.msubspacer} {FLOATZ.responsive.m.lsubspacer} {FLOATZ.responsive.s.lsubspacer} {FLOATZ.responsive.xs.subspacer}">
+					<p>
+						Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+					</p>
+				</div>
+				<div
+					class="{FLOATZ.layout.box} {FLOATZ.layout.r25} {FLOATZ.responsive.m.r50} {FLOATZ.responsive.s.r50} {FLOATZ.responsive.xs.r100} {FLOATZ.layout.rsubspacer} {FLOATZ.responsive.m.rsubspacer} {FLOATZ.responsive.s.rsubspacer} {FLOATZ.responsive.xs.subspacer}">
+					<p>
+						Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+					</p>
+				</div>
+			</div>
+			<h1>Form</h1>
+			<ul class="{FLOATZ.nav.workflow} {FLOATZ.responsive.xs.hide}">
+				<li class="{FLOATZ.nav.passed}"><a href="#">First</a></li>
+				<li class="{FLOATZ.nav.passed}"><a href="#">Second</a></li>
+				<li class="{FLOATZ.nav.selected}"><a href="#">The third</a></li>
+				<li><a>Forth and last</a></li>
+			</ul>
+			<form class="{FLOATZ.layout.box} {FLOATZ.form.form}">
+				<div class="{FLOATZ.layout.box} {FLOATZ.layout.l50} {FLOATZ.responsive.s.r100} {FLOATZ.responsive.xs.r100} {FLOATZ.layout.lsubspacer_mrmc_top} {FLOATZ.responsive.s.subspacer_mrsc_top} {FLOATZ.responsive.xs.subspacer_mrsc_top}">
+					<label for="field1">Text Field</label>
+					<input type="text" id="field1" />
+				</div>
+				<div class="{FLOATZ.layout.box} {FLOATZ.layout.r50} {FLOATZ.responsive.s.r100} {FLOATZ.responsive.xs.r100} {FLOATZ.layout.rsubspacer_mrmc_top} {FLOATZ.layout.subspacer_mrsc_mid}_s {FLOATZ.responsive.xs.subspacer_mrsc_mid}">
+					<label for="field2">Password Field</label>
+					<input type="password" id="field2" />
+				</div>
+				<div class="{FLOATZ.layout.box} {FLOATZ.layout.l25} {FLOATZ.responsive.xs.r100} {FLOATZ.layout.lsubspacer_mrmc_mid} {FLOATZ.layout.lsubspacer_mrmc_mid}_s {FLOATZ.responsive.xs.subspacer_mrsc_mid}">
+					<label for="dropdown1">Dropdown 1</label>
+					<select id="dropdown1">
+						<option>Option 1</option>
+						<option>Option 2</option>
+						<option>Option 3</option>
+						<option>Option 4</option>
+					</select>
+				</div>
+				<div class="{FLOATZ.layout.box} {FLOATZ.layout.r75} {FLOATZ.responsive.xs.r100} {FLOATZ.layout.rsubspacer_mrmc_mid} {FLOATZ.layout.rsubspacer_mrmc_mid}_s {FLOATZ.responsive.xs.subspacer_mrsc_mid}">
+					<label for="combobox1">Combobox</label>
+					<div class="{FLOATZ.form.combobox}">
+						<input type="text" id="combobox1" />
+						<!-- Image must be in next line - otherwise unnecessary whitespace in IE -->
+						<a href="#">
+							<g:Image resource="{DEMO.dropdown}" />
+						</a>
+					</div>
+				</div>
+				<div class="{FLOATZ.layout.box} {FLOATZ.layout.subspacer_mrsc_mid}">
+					<label for="textarea1">Texarea 1</label>
+					<textarea id="textarea1"></textarea>
+				</div>
+				<div class="{FLOATZ.layout.box} {FLOATZ.layout.subspacer_mrsc_mid}">
+					<input type="checkbox" id="checkbox1" /> <label for="checkbox1" class="{FLOATZ.form.inline}">Checkbox 1</label>
+					<input type="checkbox" id="checkbox2" /> <label for="checkbox2" class="{FLOATZ.form.inline}">Checkbox 2</label>
+					<input type="checkbox" id="checkbox3" /> <label for="checkbox3" class="{FLOATZ.form.inline}">Checkbox 3</label>
+				</div>
+				<div class="{FLOATZ.layout.box} {FLOATZ.layout.subspacer_mrsc_mid}">
+					<input type="radio" id="radio1" name="radioGroup1" /> <label for="radio1" class="{FLOATZ.form.inline}">Radio 1</label>
+					<input type="radio" id="radio2" name="radioGroup1" /> <label for="radio2" class="{FLOATZ.form.inline}">Radio 2</label>
+					<input type="radio" id="radio3" name="radioGroup1" /> <label for="radio3" class="{FLOATZ.form.inline}">Radio 3</label>
+				</div>
+				<div class="{FLOATZ.layout.box} {FLOATZ.layout.subspacer_mrsc_bottom}">
+					<input type="submit" value="Save" />
+					<input type="button" value="Cancel" />
+					<input type="reset" value="Reset" />
+					<button>Help</button>
+				</div>
+			</form>
+		</div>
+		<div class="{FLOATZ.layout.box} {FLOATZ.layout.spacer} {DEMO.css.footer}">
+			Version 1.3.0
 		</div>
 	</g:HTMLPanel>
 </ui:UiBinder>
