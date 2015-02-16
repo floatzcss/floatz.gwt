@@ -191,13 +191,13 @@ A full blown GWT example can be found in the provided [demo application](https:/
 | Name                    | Type            | Description                                                        |
 | ----------------------- | --------------- | ------------------------------------------------------------------ |
 | [Floatz.java](https://github.com/floatzcss/floatz.gwt/blob/master/floatz/src/com/floatzcss/gwt/client/resource/Floatz.java)             | Resource bundle | Root bundle that contains all used resources and bundles.          |
-| ResetMeyer.java         | CSS bundle      | Global reset CSS. Loaded by default.                               |
-| Reset.java              | CSS bundle      | Floatz reset. Loaded by default.                                   |
-| Layout.java             | CSS bundle      | Layout relevant CSS. Loaded by default.                            |
-| Form.java               | CSS bundle      | Form relevant CSS. Loaded by default.                              |
-| Nav.java                | CSS bundle      | Navigation relevant CSS. Loaded by default.                        |
-| IE.java                 | CSS bundle      | IE 8,9 version specific conditional CSS.                           |
-| LayoutPrint.java        | CSS bundle      | Print specific CSS. Loaded by default.                             |
+| [ResetMeyer.java](https://github.com/floatzcss/floatz.gwt/blob/master/floatz/src/com/floatzcss/gwt/client/resource/ResetMeyer.java)         | CSS bundle      | Global reset CSS. Loaded by default.                               |
+| [Reset.java](https://github.com/floatzcss/floatz.gwt/blob/master/floatz/src/com/floatzcss/gwt/client/resource/Reset.java)              | CSS bundle      | Floatz reset. Loaded by default.                                   |
+| [Layout.java](https://github.com/floatzcss/floatz.gwt/blob/master/floatz/src/com/floatzcss/gwt/client/resource/Layout.java)             | CSS bundle      | Layout relevant CSS. Loaded by default.                            |
+| [Form.java](https://github.com/floatzcss/floatz.gwt/blob/master/floatz/src/com/floatzcss/gwt/client/resource/Form.java)               | CSS bundle      | Form relevant CSS. Loaded by default.                              |
+| [Nav.java](https://github.com/floatzcss/floatz.gwt/blob/master/floatz/src/com/floatzcss/gwt/client/resource/Nav.java)                | CSS bundle      | Navigation relevant CSS. Loaded by default.                        |
+| [IE.java](https://github.com/floatzcss/floatz.gwt/blob/master/floatz/src/com/floatzcss/gwt/client/resource/IE.java)                 | CSS bundle      | IE 8,9 version specific conditional CSS.                           |
+| [LayoutPrint.java](https://github.com/floatzcss/floatz.gwt/blob/master/floatz/src/com/floatzcss/gwt/client/resource/LayoutPrint.java)        | CSS bundle      | Print specific CSS. Loaded by default.                             |
 | LayoutLiquid.java       | CSS bundle      | Liquid layout CSS. Optional.                                       |
 | LayoutCenter.java       | CSS bundle      | Centered layout CSS. Optional.                                     |
 | MobileWebkit.java       | CSS bundle      | Mobile webkit specific CSS. Optional.                              |
