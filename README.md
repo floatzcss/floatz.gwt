@@ -185,7 +185,6 @@ A full blown GWT example can be found in the provided [demo application](https:/
 
 ###Reference###
 * [Resource and CSS bundles](#resource-and-css-bundles)
-* [Script modules](#script-modules)
 
 ####Resource and CSS bundles####
 
