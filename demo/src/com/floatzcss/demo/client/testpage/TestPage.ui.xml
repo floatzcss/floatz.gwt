@@ -51,7 +51,7 @@
 				</ul>
 			</div>
 		</div>
-		<div class="{FLOATZ.layout.box} {FLOATZ.layout.spacer} {FLOATZ.layout.r75} {FLOATZ.responsive.s.r100}  {FLOATZ.responsive.xs.r100} {DEMO.css.content}">
+		<g:HTMLPanel ui:field="content" styleName="{FLOATZ.layout.box} {FLOATZ.layout.spacer} {FLOATZ.layout.r75} {FLOATZ.responsive.s.r100} {FLOATZ.responsive.xs.r100} {DEMO.css.content}">
 			<ul class="{FLOATZ.nav.listnav} {FLOATZ.nav.breadcrumb}">
 				<li><a href="#">Menu 1</a> &gt;</li>
 				<li><a href="#">Nav 1</a></li>
@@ -158,7 +158,8 @@
 					</div>
 				</fieldset>
 			</form>
-		</div>
+			<h1>Browser information</h1>
+		</g:HTMLPanel>
 		<div class="{FLOATZ.layout.box} {FLOATZ.layout.spacer} {DEMO.css.footer}">
 			Version 1.3.0
 		</div>

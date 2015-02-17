@@ -2,7 +2,7 @@ package com.floatzcss.demo.client;
 
 import com.floatzcss.demo.client.resource.DemoBundle;
 import com.floatzcss.demo.client.testpage.TestPage;
-import com.floatzcss.gwt.client.browser.Browser;
+import com.floatzcss.gwt.client.browser.UserAgent;
 import com.floatzcss.gwt.client.module.LogLevel;
 import com.floatzcss.gwt.client.module.Module;
 import com.floatzcss.gwt.client.module.ModuleManager;
@@ -47,9 +47,6 @@ public class Demo implements EntryPoint {
 			.mediaQuery(Media.L).injectAtEnd(FLOATZ.responsive().l())
 			.mediaQuery(Media.XL).injectAtEnd(FLOATZ.responsive().xl());
 
-		// Create test page
-		RootPanel.get().add(new TestPage());
-
 		// Inject floatz script modules
 		ScriptInjectorUtils.getInstance()
 			.inject(WEB_ROOT + Module.JQUERY)
@@ -68,9 +65,12 @@ public class Demo implements EntryPoint {
 						Module.FLOATZ_SKIPLINK_NAME);
 
 					// Load mobile styles only if user agent is mobile webkit
-					if (Browser.isMobileWebkit()) {
+					if (UserAgent.isMobileWebkit()) {
 						FLOATZ.mobile().ensureInjected();
 					}
+
+					// Create test page
+					RootPanel.get().add(testpage = new TestPage());
 				}
 
 				@Override

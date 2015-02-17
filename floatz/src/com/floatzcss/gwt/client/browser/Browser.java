@@ -1,12 +1,10 @@
 package com.floatzcss.gwt.client.browser;
 
 /**
- * Browser utility.
+ * Browser information of the user agent.
  * <p>
- * Is used to get information about the current user agent. Attention: use this
- * kind of browser detection with caution to prevent browser lock ins. If
- * possible try to use a different method (e.g. feature detection).
- * </p>
+ * Take care that the ua.parser script module is loaded before you call any method of this class.
+ * </p>*
  * <p>
  * Copyright (c) 2010-2015 by :hummldesign http://design.humml.eu
  * Licensed under Apache License 2.0, http://www.apache.org/licenses/LICENSE-2.0
@@ -16,27 +14,42 @@ package com.floatzcss.gwt.client.browser;
  * </p>
  *
  * @author Harald Humml
- * @since 1.2.0
+ * @since 1.3.0
  */
 public class Browser {
-
-	// TODO: Add different browser detection methods from browser.js
-
 	/**
-	 * Check if user agent is a mobile platform.
+	 * Get major version.
 	 *
-	 * @return true if mobile platform, false if not
+	 * @return Major version or empty string
 	 */
-	public static native boolean isMobile() /*-{
-        return $wnd.floatz.isMobile();
+	public native String major() /*-{
+        if ($wnd.floatz.userAgent.browser.major) {
+            return $wnd.floatz.userAgent.browser.major;
+        }
+        return "";
     }-*/;
 
 	/**
-	 * Check if user agent is a mobile webkit platform.
+	 * Get browser name.
 	 *
-	 * @return true if mobile platform, false if not
+	 * @return Browser name or empty string
 	 */
-	public static native boolean isMobileWebkit() /*-{
-        return $wnd.floatz.isMobileWebkit();
+	public native String name() /*-{
+        if ($wnd.floatz.userAgent.browser.name) {
+            return $wnd.floatz.userAgent.browser.name;
+        }
+        return "";
+    }-*/;
+
+	/**
+	 * Get full version string.
+	 *
+	 * @return Version string or empty string
+	 */
+	public native String version() /*-{
+        if ($wnd.floatz.userAgent.browser.version) {
+            return $wnd.floatz.userAgent.browser.version;
+        }
+        return "";
     }-*/;
 }
