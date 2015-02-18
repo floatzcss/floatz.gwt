@@ -51,7 +51,7 @@ public void onModuleLoad() {
 ```
 
 ####Supporting responsive design####
-To support *responsive layouts* within the application additional *CSS bundles* have to be loaded in the *entry point class*. Media queries are not supported in GWT *CSS bundles* by default thus **floatz** provides the *StyleInjectorUtils* singleton class which allows to wrap styles with media queries when injected.
+To support *responsive layouts* within the application additional *CSS bundles* have to be loaded in the *entry point class*. Media queries are not supported in GWT *CSS bundles* by default thus **floatz** provides the [StyleInjectorUtils](https://github.com/floatzcss/floatz.gwt/blob/master/floatz/src/com/floatzcss/gwt/client/util/StyleInjectorUtils.java) singleton class which allows to wrap styles with media queries when injected.
 ```
 private static final Floatz FLOATZ = Floatz.INSTANCE;
 
@@ -67,7 +67,7 @@ public void onModuleLoad() {
 }
 ```
 ####Loading script modules####
-**Floatz** ships with some optional *script modules* that add some additional functionality. These scripts can be loaded using the *ScriptInjectorUtils* utility class. After the scripts are loaded they have to be started using the *ModuleManager* class.
+**Floatz** ships with some optional *script modules* that add some additional functionality. These scripts can be loaded using the [ScriptInjectorUtils](https://github.com/floatzcss/floatz.gwt/blob/master/floatz/src/com/floatzcss/gwt/client/util/ScriptInjectorUtils.java) utility class. After the scripts are loaded they have to be started using the [ModuleManager](https://github.com/floatzcss/floatz.gwt/blob/master/floatz/src/com/floatzcss/gwt/client/module/ModuleManager.java) class.
 ```
 private static final String WEB_ROOT = "Demo/";
 
