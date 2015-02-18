@@ -36,8 +36,8 @@ public class Demo implements EntryPoint {
 		// Inject additional floatz stylesheet for liquid layout and application specific styles
 		StyleInjectorUtils.getInstance()
 			.injectAtEnd(FLOATZ.layoutLiquid())
-			.injectAtEnd(DEMO.css())
-			.mediaQuery("media print").injectAtEnd(DEMO.printCss());
+			/*.injectAtEnd(DEMO.css())
+			.mediaQuery("media print").injectAtEnd(DEMO.printCss())*/;
 
 		// Inject floatz stylesheets for responsive layouts
 		StyleInjectorUtils.getInstance()
@@ -68,6 +68,10 @@ public class Demo implements EntryPoint {
 					if (UserAgent.isMobileWebkit()) {
 						FLOATZ.mobile().ensureInjected();
 					}
+
+					StyleInjectorUtils.getInstance()
+						.injectAtEnd(DEMO.css())
+						.mediaQuery("media print").injectAtEnd(DEMO.printCss());
 
 					// Create test page
 					RootPanel.get().add(testpage = new TestPage());

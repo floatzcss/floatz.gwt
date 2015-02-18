@@ -1,59 +1,98 @@
-@external .header, .menu, .nav, .content, .footer, .logo;
+@external .header, .menu, .nav, .content, .footer, .logo, .chrome, .firefox, .ie, .safari;
 @external .flz_vmenu, .flz_htabmenu, .flz_htabmenu_bottom, .flz_workflow, .flz_form, .flz_combobox;
 
 body {
 	font-size: 1em;
 }
+
 h1, h2, h3 {
 	padding-bottom: 0.5em;
 }
+
 p {
 	padding-bottom: 1em;
 }
+
 .header {
 	background-color: royalblue;
 	color: white;
 	height: 5em;
 }
+
 .header .logo {
 	font-size: 2em;
 }
+
 .menu {
 	background-color: orange;
 	height: 2.2em;
 }
+
 .nav {
 	background-color: dimgray;
 	color: white;
 }
+
 .flz_vmenu ul li a {
 	border-color: white;
 	color: white;
 	padding: 1em;
 }
+
 .flz_vmenu ul:first-child > li:last-child a {
 	border: 0;
 }
+
 .flz_htabmenu, .flz_htabmenu_bottom, .flz_workflow, .flz_form {
 	margin-bottom: 1em;
 }
+
 .flz_htabmenu_bottom ul {
 	float: right;
 }
+
 .flz_combobox a {
 	top: -0.25em;
 }
+
 .flz_combobox a img {
 	width: 1.75em;
 	height: 1.75em;
 }
+
 .content {
 	background-color: white;
 	padding-top: 3em;
 	position: relative;
 }
+
 .footer {
 	background-color: lightgray;
 	height: 3em;
 }
 
+.chrome, .firefox, .ie, .safari {
+	background-color: lightgray;
+	padding: 1em;
+	text-align: center;
+}
+
+@if (com.floatzcss.gwt.client.browser.UserAgent.browser.name() == "Chrome") {
+	.chrome {
+		background-color: yellow;
+	}
+} @elif (com.floatzcss.gwt.client.browser.UserAgent.browser.name() == "Firefox") {
+	.firefox {
+		background-color: orange;
+	}
+} @elif (com.floatzcss.gwt.client.browser.UserAgent.browser.name() == "MSIE") {
+	.ie {
+		background-color: blue;
+		color: white;
+	}
+} @elif (com.floatzcss.gwt.client.browser.UserAgent.browser.name() == "Safari") {
+	.safari {
+		background-color: blue;
+		color: white;
+	}
+}

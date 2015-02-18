@@ -51,7 +51,7 @@
 				</ul>
 			</div>
 		</div>
-		<g:HTMLPanel ui:field="content" styleName="{FLOATZ.layout.box} {FLOATZ.layout.spacer} {FLOATZ.layout.r75} {FLOATZ.responsive.s.r100} {FLOATZ.responsive.xs.r100} {DEMO.css.content}">
+		<div class="{FLOATZ.layout.box} {FLOATZ.layout.spacer} {FLOATZ.layout.r75} {FLOATZ.responsive.s.r100} {FLOATZ.responsive.xs.r100} {DEMO.css.content}">
 			<ul class="{FLOATZ.nav.listnav} {FLOATZ.nav.breadcrumb}">
 				<li><a href="#">Menu 1</a> &gt;</li>
 				<li><a href="#">Nav 1</a></li>
@@ -159,7 +159,13 @@
 				</fieldset>
 			</form>
 			<h1>Browser information</h1>
-		</g:HTMLPanel>
+			<g:HTMLPanel ui:field="browserInfo" />
+			<h1>Browser dependent styles</h1>
+			<div class="{FLOATZ.layout.box} {FLOATZ.layout.l25} {DEMO.css.chrome}">Chrome</div>
+			<div class="{FLOATZ.layout.box} {FLOATZ.layout.m25} {DEMO.css.firefox}">Firefox</div>
+			<div class="{FLOATZ.layout.box} {FLOATZ.layout.m25} {DEMO.css.ie}">Internet Explorer</div>
+			<div class="{FLOATZ.layout.box} {FLOATZ.layout.r25} {DEMO.css.safari}">Safari</div>
+		</div>
 		<div class="{FLOATZ.layout.box} {FLOATZ.layout.spacer} {DEMO.css.footer}">
 			Version 1.3.0
 		</div>

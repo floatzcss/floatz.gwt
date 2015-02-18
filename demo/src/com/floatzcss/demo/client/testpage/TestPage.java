@@ -21,7 +21,7 @@ public class TestPage extends Composite {
 	public HTMLPanel page;
 	
 	@UiField
-	public HTMLPanel content;
+	public HTMLPanel browserInfo;
 
 	public TestPage() {
 		initWidget(ourUiBinder.createAndBindUi(this));
@@ -30,17 +30,17 @@ public class TestPage extends Composite {
 		page.getElement().setId("flz_page");
 
 		// Add browser information
-		content.add(new Label("User agent: " + UserAgent.string()));
-		content.add(new Label("Browser Major: " + UserAgent.browser.major()));
-		content.add(new Label("Browser Name: " + UserAgent.browser.name()));
-		content.add(new Label("Browser Version: " + UserAgent.browser.version()));
-		content.add(new Label("Device model: " + UserAgent.device.model()));
-		content.add(new Label("Device type: " + UserAgent.device.type()));
-		content.add(new Label("Device vendor: " + UserAgent.device.vendor()));
-		content.add(new Label("Engine name: " + UserAgent.engine.name()));
-		content.add(new Label("Engine version: " + UserAgent.engine.version()));
-		content.add(new Label("OS name: " + UserAgent.os.name()));
-		content.add(new Label("OS version: " + UserAgent.os.version()));
-		content.add(new Label("CPU architecture: " + UserAgent.cpu.architecture()));
+		browserInfo.add(new Label("User agent: " + UserAgent.string()));
+		browserInfo.add(new Label("Browser Major: " + UserAgent.browser.major()));
+		browserInfo.add(new Label("Browser Name: " + UserAgent.browser.name()));
+		browserInfo.add(new Label("Browser Version: " + UserAgent.browser.version()));
+		browserInfo.add(new Label("Device model: " + UserAgent.device.model()));
+		browserInfo.add(new Label("Device type: " + UserAgent.device.type()));
+		browserInfo.add(new Label("Device vendor: " + UserAgent.device.vendor()));
+		browserInfo.add(new Label("Engine name: " + UserAgent.engine.name()));
+		browserInfo.add(new Label("Engine version: " + UserAgent.engine.version()));
+		browserInfo.add(new Label("OS name: " + UserAgent.os.name()));
+		browserInfo.add(new Label("OS version: " + UserAgent.os.version()));
+		browserInfo.add(new Label("CPU architecture: " + UserAgent.cpu.architecture()));
 	}
 }

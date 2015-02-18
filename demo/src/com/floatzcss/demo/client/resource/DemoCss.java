@@ -15,6 +15,14 @@ public interface DemoCss extends CssResource {
 	String content();
 
 	String footer();
-	
+
 	String logo();
+
+	String chrome();
+
+	String firefox();
+
+	String ie();
+
+	String safari();
 }
