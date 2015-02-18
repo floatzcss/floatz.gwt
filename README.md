@@ -197,8 +197,3 @@ The following code shows browser detection with the *UserAgent* within a *UI bin
 ...
 }
 ```
-
-
-
-
-
