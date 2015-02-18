@@ -183,7 +183,7 @@ A full blown GWT example can be found in the provided [demo application](https:/
 
 ###Special topics###
 ####Browser dependent styling####
-For those situations where you need browser specific code or styles and [feature detection](http://en.wikipedia.org/wiki/Feature_detection_%28web_development%29) is not viable way to go, **floatz** offers a [UserAgent](https://github.com/floatzcss/floatz.gwt/blob/master/floatz/src/com/floatzcss/gwt/client/browser/UserAgent.java) utility class. It provides a structured way to gain information form the user agent string and thus can be used for browser detection within Java code, *UI binders* as well as *CSS bundles*.
+For those situations where browser specific code or styles are is necessary and [feature detection](http://en.wikipedia.org/wiki/Feature_detection_%28web_development%29) is not viable way to go, **floatz** offers a [UserAgent](https://github.com/floatzcss/floatz.gwt/blob/master/floatz/src/com/floatzcss/gwt/client/browser/UserAgent.java) utility class. It provides a structured way to gain information form the user agent string and thus can be used for browser detection within Java code, *UI binders* as well as *CSS bundles*.
 
 The following code examples browser detection using the *style* element of the UI binder.
 ```
