@@ -7,7 +7,7 @@
 * [Version history](#version-history)
 * [Getting started](#getting-started)
 * [Layouting with floatz](#layouting-with-floatz)
-* [Reference](#reference)
+* [Special topics](#special-topics)
 
 ##Version history
 * February, 2015 - Version 1.3.0 currently under construction
@@ -181,27 +181,19 @@ public class TestPage extends Composite {
 ```
 A full blown GWT example can be found in the provided [demo application](https://github.com/floatzcss/floatz.gwt/tree/master/demo).
 
-###Reference###
-* [Resource and CSS bundles](#resource-and-css-bundles)
+###Special topics###
+####Browser dependent styling####
+For those situations where browser specific code or styling is necessary and [feature detection](http://en.wikipedia.org/wiki/Feature_detection_%28web_development%29) is not a viable way to go, **floatz** offers the [UserAgent](https://github.com/floatzcss/floatz.gwt/blob/master/floatz/src/com/floatzcss/gwt/client/browser/UserAgent.java) utility class. It provides a structured way to gain information from the browsers user agent string and thus can be used for browser detection within Java code, *UI binders* as well as *CSS bundles*.
 
-####Resource and CSS bundles####
-
-| Name                    | Description                                                        |
-| ----------------------- | ------------------------------------------------------------------ |
-| [Floatz.java](https://github.com/floatzcss/floatz.gwt/blob/master/floatz/src/com/floatzcss/gwt/client/resource/Floatz.java)             | Root resource bundle that contains all used resources and bundles.          |
-| [ResetMeyer.java](https://github.com/floatzcss/floatz.gwt/blob/master/floatz/src/com/floatzcss/gwt/client/resource/ResetMeyer.java)         | [Global reset CSS bundle](https://github.com/floatzcss/floatz.gwt/blob/master/floatz/src/com/floatzcss/gwt/client/resource/css/floatz.reset.meyer.css). Loaded by default.                               |
-| [Reset.java](https://github.com/floatzcss/floatz.gwt/blob/master/floatz/src/com/floatzcss/gwt/client/resource/Reset.java)              | [Floatz reset CSS bundle](https://github.com/floatzcss/floatz.gwt/blob/master/floatz/src/com/floatzcss/gwt/client/resource/css/floatz.reset.css). Loaded by default.                                   |
-| [Layout.java](https://github.com/floatzcss/floatz.gwt/blob/master/floatz/src/com/floatzcss/gwt/client/resource/Layout.java)             | [Layout CSS bundle](https://github.com/floatzcss/floatz.gwt/blob/master/floatz/src/com/floatzcss/gwt/client/resource/css/floatz.layout.css). Loaded by default.                            |
-| [Form.java](https://github.com/floatzcss/floatz.gwt/blob/master/floatz/src/com/floatzcss/gwt/client/resource/Form.java)               | [Form CSS bundle](https://github.com/floatzcss/floatz.gwt/blob/master/floatz/src/com/floatzcss/gwt/client/resource/css/floatz.form.css). Loaded by default.                              |
-| [Nav.java](https://github.com/floatzcss/floatz.gwt/blob/master/floatz/src/com/floatzcss/gwt/client/resource/Nav.java)                | [Navigation CSS bundle](https://github.com/floatzcss/floatz.gwt/blob/master/floatz/src/com/floatzcss/gwt/client/resource/css/floatz.nav.css). Loaded by default.                        |
-| [IE.java](https://github.com/floatzcss/floatz.gwt/blob/master/floatz/src/com/floatzcss/gwt/client/resource/IE.java)                 | [IE 8,9 specific conditional CSS bundle](https://github.com/floatzcss/floatz.gwt/blob/master/floatz/src/com/floatzcss/gwt/client/resource/css/floatz.ie.css).                           |
-| [LayoutPrint.java](https://github.com/floatzcss/floatz.gwt/blob/master/floatz/src/com/floatzcss/gwt/client/resource/LayoutPrint.java)        | [Print specific CSS bundle](https://github.com/floatzcss/floatz.gwt/blob/master/floatz/src/com/floatzcss/gwt/client/resource/css/floatz.layout.print.css). Loaded by default.                             |
-| [LayoutLiquid.java](https://github.com/floatzcss/floatz.gwt/blob/master/floatz/src/com/floatzcss/gwt/client/resource/LayoutLiquid.java)       | [Liquid layout CSS bundle](https://github.com/floatzcss/floatz.gwt/blob/master/floatz/src/com/floatzcss/gwt/client/resource/css/floatz.layout.liquid.css). Optional.                                       |
-| [LayoutCenter.java](https://github.com/floatzcss/floatz.gwt/blob/master/floatz/src/com/floatzcss/gwt/client/resource/LayoutCenter.java)       | [Centered layout CSS bundle](https://github.com/floatzcss/floatz.gwt/blob/master/floatz/src/com/floatzcss/gwt/client/resource/css/floatz.layout.center.css). Optional.                                     |
-| [MobileWebkit.java](https://github.com/floatzcss/floatz.gwt/blob/master/floatz/src/com/floatzcss/gwt/client/resource/MobileWebkit.java)       | [Mobile webkit specific CSS bundle](https://github.com/floatzcss/floatz.gwt/blob/master/floatz/src/com/floatzcss/gwt/client/resource/css/floatz.mobile.webkit.css). Optional.                              |
-| [LayoutResponsive.java](https://github.com/floatzcss/floatz.gwt/blob/master/floatz/src/com/floatzcss/gwt/client/resource/LayoutResponsive.java)   | Root bundle containing all reponsive CSS bundles.                  |
-| [LayoutResponsiveXS.java](https://github.com/floatzcss/floatz.gwt/blob/master/floatz/src/com/floatzcss/gwt/client/resource/LayoutResponsiveXS.java) | [Responsive CSS bundle](https://github.com/floatzcss/floatz.gwt/blob/master/floatz/src/com/floatzcss/gwt/client/resource/css/floatz.layout.responsive.xs.css) for smartphones in portrait mode. Optional.         |
-| [LayoutResponsiveS.java](https://github.com/floatzcss/floatz.gwt/blob/master/floatz/src/com/floatzcss/gwt/client/resource/LayoutResponsiveS.java)  | [Responsive CSS bundle](https://github.com/floatzcss/floatz.gwt/blob/master/floatz/src/com/floatzcss/gwt/client/resource/css/floatz.layout.responsive.s.css) for smartphones in landscape mode. Optional.        |
-| [LayoutResponsiveM.java](https://github.com/floatzcss/floatz.gwt/blob/master/floatz/src/com/floatzcss/gwt/client/resource/LayoutResponsiveM.java)  | [Responsive CSS bundle](https://github.com/floatzcss/floatz.gwt/blob/master/floatz/src/com/floatzcss/gwt/client/resource/css/floatz.layout.responsive.m.css) for tablets in portrait mode. Optional.             |
-| [LayoutResponsiveL.java](https://github.com/floatzcss/floatz.gwt/blob/master/floatz/src/com/floatzcss/gwt/client/resource/LayoutResponsiveL.java)  | [Responsive CSS bundle](https://github.com/floatzcss/floatz.gwt/blob/master/floatz/src/com/floatzcss/gwt/client/resource/css/floatz.layout.responsive.l.css) for tablets in landscape mode and desktops. Optional.  |
-| [LayoutResponsiveXL.java](https://github.com/floatzcss/floatz.gwt/blob/master/floatz/src/com/floatzcss/gwt/client/resource/LayoutResponsiveXL.java) | [Responsive CSS bundle](https://github.com/floatzcss/floatz.gwt/blob/master/floatz/src/com/floatzcss/gwt/client/resource/css/floatz.layout.responsive.xl.css) for large desktops in landscape mode. Optional.          |
+The following code shows browser detection with the *UserAgent* within a *UI binder* or a CSS file behind a corresponding *CSS bundle*.
+```
+@if (com.floatzcss.gwt.client.browser.UserAgent.browser.name() == "Chrome") {
+...
+} @elif (com.floatzcss.gwt.client.browser.UserAgent.browser.name() == "Firefox") {
+...
+} @elif (com.floatzcss.gwt.client.browser.UserAgent.browser.name() == "MSIE") {
+...
+} @elif (com.floatzcss.gwt.client.browser.UserAgent.browser.name() == "Safari") {
+...
+}
+```
