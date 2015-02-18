@@ -7,7 +7,7 @@
 * [Version history](#version-history)
 * [Getting started](#getting-started)
 * [Layouting with floatz](#layouting-with-floatz)
-* [Reference](#reference)
+* [Special topics](#special-topics)
 
 ##Version history
 * February, 2015 - Version 1.3.0 currently under construction
@@ -182,3 +182,26 @@ public class TestPage extends Composite {
 A full blown GWT example can be found in the provided [demo application](https://github.com/floatzcss/floatz.gwt/tree/master/demo).
 
 ###Special topics###
+####Browser dependent styling####
+Even if browser specific coding is not avoidable and [feature detection](http://en.wikipedia.org/wiki/Feature_detection_%28web_development%29) should always be the prefered way. For situations were feature detection is not posssible or you don´t want to integrate yet another framework for doing so, **floatz** provides the *UserAgent* utility class. It can be used within Java code, *UI binders* as well as *CSS bundles*.
+
+The following code examples shows how can create browser dependent styles within the *style* element in a UI binder.
+```
+<ui:style>
+   @if (com.floatzcss.gwt.client.browser.UserAgent.browser.name() == "Chrome") {
+      ...
+   } @elif (com.floatzcss.gwt.client.browser.UserAgent.browser.name() == "Firefox") {
+      ...
+   } @elif (com.floatzcss.gwt.client.browser.UserAgent.browser.name() == "MSIE") {
+      ...
+   } @elif (com.floatzcss.gwt.client.browser.UserAgent.browser.name() == "Safari") {
+      ...
+   }
+</ui:style>
+```
+
+
+
+
+
+
