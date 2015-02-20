@@ -48,12 +48,20 @@ public class ModuleManager {
                 break;
         }
 
-        $wnd.jQuery(document).ready(function () {
+		// Start modules depending on existence of jQuery
+		var fnStart = function() {
             $wnd.floatz.start({
                 debug: debug,
                 logLevel: level,
-                modules: moduleArray
+                modules: moduleArray.length > 0 ? moduleArray : undefined
             });
-        });
+        };
+		if($wnd.jQuery) {
+            $wnd.jQuery(document).ready(function () {
+	            fnStart();
+            });
+        } else {
+            fnStart();
+        }
     }-*/;
 }

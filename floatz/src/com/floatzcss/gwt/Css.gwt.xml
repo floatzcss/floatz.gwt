@@ -2,6 +2,7 @@
 <!DOCTYPE module PUBLIC "-//Google Inc.//DTD Google Web Toolkit 2.0//EN"
         "http://google-web-toolkit.googlecode.com/svn/releases/2.0/distro-source/core/src/gwt-module.dtd">
 <module rename-to="floatz">
-    <entry-point class='com.floatzcss.gwt.client.Css'/>
+	<inherits name="com.google.gwt.core.Core"/>
+	<entry-point class='com.floatzcss.gwt.client.Css'/>
     <source path='client'/>
 </module>

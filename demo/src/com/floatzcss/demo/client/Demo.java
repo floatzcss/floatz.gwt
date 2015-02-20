@@ -33,11 +33,9 @@ public class Demo implements EntryPoint {
 	 */
 	public void onModuleLoad() {
 
-		// Inject additional floatz stylesheet for liquid layout and application specific styles
+		// Inject additional floatz stylesheet for liquid layout
 		StyleInjectorUtils.getInstance()
-			.injectAtEnd(FLOATZ.layoutLiquid())
-			/*.injectAtEnd(DEMO.css())
-			.mediaQuery("media print").injectAtEnd(DEMO.printCss())*/;
+			.injectAtEnd(FLOATZ.layoutLiquid());
 
 		// Inject floatz stylesheets for responsive layouts
 		StyleInjectorUtils.getInstance()
@@ -60,8 +58,8 @@ public class Demo implements EntryPoint {
 					boolean debug = !GWT.isProdMode();
 
 					// Start floatz script modules
-					ModuleManager.start(debug, 
-						debug ? LogLevel.DEBUG : LogLevel.INFO, 
+					ModuleManager.start(debug,
+						debug ? LogLevel.DEBUG : LogLevel.INFO,
 						Module.FLOATZ_SKIPLINK_NAME);
 
 					// Load mobile styles only if user agent is mobile webkit
@@ -69,6 +67,8 @@ public class Demo implements EntryPoint {
 						FLOATZ.mobile().ensureInjected();
 					}
 
+					// Inject application specific styles after loading the scripts to get access to UserAgent class 
+					// within CSS
 					StyleInjectorUtils.getInstance()
 						.injectAtEnd(DEMO.css())
 						.mediaQuery("media print").injectAtEnd(DEMO.printCss());
