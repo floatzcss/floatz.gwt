@@ -199,3 +199,30 @@ The following code shows browser detection with the *UserAgent* within a *UI bin
 ...
 }
 ```
+The following *script modules* have to be injected to support browser detection.
+```
+private static final String WEB_ROOT = "Demo/";
+
+public void onModuleLoad() {
+   ...
+
+   // Inject floatz script modules
+   ScriptInjectorUtils.getInstance()
+      .inject(WEB_ROOT + Module.UAPARSER).waitFor()
+      .inject(WEB_ROOT + Module.FLOATZ)
+      .flush(new Callback<Void, Exception>() {
+         @Override
+         public void onSuccess(Void result) {
+            boolean debug = !GWT.isProdMode();
+            
+            // Start floatz script modules
+            ModuleManager.start(debug, 
+               debug ? LogLevel.DEBUG : LogLevel.INFO);
+         }
+         @Override
+         public void onFailure(Exception reason) {
+            Window.alert("Scripts can not be loaded: " + reason.getMessage());
+         }
+      });
+}
+```
