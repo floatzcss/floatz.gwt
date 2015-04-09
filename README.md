@@ -88,7 +88,7 @@ public void onModuleLoad() {
             // Start floatz script modules
             ModuleManager.start(debug, 
                debug ? LogLevel.DEBUG : LogLevel.INFO, 
-               FLOATZ_SKIPLINK_NAME);
+               Module.FLOATZ_SKIPLINK_NAME);
          }
          @Override
          public void onFailure(Exception reason) {
