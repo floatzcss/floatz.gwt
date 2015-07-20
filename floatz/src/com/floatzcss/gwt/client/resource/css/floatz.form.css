@@ -4,7 +4,7 @@
  * Provides a common baseline as well as specific classes for form elements
  *
  * @project       floatz CSS Framework
- * @version       1.3.0
+ * @version       1.3.0hotfix01
  * @see           https://github.com/floatzcss/floatz
  * @author        Harald Humml
  * @copyright     Copyright (c) 1998-2015 by :hummldesign
@@ -15,7 +15,7 @@
  */
 
 @external .flz_custombutton, .flz_form, .flz_textbox, .flz_button;
-@external .flz_readonly, .flz_inline, .flz_combobox, .flz_checkbox, .flz_radio;
+@external .flz_readonly, .flz_inline, .flz_combobox, .flz_checkbox, .flz_radio, .flz_mandatory;
 
 form {
 	clear: both;
