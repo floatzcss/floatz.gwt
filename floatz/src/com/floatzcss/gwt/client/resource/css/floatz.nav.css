@@ -54,7 +54,7 @@ a:focus.flz_skiplink {
 .flz_listnav li a:visited {
 	color: inherit;
 }
-.flz_listnav li a:focused,
+.flz_listnav li a:focus,
 .flz_listnav li a:hover {
 	text-decoration: underline;
 }
