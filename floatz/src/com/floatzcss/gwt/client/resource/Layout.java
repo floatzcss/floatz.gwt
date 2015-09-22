@@ -41,6 +41,9 @@ public interface Layout extends CssResource {
 	@ClassName("flz_l25")
 	String l25();
 
+	@ClassName("flz_l30")
+	String l30();
+
 	@ClassName("flz_l33")
 	String l33();
 
@@ -55,6 +58,9 @@ public interface Layout extends CssResource {
 
 	@ClassName("flz_l66")
 	String l66();
+
+	@ClassName("flz_l70")
+	String l70();
 
 	@ClassName("flz_l75")
 	String l75();
@@ -98,6 +104,9 @@ public interface Layout extends CssResource {
 	@ClassName("flz_m25")
 	String m25();
 
+	@ClassName("flz_m30")
+	String m30();
+
 	@ClassName("flz_m33")
 	String m33();
 
@@ -109,6 +118,9 @@ public interface Layout extends CssResource {
 
 	@ClassName("flz_m60")
 	String m60();
+
+	@ClassName("flz_m70")
+	String m70();
 
 	@ClassName("flz_m80")
 	String m80();
@@ -146,6 +158,9 @@ public interface Layout extends CssResource {
 	@ClassName("flz_r25")
 	String r25();
 
+	@ClassName("flz_r30")
+	String r30();
+
 	@ClassName("flz_r33")
 	String r33();
 
@@ -160,6 +175,9 @@ public interface Layout extends CssResource {
 
 	@ClassName("flz_r66")
 	String r66();
+
+	@ClassName("flz_r70")
+	String r70();
 
 	@ClassName("flz_r75")
 	String r75();

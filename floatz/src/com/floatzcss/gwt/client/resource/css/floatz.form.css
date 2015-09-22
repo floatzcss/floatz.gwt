@@ -10,7 +10,7 @@
  * @copyright     Copyright (c) 1998-2015 by :hummldesign
  * @link          http://www.floatzcss.com
  * @license       Apache License 2.0 http://www.apache.org/licenses/LICENSE-2.0
- * @lastmodified  2015-07-20
+ * @lastmodified  2015-09-21
  * @since         1.0.0
  */
 
@@ -68,7 +68,6 @@ fieldset legend {
 }
 .flz_form input[type="text"],
 .flz_form input[type="password"] {
-	background-color: #fff;
 	border: 1px solid #000;
 	display: block;
 	width: 99.4%;
@@ -82,7 +81,7 @@ fieldset legend {
 }
 .flz_form textarea {
 	display: block;
-	width: 99.4%;
+	width: 100%;
 }
 .flz_form input[type="checkbox"],
 .flz_form input[type="radio"],

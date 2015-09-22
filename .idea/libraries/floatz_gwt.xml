@@ -3,6 +3,7 @@
     <CLASSES>
       <root url="jar://$PROJECT_DIR$/out/artifacts/floatz_gwt/floatz.gwt.jar!/" />
     </CLASSES>
+    <JAVADOC />
     <SOURCES>
       <root url="jar://$PROJECT_DIR$/out/artifacts/floatz_gwt/floatz.gwt.jar!/" />
     </SOURCES>

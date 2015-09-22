@@ -21,6 +21,9 @@ public interface LayoutResponsive extends ClientBundle {
 	// Get and create instance of resource bundle
 	public LayoutResponsive INSTANCE = GWT.create(LayoutResponsive.class);
 
+	@Source("com/floatzcss/gwt/client/resource/css/floatz.layout.responsive.xxs.css")
+	LayoutResponsiveXXS xxs();
+
 	@Source("com/floatzcss/gwt/client/resource/css/floatz.layout.responsive.xs.css")
 	LayoutResponsiveXS xs();
 
@@ -35,4 +38,7 @@ public interface LayoutResponsive extends ClientBundle {
 
 	@Source("com/floatzcss/gwt/client/resource/css/floatz.layout.responsive.xl.css")
 	LayoutResponsiveXL xl();
+
+	@Source("com/floatzcss/gwt/client/resource/css/floatz.layout.responsive.xxl.css")
+	LayoutResponsiveXXL xxl();
 }

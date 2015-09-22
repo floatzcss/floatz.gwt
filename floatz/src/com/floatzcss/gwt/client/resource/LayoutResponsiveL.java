@@ -152,6 +152,15 @@ public interface LayoutResponsiveL extends CssResource {
 	@ClassName("flz_r25_l")
 	String r25();
 
+	@ClassName("flz_l30_l")
+	String l30();
+
+	@ClassName("flz_m30_l")
+	String m30();
+
+	@ClassName("flz_r30_l")
+	String r30();
+
 	@ClassName("flz_l33_l")
 	String l33();
 
@@ -193,6 +202,15 @@ public interface LayoutResponsiveL extends CssResource {
 
 	@ClassName("flz_r66_l")
 	String r66();
+
+	@ClassName("flz_l70_l")
+	String l70();
+
+	@ClassName("flz_m70_l")
+	String m70();
+
+	@ClassName("flz_r70_l")
+	String r70();
 
 	@ClassName("flz_l75_l")
 	String l75();

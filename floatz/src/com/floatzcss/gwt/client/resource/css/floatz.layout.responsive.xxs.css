@@ -1,0 +1,345 @@
+/*****************************************************************************************
+ * floatz.layout.responsive.css
+ * ---------------------------------------------------------------------------------------
+ * Basic layouting elements for fixed (and also fluid) layout
+ *
+ * @project       floatz CSS Framework
+ * @version       1.4.0
+ * @see           https://github.com/floatzcss/floatz
+ * @author        Harald Humml
+ * @copyright     Copyright (c) 1998-2015 by :hummldesign
+ * @link          http://www.floatzcss.com
+ * @license       Apache License 2.0 http://www.apache.org/licenses/LICENSE-2.0
+ * @lastmodified  2014-09-21
+ * @since         1.4.0
+ */
+
+@external .flz_clear_xxs, .flz_lclear_xxs, .flz_rclear_xxs, .flz_hide_xxs;
+@external .flz_spacer_xxs, .flz_lspacer_xxs, .flz_mspacer_xxs, .flz_rspacer_xxs;
+@external .flz_spacer_mrsc_top_xxs, .flz_spacer_mrsc_mid_xxs, .flz_spacer_mrsc_bottom_xxs;
+@external .flz_lspacer_mrmc_top_xxs, .flz_lspacer_mrmc_mid_xxs, .flz_lspacer_mrmc_bottom_xxs;
+@external .flz_mspacer_mrmc_top_xxs, .flz_mspacer_mrmc_mid_xxs, .flz_mspacer_mrmc_bottom_xxs;
+@external .flz_rspacer_mrmc_top_xxs, .flz_rspacer_mrmc_mid_xxs, .flz_rspacer_mrmc_bottom_xxs;
+@external .flz_subspacer_xxs, .flz_lsubspacer_xxs, .flz_msubspacer_xxs, .flz_rsubspacer_xxs;
+@external .flz_subspacer_mrsc_top_xxs, .flz_subspacer_mrsc_mid_xxs, .flz_subspacer_mrsc_bottom_xxs;
+@external .flz_lsubspacer_mrmc_top_xxs, .flz_lsubspacer_mrmc_mid_xxs, .flz_lsubspacer_mrmc_bottom_xxs;
+@external .flz_msubspacer_mrmc_top_xxs, .flz_msubspacer_mrmc_mid_xxs, .flz_msubspacer_mrmc_bottom_xxs;
+@external .flz_rsubspacer_mrmc_top_xxs, .flz_rsubspacer_mrmc_mid_xxs, .flz_rsubspacer_mrmc_bottom_xxs;
+@external .flz_l10_xxs, .flz_m10_xxs, .flz_r10_xxs, .flz_l20_xxs, .flz_m20_xxs, .flz_r20_xxs;
+@external .flz_l25_xxs, .flz_m25_xxs, .flz_r25_xxs, .flz_l30_xxs, .flz_m30_xxs, .flz_r30_xxs;
+@external .flz_l33_xxs, .flz_m33_xxs, .flz_r33_xxs, .flz_l40_xxs, .flz_m40_xxs, .flz_r40_xxs;
+@external .flz_l50_xxs, .flz_m50_xxs, .flz_r50_xxs, .flz_l60_xxs, .flz_m60_xxs, .flz_r60_xxs;
+@external .flz_l66_xxs, .flz_r66_xxs, .flz_l70_xxs, .flz_m70_xxs, .flz_r70_xxs;
+@external .flz_l75_xxs, .flz_r75_xxs, .flz_l80_xxs, .flz_m80_xxs, .flz_r80_xxs;
+@external .flz_l90_xxs, .flz_r90_xxs, .flz_r100_xxs;
+
+/* Responsive images */
+img {
+	max-width: 100%;
+}
+
+/**
+
+ * ---------------------------------------------------------------------------------------
+ * @section       Smartphone in portrait mode (XS)
+ * @app-base_css  floatz.layout.css
+ *
+ * Adds responsive layout support.
+ */
+/*@media (min-width: 0) and (max-width: 480px) {*/
+	.flz_clear_xxs {
+		clear: both;
+	}
+
+	.flz_lclear_xxs {
+		clear: left;
+	}
+
+	.flz_rclear_xxs {
+		clear: right;
+	}
+
+	.flz_hide_xxs {
+		display: none;
+	}
+
+	/* Spacers */
+	.flz_spacer_xxs,
+	.flz_lspacer_xxs,
+	.flz_mspacer_xxs,
+	.flz_rspacer_xxs,
+	.flz_spacer_mrsc_top_xxs,
+	.flz_spacer_mrsc_mid_xxs,
+	.flz_spacer_mrsc_bottom_xxs,
+	.flz_lspacer_mrmc_top_xxs,
+	.flz_lspacer_mrmc_mid_xxs,
+	.flz_lspacer_mrmc_bottom_xxs,
+	.flz_mspacer_mrmc_top_xxs,
+	.flz_mspacer_mrmc_mid_xxs,
+	.flz_mspacer_mrmc_bottom_xxs,
+	.flz_rspacer_mrmc_top_xxs,
+	.flz_rspacer_mrmc_mid_xxs,
+	.flz_rspacer_mrmc_bottom_xxs,
+	.flz_subspacer_xxs,
+	.flz_lsubspacer_xxs,
+	.flz_msubspacer_xxs,
+	.flz_rsubspacer_xxs,
+	.flz_subspacer_mrsc_top_xxs,
+	.flz_subspacer_mrsc_mid_xxs,
+	.flz_subspacer_mrsc_bottom_xxs,
+	.flz_lsubspacer_mrmc_top_xxs,
+	.flz_lsubspacer_mrmc_mid_xxs,
+	.flz_lsubspacer_mrmc_bottom_xxs,
+	.flz_msubspacer_mrmc_top_xxs,
+	.flz_msubspacer_mrmc_mid_xxs,
+	.flz_msubspacer_mrmc_bottom_xxs,
+	.flz_rsubspacer_mrmc_top_xxs,
+	.flz_rsubspacer_mrmc_mid_xxs,
+	.flz_rsubspacer_mrmc_bottom_xxs {
+		display: block;
+		padding: 0;
+		/* Reset all padding to allow full overwrites */
+		/*  */
+	}
+
+	.flz_spacer_xxs:after,
+	.flz_lspacer_xxs:after,
+	.flz_mspacer_xxs:after,
+	.flz_rspacer_xxs:after,
+	.flz_spacer_mrsc_top_xxs:after,
+	.flz_spacer_mrsc_mid_xxs:after,
+	.flz_spacer_mrsc_bottom_xxs:after,
+	.flz_lspacer_mrmc_top_xxs:after,
+	.flz_lspacer_mrmc_mid_xxs:after,
+	.flz_lspacer_mrmc_bottom_xxs:after,
+	.flz_mspacer_mrmc_top_xxs:after,
+	.flz_mspacer_mrmc_mid_xxs:after,
+	.flz_mspacer_mrmc_bottom_xxs:after,
+	.flz_rspacer_mrmc_top_xxs:after,
+	.flz_rspacer_mrmc_mid_xxs:after,
+	.flz_rspacer_mrmc_bottom_xxs:after,
+	.flz_subspacer_xxs:after,
+	.flz_lsubspacer_xxs:after,
+	.flz_msubspacer_xxs:after,
+	.flz_rsubspacer_xxs:after,
+	.flz_subspacer_mrsc_top_xxs:after,
+	.flz_subspacer_mrsc_mid_xxs:after,
+	.flz_subspacer_mrsc_bottom_xxs:after,
+	.flz_lsubspacer_mrmc_top_xxs:after,
+	.flz_lsubspacer_mrmc_mid_xxs:after,
+	.flz_lsubspacer_mrmc_bottom_xxs:after,
+	.flz_msubspacer_mrmc_top_xxs:after,
+	.flz_msubspacer_mrmc_mid_xxs:after,
+	.flz_msubspacer_mrmc_bottom_xxs:after,
+	.flz_rsubspacer_mrmc_top_xxs:after,
+	.flz_rsubspacer_mrmc_mid_xxs:after,
+	.flz_rsubspacer_mrmc_bottom_xxs:after {
+		content: ".";
+		display: block;
+		height: 0;
+		clear: both;
+		visibility: hidden;
+	}
+
+	.flz_spacer_xxs,
+	.flz_lspacer_xxs,
+	.flz_mspacer_xxs,
+	.flz_rspacer_xxs {
+		padding: 1em;
+	}
+
+	.flz_subspacer_xxs {
+		padding: 0;
+	}
+
+	.flz_subspacer_mrsc_top_xxs,
+	.flz_lsubspacer_mrmc_top_xxs,
+	.flz_msubspacer_mrmc_top_xxs,
+	.flz_rsubspacer_mrmc_top_xxs {
+		padding-top: 0;
+		padding-bottom: 0.5em;
+	}
+
+	.flz_subspacer_mrsc_mid_xxs,
+	.flz_lsubspacer_mrmc_mid_xxs,
+	.flz_msubspacer_mrmc_mid_xxs,
+	.flz_rsubspacer_mrmc_mid_xxs {
+		padding-top: 0.5em;
+		padding-bottom: 0.5em;
+	}
+
+	.flz_subspacer_mrsc_bottom_xxs,
+	.flz_lsubspacer_mrmc_bottom_xxs,
+	.flz_msubspacer_mrmc_bottom_xxs,
+	.flz_rsubspacer_mrmc_bottom_xxs {
+		padding-top: 0.5em;
+		padding-bottom: 0;
+	}
+
+	.flz_lsubspacer_xxs,
+	.flz_msubspacer_xxs,
+	.flz_lsubspacer_mrmc_top_xxs,
+	.flz_msubspacer_mrmc_top_xxs,
+	.flz_lsubspacer_mrmc_mid_xxs,
+	.flz_msubspacer_mrmc_mid_xxs,
+	.flz_lsubspacer_mrmc_bottom_xxs,
+	.flz_msubspacer_mrmc_bottom_xxs {
+		padding-right: 0.5em;
+	}
+
+	.flz_rsubspacer_xxs,
+	.flz_msubspacer_xxs,
+	.flz_msubspacer_mrmc_top_xxs,
+	.flz_rsubspacer_mrmc_top_xxs,
+	.flz_msubspacer_mrmc_mid_xxs,
+	.flz_rsubspacer_mrmc_mid_xxs,
+	.flz_msubspacer_mrmc_bottom_xxs,
+	.flz_rsubspacer_mrmc_bottom_xxs {
+		padding-left: 0.5em;
+	}
+
+	.flz_spacer_mrsc_top_xxs,
+	.flz_lspacer_mrmc_top_xxs,
+	.flz_mspacer_mrmc_top_xxs,
+	.flz_rspacer_mrmc_top_xxs {
+		padding-top: 1em;
+		padding-bottom: 0.5em;
+	}
+
+	.flz_spacer_mrsc_bottom_xxs,
+	.flz_lspacer_mrmc_bottom_xxs,
+	.flz_mspacer_mrmc_bottom_xxs,
+	.flz_rspacer_mrmc_bottom_xxs {
+		padding-top: 0.5em;
+		padding-bottom: 1em;
+	}
+
+	.flz_spacer_mrsc_mid_xxs,
+	.flz_lspacer_mrmc_mid_xxs,
+	.flz_mspacer_mrmc_mid_xxs,
+	.flz_rspacer_mrmc_mid_xxs {
+		padding-top: 0.5em;
+		padding-bottom: 0.5em;
+	}
+
+	.flz_spacer_mrsc_top_xxs,
+	.flz_spacer_mrsc_bottom_xxs,
+	.flz_spacer_mrsc_mid_xxs {
+		padding-left: 1em;
+		padding-right: 1em;
+	}
+
+	.flz_lspacer_xxs,
+	.flz_mspacer_xxs,
+	.flz_lspacer_mrmc_top_xxs,
+	.flz_mspacer_mrmc_top_xxs,
+	.flz_lspacer_mrmc_mid_xxs,
+	.flz_mspacer_mrmc_mid_xxs,
+	.flz_lspacer_mrmc_bottom_xxs,
+	.flz_mspacer_mrmc_bottom_xxs {
+		padding-right: 0.5em;
+	}
+
+	.flz_mspacer_xxs,
+	.flz_rspacer_xxs,
+	.flz_mspacer_mrmc_top_xxs,
+	.flz_rspacer_mrmc_top_xxs,
+	.flz_mspacer_mrmc_mid_xxs,
+	.flz_rspacer_mrmc_mid_xxs,
+	.flz_mspacer_mrmc_bottom_xxs,
+	.flz_rspacer_mrmc_bottom_xxs {
+		padding-left: 0.5em;
+	}
+
+	.flz_lspacer_mrmc_top_xxs,
+	.flz_lspacer_mrmc_mid_xxs,
+	.flz_lspacer_mrmc_bottom_xxs {
+		padding-left: 1em;
+	}
+
+	.flz_rspacer_mrmc_top_xxs,
+	.flz_rspacer_mrmc_mid_xxs,
+	.flz_rspacer_mrmc_bottom_xxs {
+		padding-right: 1em;
+	}
+
+	/* Layouters */
+	.flz_l10_xxs,
+	.flz_m10_xxs,
+	.flz_r10_xxs {
+		width: 10%;
+	}
+
+	.flz_l20_xxs,
+	.flz_m20_xxs,
+	.flz_r20_xxs {
+		width: 20%;
+	}
+
+	.flz_l25_xxs,
+	.flz_m25_xxs,
+	.flz_r25_xxs {
+		width: 25%;
+	}
+
+	.flz_l30_xxs,
+	.flz_m30_xxs,
+	.flz_r30_xxs {
+		width: 30%;
+	}
+
+	.flz_l33_xxs,
+	.flz_m33_xxs,
+	.flz_r33_xxs {
+		width: 33.33333%;
+	}
+
+	.flz_l40_xxs,
+	.flz_m40_xxs,
+	.flz_r40_xxs {
+		width: 40%;
+	}
+
+	.flz_l50_xxs,
+	.flz_m50_xxs,
+	.flz_r50_xxs {
+		width: 50%;
+	}
+
+	.flz_l60_xxs,
+	.flz_m60_xxs,
+	.flz_r60_xxs {
+		width: 60%;
+	}
+
+	.flz_l66_xxs,
+	.flz_r66_xxs {
+		width: 66.66666%;
+	}
+
+	.flz_l70_xxs,
+	.flz_m70_xxs,
+	.flz_r70_xxs {
+		width: 70%;
+	}
+
+	.flz_l75_xxs,
+	.flz_r75_xxs {
+		width: 75%;
+	}
+
+	.flz_l80_xxs,
+	.flz_m80_xxs,
+	.flz_r80_xxs {
+		width: 80%;
+	}
+
+	.flz_l90_xxs,
+	.flz_r90_xxs {
+		width: 90%;
+	}
+
+	.flz_r100_xxs {
+		width: 100%;
+	}
+/*}*/

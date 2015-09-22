@@ -39,11 +39,14 @@ public class Demo implements EntryPoint {
 
 		// Inject floatz stylesheets for responsive layouts
 		StyleInjectorUtils.getInstance()
+			.mediaQuery(Media.XXS).injectAtEnd(FLOATZ.responsive().xxs())
 			.mediaQuery(Media.XS).injectAtEnd(FLOATZ.responsive().xs())
 			.mediaQuery(Media.S).injectAtEnd(FLOATZ.responsive().s())
 			.mediaQuery(Media.M).injectAtEnd(FLOATZ.responsive().m())
 			.mediaQuery(Media.L).injectAtEnd(FLOATZ.responsive().l())
-			.mediaQuery(Media.XL).injectAtEnd(FLOATZ.responsive().xl());
+			.mediaQuery(Media.XL).injectAtEnd(FLOATZ.responsive().xl())
+			.mediaQuery(Media.XXL).injectAtEnd(FLOATZ.responsive().xxl())
+		;
 
 		// Inject floatz script modules
 		ScriptInjectorUtils.getInstance()

@@ -1,16 +1,16 @@
 /*****************************************************************************************
  * floatz.layout.responsive.css
  * ---------------------------------------------------------------------------------------
- * Basic layouting elements for responsive layout
+ * Basic layouting elements for fixed (and also fluid) layout
  *
  * @project       floatz CSS Framework
- * @version       1.3.0
+ * @version       1.4.0
  * @see           https://github.com/floatzcss/floatz
  * @author        Harald Humml
  * @copyright     Copyright (c) 1998-2015 by :hummldesign
  * @link          http://www.floatzcss.com
  * @license       Apache License 2.0 http://www.apache.org/licenses/LICENSE-2.0
- * @lastmodified  2014-12-11
+ * @lastmodified  2014-09-21
  * @since         1.3.0
  */
 
@@ -26,9 +26,10 @@
 @external .flz_msubspacer_mrmc_top_xs, .flz_msubspacer_mrmc_mid_xs, .flz_msubspacer_mrmc_bottom_xs;
 @external .flz_rsubspacer_mrmc_top_xs, .flz_rsubspacer_mrmc_mid_xs, .flz_rsubspacer_mrmc_bottom_xs;
 @external .flz_l10_xs, .flz_m10_xs, .flz_r10_xs, .flz_l20_xs, .flz_m20_xs, .flz_r20_xs;
-@external .flz_l25_xs, .flz_m25_xs, .flz_r25_xs, .flz_l33_xs, .flz_m33_xs, .flz_r33_xs;
-@external .flz_l40_xs, .flz_m40_xs, .flz_r40_xs, .flz_l50_xs, .flz_m50_xs, .flz_r50_xs;
-@external .flz_l60_xs, .flz_m60_xs, .flz_r60_xs, .flz_l66_xs, .flz_r66_xs;
+@external .flz_l25_xs, .flz_m25_xs, .flz_r25_xs, .flz_l30_xs, .flz_m30_xs, .flz_r30_xs;
+@external .flz_l33_xs, .flz_m33_xs, .flz_r33_xs, .flz_l40_xs, .flz_m40_xs, .flz_r40_xs;
+@external .flz_l50_xs, .flz_m50_xs, .flz_r50_xs, .flz_l60_xs, .flz_m60_xs, .flz_r60_xs;
+@external .flz_l66_xs, .flz_r66_xs, .flz_l70_xs, .flz_m70_xs, .flz_r70_xs;
 @external .flz_l75_xs, .flz_r75_xs, .flz_l80_xs, .flz_m80_xs, .flz_r80_xs;
 @external .flz_l90_xs, .flz_r90_xs, .flz_r100_xs;
 
@@ -281,6 +282,12 @@ img {
 		width: 25%;
 	}
 
+	.flz_l30_xs,
+	.flz_m30_xs,
+	.flz_r30_xs {
+		width: 30%;
+	}
+
 	.flz_l33_xs,
 	.flz_m33_xs,
 	.flz_r33_xs {
@@ -308,6 +315,12 @@ img {
 	.flz_l66_xs,
 	.flz_r66_xs {
 		width: 66.66666%;
+	}
+
+	.flz_l70_xs,
+	.flz_m70_xs,
+	.flz_r70_xs {
+		width: 70%;
 	}
 
 	.flz_l75_xs,

@@ -14,9 +14,11 @@ package com.floatzcss.gwt.client.util;
  * @since 1.3.0
  */
 public class Media {
-	public static final String XS = "@media (min-width: 0) and (max-width: 480px)";
-	public static final String S = "@media (min-width: 481px) and (max-width: 767px)";
-	public static final String M = "@media (min-width: 768px) and (max-width: 979px)";
-	public static final String L = "@media (min-width: 980px) and (max-width: 1199px)";
-	public static final String XL = "@media (min-width: 1200px)";
+	public static final String XXS = "@media (min-width: 0) and (max-width: 320px)";
+	public static final String XS  = "@media (min-width: 321px) and (max-width: 480px)";
+	public static final String S   = "@media (min-width: 481px) and (max-width: 767px)";
+	public static final String M   = "@media (min-width: 768px) and (max-width: 979px)";
+	public static final String L   = "@media (min-width: 980px) and (max-width: 1199px)";
+	public static final String XL  = "@media (min-width: 1200px) and (max-width: 1599px)";
+	public static final String XXL = "@media (min-width: 1600px)";
 }
