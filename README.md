@@ -61,11 +61,13 @@ public void onModuleLoad() {
    ...
    // Inject floatz stylesheets for responsive layouts
    StyleInjectorUtils.getInstance()
+      .mediaQuery(Media.XXS).injectAtEnd(FLOATZ.responsive().xxs())
       .mediaQuery(Media.XS).injectAtEnd(FLOATZ.responsive().xs())
       .mediaQuery(Media.S).injectAtEnd(FLOATZ.responsive().s())
       .mediaQuery(Media.M).injectAtEnd(FLOATZ.responsive().m())
       .mediaQuery(Media.L).injectAtEnd(FLOATZ.responsive().l())
-      .mediaQuery(Media.XL).injectAtEnd(FLOATZ.responsive().xl());
+      .mediaQuery(Media.XL).injectAtEnd(FLOATZ.responsive().xl()
+      .mediaQuery(Media.XXL).injectAtEnd(FLOATZ.responsive().xxl());
 }
 ```
 ####Loading script modules####
@@ -101,11 +103,11 @@ public void onModuleLoad() {
 ```
 The log output in the browser console shows which script modules are loaded and started successfully.
 ```
-floatz                            | 1.3.0 | INFO   | Module floatz loaded
-floatz.js:10 floatz.skiplink      | 1.3.0 | INFO   | Module floatz.skiplink loaded
-floatz.js:10 floatz               | 1.3.0 | INFO   | Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.111 Safari/537.36
-floatz.js:10 floatz               | 1.3.0 | INFO   | Module floatz started
-floatz.js:10 floatz               | 1.3.0 | INFO   | Module floatz.skiplink started
+floatz                            | 1.4.0 | INFO   | Module floatz loaded
+floatz.js:10 floatz.skiplink      | 1.4.0 | INFO   | Module floatz.skiplink loaded
+floatz.js:10 floatz               | 1.4.0 | INFO   | Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.111 Safari/537.36
+floatz.js:10 floatz               | 1.4.0 | INFO   | Module floatz started
+floatz.js:10 floatz               | 1.4.0 | INFO   | Module floatz.skiplink started
 ```
 
 ###Layouting with floatz###
