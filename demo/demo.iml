@@ -32,11 +32,11 @@
     <orderEntry type="module-library" scope="PROVIDED">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/../download/floatz.gwt-1.4.0beta.jar!/" />
+          <root url="jar://$MODULE_DIR$/../download/floatz.gwt-1.4.0.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES>
-          <root url="jar://$MODULE_DIR$/../download/floatz.gwt-1.4.0beta.jar!/" />
+          <root url="jar://$MODULE_DIR$/../download/floatz.gwt-1.4.0.jar!/" />
         </SOURCES>
       </library>
     </orderEntry>

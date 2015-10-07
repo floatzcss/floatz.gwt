@@ -8,7 +8,7 @@
           <element id="javaee-facet-classes" facet="demo/web/Web" />
         </element>
         <element id="directory" name="lib">
-          <element id="artifact" artifact-name="floatz.gwt-1.4.0beta" />
+          <element id="artifact" artifact-name="floatz.gwt-1.4.0" />
         </element>
       </element>
       <element id="gwt-compiler-output" facet="floatz/gwt/GWT" />
