@@ -1,0 +1,6 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="floatz">
+    <output-path>$PROJECT_DIR$/out/artifacts/floatz</output-path>
+    <root id="archive" name="floatz.jar" />
+  </artifact>
+</component>
