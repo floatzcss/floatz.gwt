@@ -31,7 +31,8 @@
 @external .flz_r70, .flz_l75, .flz_r75, .flz_l80,	.flz_r80, .flz_l90, .flz_r90;
 @external .flz_r100, .flz_panel, .flz_scrollpanel, .flz_scrollbox;
 
-#flz_page {background-color: #fff;
+#flz_page {
+	background-color: #fff;
 	float: left;
 	position: relative;
 	width: 985px;

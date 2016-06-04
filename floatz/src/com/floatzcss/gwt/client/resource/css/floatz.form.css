@@ -70,7 +70,7 @@ fieldset legend {
 .flz_form input[type="password"] {
 	border: 1px solid #000;
 	display: block;
-	width: 99.4%;
+	width: 100%;
 	padding-left: 0;
 	padding-right: 0;
 }
