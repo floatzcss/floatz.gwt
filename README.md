@@ -19,13 +19,13 @@
 
 For a description how to use versions below 1.3.0 please goto [code.google.com](https://code.google.com/p/floatz/wiki/LayoutingInGoogleWebToolkit#Adding_floatz_to_a_GWT_project).
 
-### Getting started###
+### Getting started
 * [Integrating floatz into the application](#Integrating-floatz-into-the-application)
 * [Changing the layout mode](#changing-the-layout-mode)
 * [Supporting responsive design](#supporting-responsive-design)
 * [Loading script modules](#loading-script-modules)
 
-#### Integrating floatz into the application####
+#### Integrating floatz into the application
 Integrating **floatz** into the application is very easy. Here are the necessary steps:
 
 * Download the [latest JAR version](https://github.com/floatzcss/floatz.gwt/tree/master/download) and copy it into the applications *WEB-INF/lib* folder.
@@ -36,7 +36,7 @@ Integrating **floatz** into the application is very easy. Here are the necessary
 ```
 * Done. All necessary **floatz** *CSS bundles* are injected automatically when the application starts.
 
-#### Changing the layout mode####
+#### Changing the layout mode
 By default **floatz** is using a *fixed width layout*. It can also be switched to *liquid layout* or *centered layout* by simply injecting the appropriate *CSS bundle* in the *onLoadModule()* method of the applications *entry point class*.
 ```
 private static final Floatz FLOATZ = Floatz.INSTANCE;
@@ -53,7 +53,7 @@ public void onModuleLoad() {
 }
 ```
 
-#### Supporting responsive design####
+#### Supporting responsive design
 To support *responsive layouts* within the application additional *CSS bundles* have to be loaded in the *entry point class*. Media queries are not supported in GWT *CSS bundles* by default thus **floatz** provides the [StyleInjectorUtils](https://github.com/floatzcss/floatz.gwt/blob/master/floatz/src/com/floatzcss/gwt/client/util/StyleInjectorUtils.java) singleton class which allows to wrap styles with media queries when injected.
 ```
 private static final Floatz FLOATZ = Floatz.INSTANCE;
@@ -71,7 +71,7 @@ public void onModuleLoad() {
       .mediaQuery(Media.XXL).injectAtEnd(FLOATZ.responsive().xxl());
 }
 ```
-#### Loading script modules####
+#### Loading script modules
 **Floatz** ships with some optional *script modules* that add some additional functionality. These scripts can be loaded using the [ScriptInjectorUtils](https://github.com/floatzcss/floatz.gwt/blob/master/floatz/src/com/floatzcss/gwt/client/util/ScriptInjectorUtils.java) utility class. After the scripts are loaded they have to be started using the [ModuleManager](https://github.com/floatzcss/floatz.gwt/blob/master/floatz/src/com/floatzcss/gwt/client/module/ModuleManager.java) class.
 ```
  private static final String WEB_ROOT = "Demo/";
@@ -111,11 +111,11 @@ floatz.js:10 floatz               | 1.4.0 | INFO   | Module floatz started
 floatz.js:10 floatz               | 1.4.0 | INFO   | Module floatz.skiplink started
 ```
 
-### Layouting with floatz###
+### Layouting with floatz
 * [Layouting in Java code](#layouting-in-java-code)
 * [Layouting in UI binders](#layouting-in-ui-binders)
 
-#### Layouting in Java code####
+#### Layouting in Java code
 **Floatz.gwt** provides a set of *GWT resource and CSS bundles* which can be easily used to style elements directly within Java code. Each CSS file has its own namespace within the *resource bundle* which makes it very convenient to find the right CSS classes using the IDEs code completion facility.
 ```
 public class FloatzTest implements EntryPoint {
@@ -140,7 +140,7 @@ public class FloatzTest implements EntryPoint {
    }
 }
 ```
-#### Layouting in UI binders####
+#### Layouting in UI binders
 Of course it is also possible to use the provided *CSS bundles* within UI binders which is the preferred way to structure and style pages in GWT applications. This is an exemplary Java and UI binder code.
 ```
 public class TestPage extends Composite {
@@ -186,10 +186,10 @@ public class TestPage extends Composite {
 ```
 A full blown GWT example can be found in the provided [demo application](https://github.com/floatzcss/floatz.gwt/tree/master/demo).
 
-### Special topics###
+### Special topics
 * [Browser dependent styling](#browser-dependent-styling)
 
-#### Browser dependent styling####
+#### Browser dependent styling
 For those situations where browser specific code or styling is necessary and [feature detection](http://en.wikipedia.org/wiki/Feature_detection_%28web_development%29) is not a viable way to go, **floatz** offers the [UserAgent](https://github.com/floatzcss/floatz.gwt/blob/master/floatz/src/com/floatzcss/gwt/client/browser/UserAgent.java) utility class. It provides a structured way to gain information from the browsers user agent string and thus can be used for browser detection within Java code, *UI binders* as well as *CSS bundles*.
 
 The following code shows browser detection with the *UserAgent* within a *UI binder* or a CSS file behind a corresponding *CSS bundle*.
